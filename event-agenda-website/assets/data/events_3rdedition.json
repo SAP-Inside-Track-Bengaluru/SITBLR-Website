@@ -11,14 +11,24 @@
             "sequence": "0.3",
             "time": "09:30 - 10:00",
             "type": "Keynote",
-            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India ; Head, Customer Innovation Services, SAP)",
+            "tracktitle": "Keynote",
+            "speaker1": "Sindhu Gangadharan",
+            "speaker1_designation": "MD, SAP Labs India ; Head, Customer Innovation Services, SAP",
+            "location": "Audimax, BLR05",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.4",
             "time": "10:00 - 10:30",
             "type": "Keynote",
-            "tracktitle": "Industry Talk - Sindhu Gangadharan | Ankit Gupta, Managing Director, Protiviti India | Ronit Mangal, CIO, Licious ",
+            "tracktitle": "Industry Talk",
+            "speaker1": "Sindhu Gangadharan",
+            "speaker1_designation": "MD, SAP Labs India ; Head, Customer Innovation Services, SAP",
+            "speaker2": "Ankit Gupta",
+            "speaker2_designation": "Managing Director, Protiviti India",
+            "speaker3": "Ronit Mangal",
+            "speaker3_designation": "CIO, Licious",
+            "location": "Audimax, BLR05",
             "sessionsBySequence": []
         },
         {
