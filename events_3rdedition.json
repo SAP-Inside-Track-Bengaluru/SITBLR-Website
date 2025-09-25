@@ -896,47 +896,38 @@
 
     "handson": [
         {
-            "speaker1": "",
-            "speaker2": "",
-            "sessiontitle": "",
+            "speaker1": "Srinivasa Murthy.V",
+            "speaker2": "Sivaprakasam Priyadharsiha",
+            "sessiontitle": "SAP Agent in Action: The Future of Connected Retail Commerce",
             "description": "",
             "organization1": "",
             "tracktitle": "",
             "trackid": ""
         },
         {
-            "speaker1": "",
+            "speaker1": "Ankur Kumar",
             "speaker2": "",
-            "sessiontitle": "",
+            "sessiontitle": "SAP Document AI - Recent innovations with SAP Business AI",
             "description": "",
             "organization1": "",
             "tracktitle": "",
             "trackid": ""
         },
         {
-            "speaker1": "",
+            "speaker1": "naveeta srivastava",
             "speaker2": "",
-            "sessiontitle": "",
+            "sessiontitle": "Smarter Contracts, Smarter Procurement: The Magic of Embedded AI",
             "description": "",
             "organization1": "",
-            "tracktitle": "",
+            "tracktitle": "BLR05 Cafeteria",
             "trackid": ""
         },
         {
-            "speaker1": "",
+            "speaker1": "Swathi R",
             "speaker2": "",
-            "sessiontitle": "",
+            "sessiontitle": "SAP’s well-architected Framework in SAP Architecture Center",
             "description": "",
-            "organization1": "",
-            "tracktitle": "",
-            "trackid": ""
-        },
-        {
-            "speaker1": "",
-            "speaker2": "",
-            "sessiontitle": "",
-            "description": "",
-            "organization1": "",
+            "organization1": "BLR05 Cafeteria",
             "tracktitle": "",
             "trackid": ""
         }

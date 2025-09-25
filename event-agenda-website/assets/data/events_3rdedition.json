@@ -3,21 +3,21 @@
         {
             "sequence": "0.1",
             "time": "08:00 - 09:30",
-            "type": "break",
+            "type": "Registration",
             "tracktitle": "Registration,Networking & Demo Booths",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.3",
             "time": "09:30 - 10:00",
-            "type": "break",
+            "type": "Keynote",
             "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India ; Head, Customer Innovation Services, SAP)",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.4",
             "time": "10:00 - 10:30",
-            "type": "break",
+            "type": "Keynote",
             "tracktitle": "Industry Talk - Sindhu Gangadharan | Ankit Gupta, Managing Director, Protiviti India | Ronit Mangal, CIO, Licious ",
             "sessionsBySequence": []
         },
@@ -893,53 +893,38 @@
             ]
         }
     ],
-
-
     "handson": [
         {
-            "speaker1": "",
-            "speaker2": "",
-            "sessiontitle": "",
+            "sessiontitle": "Documents to Insights - Enhanced Intelligent Document Processing using SAP Document AI",
             "description": "",
             "organization1": "",
             "tracktitle": "",
-            "trackid": ""
+            "trackid": "",
+            "location": "BLR05 Cafeteria"
         },
         {
-            "speaker1": "",
-            "speaker2": "",
-            "sessiontitle": "",
+            "sessiontitle": "J4D - ABAP AI Capabilities -Explore the Joule for Developers, ABAP AI Capabilities in this hands-on workshop that brings together ABAP and AI",
             "description": "",
             "organization1": "",
             "tracktitle": "",
-            "trackid": ""
+            "trackid": "",
+            "location": "BLR05 Cafeteria"
         },
         {
-            "speaker1": "",
-            "speaker2": "",
-            "sessiontitle": "",
+             "sessiontitle": "Build Enterprise Grade CAP Application - Build CAP App following  SAP BTP Developer's Guide",
             "description": "",
             "organization1": "",
             "tracktitle": "",
-            "trackid": ""
+            "trackid": "",
+            "location": "BLR05 Cafeteria"
         },
         {
-            "speaker1": "",
-            "speaker2": "",
-            "sessiontitle": "",
+            "sessiontitle": "SAP Fiori Apps with GenAI - Build Fiori UI using Gen AI capabilities in SAP Build Code",
             "description": "",
             "organization1": "",
             "tracktitle": "",
-            "trackid": ""
-        },
-        {
-            "speaker1": "",
-            "speaker2": "",
-            "sessiontitle": "",
-            "description": "",
-            "organization1": "",
-            "tracktitle": "",
-            "trackid": ""
+            "trackid": "",
+            "location": "BLR05 Cafeteria"
         }
     ]
 }

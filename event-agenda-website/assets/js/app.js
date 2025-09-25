@@ -4,7 +4,7 @@ class AgendaApp {
         this.rawData = null;
         this.parsedData = null;
         this.currentFilters = {
-            types: ['Lecture', 'Demo Pod', 'Break'],
+            types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
             tracks: []
         };
         this.currentSearchTerm = '';
@@ -121,7 +121,7 @@ class AgendaApp {
             this.updateThemeButton();
         } else {
             // Default to dark theme
-            document.body.className = 'dark';
+            document.body.className = 'light';
             this.updateThemeButton();
         }
     }
@@ -172,7 +172,7 @@ class AgendaApp {
     resetFilters() {
         const tracks = getUniqueTracks(this.parsedData);
         this.currentFilters = {
-            types: ['Lecture', 'Demo Pod', 'Break'],
+            types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
             tracks: tracks
         };
         this.renderAgenda();
@@ -240,8 +240,10 @@ class AgendaApp {
         
         if (this.currentTab === 'sessions') {
             this.renderTimeline('sessionsContainer', filteredData.lectures);
-        } else {
+        } else if (this.currentTab === 'demopods') {
             this.renderTimeline('demopodsContainer', filteredData.demopods);
+        } else if (this.currentTab === 'handson') {
+            this.renderTimeline('handsonContainer', filteredData.handson);
         }
         
         this.updateEmptyState(filteredData);
@@ -278,6 +280,30 @@ class AgendaApp {
                 description: ''
             }, `break-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(breakCard);
+        } else if (timeSlot.type === 'registration') {
+            // Create a single registration card
+            const registrationCard = this.createSessionCard({
+                title: timeSlot.title,
+                type: 'Registration',
+                track: '',
+                speaker1: '',
+                speaker2: '',
+                speakers: '',
+                description: ''
+            }, `registration-${timeSlot.sequence}`, true);
+            sessionsCol.appendChild(registrationCard);
+        } else if (timeSlot.type === 'keynote') {
+            // Create a single keynote card
+            const keynoteCard = this.createSessionCard({
+                title: timeSlot.title,
+                type: 'Keynote',
+                track: '',
+                speaker1: '',
+                speaker2: '',
+                speakers: '',
+                description: ''
+            }, `keynote-${timeSlot.sequence}`, true);
+            sessionsCol.appendChild(keynoteCard);
         } else {
             // Create session cards for each session in the time slot
             timeSlot.sessions.forEach((session, sessionIndex) => {
@@ -292,7 +318,7 @@ class AgendaApp {
         return element;
     }
 
-    createSessionCard(session, sessionId, isBreak = false) {
+    createSessionCard(session, sessionId, isSpecialSession = false) {
         const template = document.getElementById('sessionCardTemplate');
         const element = template.content.cloneNode(true);
         const card = element.querySelector('.session-card');
@@ -300,8 +326,15 @@ class AgendaApp {
         // Set unique ID
         card.id = sessionId;
         
-        if (isBreak) {
-            card.classList.add('break');
+        if (isSpecialSession) {
+            card.classList.add('special-session');
+            if (session.type === 'Break') {
+                card.classList.add('break');
+            } else if (session.type === 'Registration') {
+                card.classList.add('registration');
+            } else if (session.type === 'Keynote') {
+                card.classList.add('keynote');
+            }
         }
         
         // Set title
@@ -312,9 +345,22 @@ class AgendaApp {
         const typeBadge = card.querySelector('.type-badge');
         typeBadge.textContent = session.type || 'Session';
         
+        // Add appropriate badge class
+        if (session.type === 'Demo Pod') {
+            typeBadge.classList.add('demo');
+        } else if (session.type === 'Hands On') {
+            typeBadge.classList.add('handson');
+        } else if (session.type === 'Break') {
+            typeBadge.classList.add('break');
+        } else if (session.type === 'Keynote') {
+            typeBadge.classList.add('keynote');
+        } else if (session.type === 'Registration') {
+            typeBadge.classList.add('registration');
+        }
+        
         // Set track
         const trackBadge = card.querySelector('.track-badge');
-        if (session.track && !isBreak) {
+        if (session.track && !isSpecialSession) {
             trackBadge.textContent = session.track;
         } else {
             trackBadge.style.display = 'none';
@@ -322,7 +368,7 @@ class AgendaApp {
         
         // Set speakers
         const speakersElement = card.querySelector('.speakers');
-        if (!isBreak) {
+        if (!isSpecialSession) {
             const speakersText = formatSpeakers(session);
             if (speakersText) {
                 speakersElement.textContent = `Speakers: ${speakersText}`;
@@ -338,9 +384,15 @@ class AgendaApp {
 
     updateEmptyState(filteredData) {
         const emptyState = document.getElementById('emptyState');
-        const hasData = (this.currentTab === 'sessions') ? 
-            filteredData.lectures.length > 0 : 
-            filteredData.demopods.length > 0;
+        let hasData = false;
+        
+        if (this.currentTab === 'sessions') {
+            hasData = filteredData.lectures.length > 0;
+        } else if (this.currentTab === 'demopods') {
+            hasData = filteredData.demopods.length > 0;
+        } else if (this.currentTab === 'handson') {
+            hasData = filteredData.handson.length > 0;
+        }
             
         emptyState.hidden = hasData;
     }

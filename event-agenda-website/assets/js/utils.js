@@ -8,7 +8,8 @@
 function parseEventData(eventData) {
     const parsedData = {
         lectures: [],
-        demopods: []
+        demopods: [],
+        handson: []
     };
 
     // Parse lectures (sessions)
@@ -20,6 +21,24 @@ function parseEventData(eventData) {
                     sequence: lecture.sequence,
                     time: lecture.time,
                     type: 'break',
+                    title: lecture.tracktitle,
+                    sessions: []
+                });
+            } else if (lecture.type === 'Registration') {
+                // Handle registration sessions
+                parsedData.lectures.push({
+                    sequence: lecture.sequence,
+                    time: lecture.time,
+                    type: 'registration',
+                    title: lecture.tracktitle,
+                    sessions: []
+                });
+            } else if (lecture.type === 'Keynote') {
+                // Handle keynote sessions
+                parsedData.lectures.push({
+                    sequence: lecture.sequence,
+                    time: lecture.time,
+                    type: 'keynote',
                     title: lecture.tracktitle,
                     sessions: []
                 });
@@ -71,6 +90,33 @@ function parseEventData(eventData) {
         });
     }
 
+    // Parse hands-on sessions
+    if (eventData.handson && Array.isArray(eventData.handson)) {
+        const handsonSessions = eventData.handson
+            .filter(session => session.sessiontitle && session.sessiontitle.trim() !== '')
+            .map(session => ({
+                title: session.sessiontitle || '',
+                speaker1: session.speaker1 || '',
+                speaker2: session.speaker2 || '',
+                speakers: session.speakers || '',
+                track: session.location || session.tracktitle || 'BLR05 Cafeteria',
+                trackId: session.trackid || session.location || 'cafeteria',
+                type: 'Hands On',
+                description: session.description || '',
+                organization: session.organization1 || ''
+            }));
+
+        if (handsonSessions.length > 0) {
+            parsedData.handson.push({
+                sequence: 'handson',
+                time: 'Workshop Sessions',
+                type: 'handson',
+                title: 'Hands-On Workshops',
+                sessions: handsonSessions
+            });
+        }
+    }
+
     return parsedData;
 }
 
@@ -82,7 +128,7 @@ function parseEventData(eventData) {
 function getUniqueTracks(parsedData) {
     const tracks = new Set();
     
-    [...parsedData.lectures, ...parsedData.demopods].forEach(timeSlot => {
+    [...parsedData.lectures, ...parsedData.demopods, ...parsedData.handson].forEach(timeSlot => {
         if (timeSlot.sessions) {
             timeSlot.sessions.forEach(session => {
                 if (session.track && session.track.trim() !== '') {
@@ -106,6 +152,10 @@ function getUniqueTypes(parsedData) {
     parsedData.lectures.forEach(timeSlot => {
         if (timeSlot.type === 'break') {
             types.add('Break');
+        } else if (timeSlot.type === 'registration') {
+            types.add('Registration');
+        } else if (timeSlot.type === 'keynote') {
+            types.add('Keynote');
         } else if (timeSlot.sessions) {
             timeSlot.sessions.forEach(session => {
                 types.add(session.type);
@@ -114,6 +164,14 @@ function getUniqueTypes(parsedData) {
     });
     
     parsedData.demopods.forEach(timeSlot => {
+        if (timeSlot.sessions) {
+            timeSlot.sessions.forEach(session => {
+                types.add(session.type);
+            });
+        }
+    });
+    
+    parsedData.handson.forEach(timeSlot => {
         if (timeSlot.sessions) {
             timeSlot.sessions.forEach(session => {
                 types.add(session.type);
@@ -155,7 +213,8 @@ function formatSpeakers(session) {
 function filterEvents(parsedData, searchTerm = '', filters = {}) {
     const filtered = {
         lectures: [],
-        demopods: []
+        demopods: [],
+        handson: []
     };
 
     const searchLower = searchTerm.toLowerCase();
@@ -165,6 +224,18 @@ function filterEvents(parsedData, searchTerm = '', filters = {}) {
         if (timeSlot.type === 'break') {
             // Always include breaks if Break type is selected
             if (!filters.types || filters.types.includes('Break')) {
+                return timeSlot;
+            }
+            return null;
+        } else if (timeSlot.type === 'registration') {
+            // Always include registration if Registration type is selected
+            if (!filters.types || filters.types.includes('Registration')) {
+                return timeSlot;
+            }
+            return null;
+        } else if (timeSlot.type === 'keynote') {
+            // Always include keynotes if Keynote type is selected
+            if (!filters.types || filters.types.includes('Keynote')) {
                 return timeSlot;
             }
             return null;
@@ -209,6 +280,45 @@ function filterEvents(parsedData, searchTerm = '', filters = {}) {
 
     // Filter demo pods
     filtered.demopods = parsedData.demopods.map(timeSlot => {
+        const filteredSessions = timeSlot.sessions.filter(session => {
+            // Type filter
+            if (filters.types && !filters.types.includes(session.type)) {
+                return false;
+            }
+
+            // Track filter
+            if (filters.tracks && filters.tracks.length > 0 && !filters.tracks.includes(session.track)) {
+                return false;
+            }
+
+            // Search filter
+            if (searchTerm) {
+                const sessionText = [
+                    session.title,
+                    formatSpeakers(session),
+                    session.track,
+                    session.description
+                ].join(' ').toLowerCase();
+                
+                if (!sessionText.includes(searchLower)) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+
+        if (filteredSessions.length > 0) {
+            return {
+                ...timeSlot,
+                sessions: filteredSessions
+            };
+        }
+        return null;
+    }).filter(Boolean);
+
+    // Filter hands-on sessions
+    filtered.handson = parsedData.handson.map(timeSlot => {
         const filteredSessions = timeSlot.sessions.filter(session => {
             // Type filter
             if (filters.types && !filters.types.includes(session.type)) {

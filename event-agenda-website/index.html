@@ -12,8 +12,8 @@
     <a href="#main" class="skip-link">Skip to content</a>
     <header class="site-header">
         <div class="brand">
-            <h1>SITBLR 3rd Edition</h1>
-            <span class="tagline">Agenda & Demo Pods</span>
+            <h1>SAP Inside Track Bengaluru</h1>
+            <span class="tagline">3rd Edition - Agenda & Demo Pods</span>
         </div>
         <div class="header-actions">
             <div class="search-wrapper" role="search">
@@ -28,6 +28,7 @@
     <nav class="tabs" aria-label="Content sections">
         <button class="tab active" data-target="sessions" aria-selected="true">Sessions</button>
         <button class="tab" data-target="demopods" aria-selected="false">Demo Pods</button>
+        <button class="tab" data-target="handson" aria-selected="false">Hands On</button>
     </nav>
 
     <div id="filterPanel" class="filter-panel" aria-hidden="true">
@@ -42,7 +43,10 @@
                 <legend>Type</legend>
                 <label><input type="checkbox" name="type" value="Lecture" checked> Lecture</label>
                 <label><input type="checkbox" name="type" value="Demo Pod" checked> Demo Pod</label>
+                <label><input type="checkbox" name="type" value="Hands On" checked> Hands On</label>
                 <label><input type="checkbox" name="type" value="Break" checked> Break</label>
+                <label><input type="checkbox" name="type" value="Keynote" checked> Keynote</label>
+                <label><input type="checkbox" name="type" value="Registration" checked> Registration</label>
             </fieldset>
 
             <fieldset id="trackFilters">
@@ -64,11 +68,38 @@
         <section id="demopods" class="agenda-section" hidden aria-label="Demo pods timeline">
             <div id="demopodsContainer" class="timeline" aria-live="polite"></div>
         </section>
+        <section id="handson" class="agenda-section" hidden aria-label="Hands-on workshops timeline">
+            <div id="handsonContainer" class="timeline" aria-live="polite"></div>
+        </section>
         <div id="emptyState" class="empty-state" hidden>No sessions match your filters.</div>
     </main>
 
+    <section class="sponsors-section" aria-label="Event sponsors">
+        <div class="sponsors-container">
+            <div class="sponsors-header">
+                <h2>Our Sponsors</h2>
+                <p class="sponsors-subtitle">Thank you to our amazing partners who make this event possible</p>
+            </div>
+            <div class="sponsors-grid">
+                
+                <div class="sponsor-item">
+                    <img src="assets/images/sponsor_logos/aws-logo.webp" alt="Amazon Web Services" class="sponsor-logo" loading="lazy">
+                </div>
+                <div class="sponsor-item">
+                    <img src="assets/images/sponsor_logos/mindset_logo.webp" alt="Mindset Consulting" class="sponsor-logo" loading="lazy">
+                </div>
+                <div class="sponsor-item">
+                    <img src="assets/images/sponsor_logos/rojo_logo.webp" alt="Rojo Consultancy" class="sponsor-logo" loading="lazy">
+                </div>
+                <div class="sponsor-item">
+                    <img src="assets/images/sponsor_logos/sap_press_logo.webp" alt="SAP Press" class="sponsor-logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="site-footer">
-        <p>&copy; <span id="year"></span> SITBLR. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> SAP Inside Track Bengaluru. All rights reserved.</p>
     </footer>
 
     <template id="timeslotTemplate">
