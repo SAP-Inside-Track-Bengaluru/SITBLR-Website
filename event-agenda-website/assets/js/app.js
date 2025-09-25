@@ -269,7 +269,8 @@ class AgendaApp {
         const sessionsCol = element.querySelector('.sessions-col');
         
         if (timeSlot.type === 'break') {
-            // Create a single break card
+            // Create a single full-width break card
+            sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
             const breakCard = this.createSessionCard({
                 title: timeSlot.title,
                 type: 'Break',

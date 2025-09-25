@@ -111,8 +111,24 @@ body.dark {
   /* Break cards - enhanced neutral gray */
   background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
   border-left: 4px solid #64748b;
+  grid-column: 1 / -1;
+  max-width: none;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  min-height: auto;
 }
-.session-card.break .session-title { color: var(--accent); }
+.session-card.break .session-title { 
+  color: var(--accent); 
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: left;
+}
+.session-card.break .session-header {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+}
 .session-card.break .type-badge { background: #64748b; }
 
 .session-card.keynote { 
@@ -368,6 +384,11 @@ body.dark .session-card.handson {
 body.dark .session-card.break { 
   background: linear-gradient(145deg, #374151, #1f2937); 
   border-left: 4px solid #6b7280;
+  grid-column: 1 / -1;
+  max-width: none;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  min-height: auto;
 }
 
 body.dark .session-card.keynote {
