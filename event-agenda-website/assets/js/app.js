@@ -338,15 +338,21 @@ class AgendaApp {
         // Set unique ID
         card.id = sessionId;
         
+        // Add session type classes for styling
+        if (session.type === 'Demo Pod') {
+            card.classList.add('demo');
+        } else if (session.type === 'Hands On') {
+            card.classList.add('handson');
+        } else if (session.type === 'Break') {
+            card.classList.add('break');
+        } else if (session.type === 'Keynote') {
+            card.classList.add('keynote');
+        } else if (session.type === 'Registration') {
+            card.classList.add('registration');
+        }
+        
         if (isSpecialSession) {
             card.classList.add('special-session');
-            if (session.type === 'Break') {
-                card.classList.add('break');
-            } else if (session.type === 'Registration') {
-                card.classList.add('registration');
-            } else if (session.type === 'Keynote') {
-                card.classList.add('keynote');
-            }
         }
         
         // Set title
