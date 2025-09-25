@@ -93,6 +93,29 @@ body.dark {
 .session-card.break .session-title { color:var(--accent); }
 .session-card.break .type-badge { background:#64748b; }
 
+/* Full width cards for keynotes and registration */
+.session-card.keynote,
+.session-card.registration {
+  grid-column: 1 / -1;
+  max-width: none;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  min-height: auto;
+}
+
+.session-card.keynote .session-title,
+.session-card.registration .session-title {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.session-card.keynote .session-header,
+.session-card.registration .session-header {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Empty state */
 .empty-state { text-align:center; padding:3rem 1rem; font-weight:500; color:var(--text-muted); }
 
@@ -472,6 +495,18 @@ body.dark .session-card.break { background:linear-gradient(145deg,#1e2430,#161b2
   
   .sponsor-logo {
     max-height: 50px;
+  }
+
+  /* Full width cards mobile adjustments */
+  .session-card.keynote,
+  .session-card.registration {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .session-card.keynote .session-title,
+  .session-card.registration .session-title {
+    font-size: 1rem;
   }
 }
 

@@ -281,7 +281,8 @@ class AgendaApp {
             }, `break-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(breakCard);
         } else if (timeSlot.type === 'registration') {
-            // Create a single registration card
+            // Create a single full-width registration card
+            sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
             const registrationCard = this.createSessionCard({
                 title: timeSlot.title,
                 type: 'Registration',
@@ -293,7 +294,8 @@ class AgendaApp {
             }, `registration-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(registrationCard);
         } else if (timeSlot.type === 'keynote') {
-            // Create a single keynote card
+            // Create a single full-width keynote card
+            sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
             const keynoteCard = this.createSessionCard({
                 title: timeSlot.title,
                 type: 'Keynote',
