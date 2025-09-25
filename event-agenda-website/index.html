@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAP Inside Track Bengaluru - Event Agenda</title>
+    <meta name="description" content="Agenda for SAP Inside Track Bengaluru – lectures, demo pods & more" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="preload" href="assets/data/events_3rdedition.json" as="fetch" crossorigin>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header class="site-header">
+        <div class="brand">
+            <h1>SITBLR 3rd Edition</h1>
+            <span class="tagline">Agenda & Demo Pods</span>
+        </div>
+        <div class="header-actions">
+            <div class="search-wrapper" role="search">
+                <input id="searchInput" type="text" placeholder="Search by title, speaker or track" aria-label="Search sessions" />
+                <button id="clearSearch" class="icon-btn" aria-label="Clear search" hidden>&times;</button>
+            </div>
+            <button id="filterToggle" class="icon-btn" aria-expanded="false" aria-controls="filterPanel">Filters</button>
+            <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle dark mode">🌗</button>
+        </div>
+    </header>
+
+    <nav class="tabs" aria-label="Content sections">
+        <button class="tab active" data-target="sessions" aria-selected="true">Sessions</button>
+        <button class="tab" data-target="demopods" aria-selected="false">Demo Pods</button>
+    </nav>
+
+    <div id="filterPanel" class="filter-panel" aria-hidden="true">
+        <form id="filtersForm" class="filters" aria-describedby="filterHelp">
+            <div class="filters-header">
+                <h2>Filter</h2>
+                <button type="button" id="closeFilters" class="icon-btn" aria-label="Close filters">✕</button>
+            </div>
+            <p id="filterHelp" class="sr-only">Use the checkboxes to limit which sessions are shown.</p>
+
+            <fieldset>
+                <legend>Type</legend>
+                <label><input type="checkbox" name="type" value="Lecture" checked> Lecture</label>
+                <label><input type="checkbox" name="type" value="Demo Pod" checked> Demo Pod</label>
+                <label><input type="checkbox" name="type" value="Break" checked> Break</label>
+            </fieldset>
+
+            <fieldset id="trackFilters">
+                <legend>Tracks</legend>
+                <div class="tracks-list" id="tracksList">Loading…</div>
+            </fieldset>
+
+            <div class="filters-footer">
+                <button type="reset">Reset</button>
+                <button type="submit" class="primary">Apply</button>
+            </div>
+        </form>
+    </div>
+
+    <main id="main" class="main">
+        <section id="sessions" class="agenda-section active" aria-label="Sessions agenda timeline">
+            <div id="sessionsContainer" class="timeline" aria-live="polite"></div>
+        </section>
+        <section id="demopods" class="agenda-section" hidden aria-label="Demo pods timeline">
+            <div id="demopodsContainer" class="timeline" aria-live="polite"></div>
+        </section>
+        <div id="emptyState" class="empty-state" hidden>No sessions match your filters.</div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> SITBLR. All rights reserved.</p>
+    </footer>
+
+    <template id="timeslotTemplate">
+        <div class="timeslot">
+            <div class="time-col">
+                <time class="slot-time"></time>
+            </div>
+            <div class="sessions-col"></div>
+        </div>
+    </template>
+
+    <template id="sessionCardTemplate">
+        <article class="session-card" tabindex="0">
+            <header class="session-header">
+                <h3 class="session-title"></h3>
+                <span class="badge type-badge"></span>
+            </header>
+            <div class="session-meta">
+                <span class="track-badge"></span>
+                <span class="speakers"></span>
+            </div>
+        </article>
+    </template>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

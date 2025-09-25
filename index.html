@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITBLR Event - Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=event-agenda-website/">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #2563eb 0%, #6366f1 60%, #8b5cf6 100%);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            padding: 2rem;
+        }
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SITBLR Event Agenda</h1>
+        <p>Redirecting to the event website...</p>
+        <p>If you are not redirected automatically, <a href="event-agenda-website/">click here</a>.</p>
+    </div>
+    <script>
+        // Fallback redirect
+        setTimeout(() => {
+            if (window.location.href.indexOf('event-agenda-website') === -1) {
+                window.location.href = 'event-agenda-website/';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

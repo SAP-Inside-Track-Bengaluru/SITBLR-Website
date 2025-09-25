@@ -1,0 +1,274 @@
+// Utility functions for SITBLR Event Agenda
+
+/**
+ * Parse the event data JSON into a standardized format
+ * @param {Object} eventData - Raw JSON data from events_3rdedition.json
+ * @returns {Object} Parsed data with lectures and demopods
+ */
+function parseEventData(eventData) {
+    const parsedData = {
+        lectures: [],
+        demopods: []
+    };
+
+    // Parse lectures (sessions)
+    if (eventData.lectures) {
+        eventData.lectures.forEach(lecture => {
+            if (lecture.type === 'break') {
+                // Handle break sessions
+                parsedData.lectures.push({
+                    sequence: lecture.sequence,
+                    time: lecture.time,
+                    type: 'break',
+                    title: lecture.tracktitle,
+                    sessions: []
+                });
+            } else if (lecture.type === 'grid' && lecture.sessionsBySequence) {
+                // Handle regular sessions with multiple tracks
+                parsedData.lectures.push({
+                    sequence: lecture.sequence,
+                    time: lecture.time,
+                    type: 'session',
+                    title: '',
+                    sessions: lecture.sessionsBySequence.map(session => ({
+                        title: session.sessiontitle || '',
+                        speaker1: session.speaker1 || '',
+                        speaker2: session.speaker2 || '',
+                        speakers: session.speakers || '',
+                        track: session.tracktitle || '',
+                        trackId: session.trackid || '',
+                        type: session.type || 'Lecture',
+                        description: session.description || '',
+                        organization: session.organization1 || ''
+                    }))
+                });
+            }
+        });
+    }
+
+    // Parse demo pods
+    if (eventData.demopods) {
+        eventData.demopods.forEach(demo => {
+            if (demo.sessionsBySequence) {
+                parsedData.demopods.push({
+                    sequence: demo.sequence,
+                    time: demo.time,
+                    type: 'demo',
+                    title: '',
+                    sessions: demo.sessionsBySequence.map(session => ({
+                        title: session.sessiontitle || '',
+                        speaker1: session.speaker1 || '',
+                        speaker2: session.speaker2 || '',
+                        speakers: session.speakers || '',
+                        track: session.tracktitle || '',
+                        trackId: session.trackid || '',
+                        type: session.type || 'Demo Pod',
+                        description: session.description || '',
+                        organization: session.organization1 || ''
+                    }))
+                });
+            }
+        });
+    }
+
+    return parsedData;
+}
+
+/**
+ * Get all unique tracks from the data
+ * @param {Object} parsedData - Parsed event data
+ * @returns {Array} Array of unique tracks
+ */
+function getUniqueTracks(parsedData) {
+    const tracks = new Set();
+    
+    [...parsedData.lectures, ...parsedData.demopods].forEach(timeSlot => {
+        if (timeSlot.sessions) {
+            timeSlot.sessions.forEach(session => {
+                if (session.track && session.track.trim() !== '') {
+                    tracks.add(session.track);
+                }
+            });
+        }
+    });
+    
+    return Array.from(tracks).sort();
+}
+
+/**
+ * Get all unique session types from the data
+ * @param {Object} parsedData - Parsed event data
+ * @returns {Array} Array of unique types
+ */
+function getUniqueTypes(parsedData) {
+    const types = new Set();
+    
+    parsedData.lectures.forEach(timeSlot => {
+        if (timeSlot.type === 'break') {
+            types.add('Break');
+        } else if (timeSlot.sessions) {
+            timeSlot.sessions.forEach(session => {
+                types.add(session.type);
+            });
+        }
+    });
+    
+    parsedData.demopods.forEach(timeSlot => {
+        if (timeSlot.sessions) {
+            timeSlot.sessions.forEach(session => {
+                types.add(session.type);
+            });
+        }
+    });
+    
+    return Array.from(types).sort();
+}
+
+/**
+ * Format speakers for display
+ * @param {Object} session - Session object
+ * @returns {String} Formatted speaker string
+ */
+function formatSpeakers(session) {
+    const speakers = [];
+    
+    if (session.speakers && session.speakers.trim()) {
+        speakers.push(session.speakers);
+    }
+    if (session.speaker1 && session.speaker1.trim()) {
+        speakers.push(session.speaker1);
+    }
+    if (session.speaker2 && session.speaker2.trim()) {
+        speakers.push(session.speaker2);
+    }
+    
+    return speakers.length > 0 ? speakers.join(', ') : '';
+}
+
+/**
+ * Filter events based on search term and filters
+ * @param {Object} parsedData - Parsed event data
+ * @param {String} searchTerm - Search term
+ * @param {Object} filters - Active filters
+ * @returns {Object} Filtered data
+ */
+function filterEvents(parsedData, searchTerm = '', filters = {}) {
+    const filtered = {
+        lectures: [],
+        demopods: []
+    };
+
+    const searchLower = searchTerm.toLowerCase();
+
+    // Filter lectures
+    filtered.lectures = parsedData.lectures.map(timeSlot => {
+        if (timeSlot.type === 'break') {
+            // Always include breaks if Break type is selected
+            if (!filters.types || filters.types.includes('Break')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        const filteredSessions = timeSlot.sessions.filter(session => {
+            // Type filter
+            if (filters.types && !filters.types.includes(session.type)) {
+                return false;
+            }
+
+            // Track filter
+            if (filters.tracks && filters.tracks.length > 0 && !filters.tracks.includes(session.track)) {
+                return false;
+            }
+
+            // Search filter
+            if (searchTerm) {
+                const sessionText = [
+                    session.title,
+                    formatSpeakers(session),
+                    session.track,
+                    session.description
+                ].join(' ').toLowerCase();
+                
+                if (!sessionText.includes(searchLower)) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+
+        if (filteredSessions.length > 0) {
+            return {
+                ...timeSlot,
+                sessions: filteredSessions
+            };
+        }
+        return null;
+    }).filter(Boolean);
+
+    // Filter demo pods
+    filtered.demopods = parsedData.demopods.map(timeSlot => {
+        const filteredSessions = timeSlot.sessions.filter(session => {
+            // Type filter
+            if (filters.types && !filters.types.includes(session.type)) {
+                return false;
+            }
+
+            // Track filter
+            if (filters.tracks && filters.tracks.length > 0 && !filters.tracks.includes(session.track)) {
+                return false;
+            }
+
+            // Search filter
+            if (searchTerm) {
+                const sessionText = [
+                    session.title,
+                    formatSpeakers(session),
+                    session.track,
+                    session.description
+                ].join(' ').toLowerCase();
+                
+                if (!sessionText.includes(searchLower)) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+
+        if (filteredSessions.length > 0) {
+            return {
+                ...timeSlot,
+                sessions: filteredSessions
+            };
+        }
+        return null;
+    }).filter(Boolean);
+
+    return filtered;
+}
+
+/**
+ * Debounce function for search input
+ * @param {Function} func - Function to debounce
+ * @param {Number} delay - Delay in milliseconds
+ * @returns {Function} Debounced function
+ */
+function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+/**
+ * Generate a unique ID for session cards
+ * @param {String} sequence - Time slot sequence
+ * @param {Number} index - Session index
+ * @returns {String} Unique ID
+ */
+function generateSessionId(sequence, index) {
+    return `session-${sequence}-${index}`;
+}
