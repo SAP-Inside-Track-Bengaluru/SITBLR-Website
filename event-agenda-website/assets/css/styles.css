@@ -84,7 +84,7 @@ body.dark {
 .type-badge.demo { background:#0ea5e9; }
 .type-badge.handson { background:#10b981; }
 .type-badge.break { background:#64748b; }
-.session-meta { display:flex; flex-direction:column; gap:.35rem; font-size:.7rem; color:var(--text-muted); }
+.session-meta { display:flex; flex-direction:column-reverse; gap:.35rem; font-size:.7rem; color:var(--text-muted); }
 .track-badge { display:inline-flex; align-items:center; gap:.35rem; background:var(--bg-panel-alt); border:1px solid var(--border); padding:.25rem .55rem; border-radius:1rem; font-weight:500; font-size:.65rem; letter-spacing:.5px; text-transform:uppercase; max-width:100%; }
 .speakers { font-size:.7rem; line-height:1.2; font-weight:500; }
 
@@ -107,13 +107,32 @@ body.dark {
 .session-card.registration .session-title {
   font-size: 1.1rem;
   line-height: 1.4;
+  text-align: left;
 }
 
 .session-card.keynote .session-header,
 .session-card.registration .session-header {
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
+  text-align: left;
+}
+
+.session-card.keynote .speakers,
+.session-card.registration .speakers {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0.75rem 0;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: left;
+}
+
+.session-card.keynote .track-badge,
+.session-card.registration .track-badge {
+  font-size: 0.7rem;
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* Empty state */

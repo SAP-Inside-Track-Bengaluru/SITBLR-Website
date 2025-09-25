@@ -286,11 +286,16 @@ class AgendaApp {
             const registrationCard = this.createSessionCard({
                 title: timeSlot.title,
                 type: 'Registration',
-                track: '',
-                speaker1: '',
-                speaker2: '',
+                track: timeSlot.location || '',
+                speaker1: timeSlot.speaker1 || '',
+                speaker2: timeSlot.speaker2 || '',
+                speaker3: timeSlot.speaker3 || '',
+                speaker1_designation: timeSlot.speaker1_designation || '',
+                speaker2_designation: timeSlot.speaker2_designation || '',
+                speaker3_designation: timeSlot.speaker3_designation || '',
                 speakers: '',
-                description: ''
+                description: '',
+                location: timeSlot.location || ''
             }, `registration-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(registrationCard);
         } else if (timeSlot.type === 'keynote') {
@@ -299,11 +304,16 @@ class AgendaApp {
             const keynoteCard = this.createSessionCard({
                 title: timeSlot.title,
                 type: 'Keynote',
-                track: '',
-                speaker1: '',
-                speaker2: '',
+                track: timeSlot.location || '',
+                speaker1: timeSlot.speaker1 || '',
+                speaker2: timeSlot.speaker2 || '',
+                speaker3: timeSlot.speaker3 || '',
+                speaker1_designation: timeSlot.speaker1_designation || '',
+                speaker2_designation: timeSlot.speaker2_designation || '',
+                speaker3_designation: timeSlot.speaker3_designation || '',
                 speakers: '',
-                description: ''
+                description: '',
+                location: timeSlot.location || ''
             }, `keynote-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(keynoteCard);
         } else {
@@ -360,17 +370,30 @@ class AgendaApp {
             typeBadge.classList.add('registration');
         }
         
-        // Set track
+        // Set track/location
         const trackBadge = card.querySelector('.track-badge');
-        if (session.track && !isSpecialSession) {
-            trackBadge.textContent = session.track;
+        if (session.track || session.location) {
+            trackBadge.textContent = session.location || session.track;
+            if (isSpecialSession && (session.type === 'Keynote' || session.type === 'Registration')) {
+                trackBadge.style.display = 'inline-flex';
+            }
         } else {
             trackBadge.style.display = 'none';
         }
         
         // Set speakers
         const speakersElement = card.querySelector('.speakers');
-        if (!isSpecialSession) {
+        if (isSpecialSession && (session.type === 'Keynote' || session.type === 'Registration')) {
+            // Handle special session speakers with designations (no label)
+            const speakersText = formatSpecialSessionSpeakers(session);
+            if (speakersText) {
+                speakersElement.innerHTML = speakersText;
+                speakersElement.style.display = 'block';
+            } else {
+                speakersElement.style.display = 'none';
+            }
+        } else if (!isSpecialSession) {
+            // Handle regular session speakers
             const speakersText = formatSpeakers(session);
             if (speakersText) {
                 speakersElement.textContent = `Speakers: ${speakersText}`;

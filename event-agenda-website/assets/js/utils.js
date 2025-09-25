@@ -31,6 +31,13 @@ function parseEventData(eventData) {
                     time: lecture.time,
                     type: 'registration',
                     title: lecture.tracktitle,
+                    speaker1: lecture.speaker1 || '',
+                    speaker1_designation: lecture.speaker1_designation || '',
+                    speaker2: lecture.speaker2 || '',
+                    speaker2_designation: lecture.speaker2_designation || '',
+                    speaker3: lecture.speaker3 || '',
+                    speaker3_designation: lecture.speaker3_designation || '',
+                    location: lecture.location || '',
                     sessions: []
                 });
             } else if (lecture.type === 'Keynote') {
@@ -40,6 +47,13 @@ function parseEventData(eventData) {
                     time: lecture.time,
                     type: 'keynote',
                     title: lecture.tracktitle,
+                    speaker1: lecture.speaker1 || '',
+                    speaker1_designation: lecture.speaker1_designation || '',
+                    speaker2: lecture.speaker2 || '',
+                    speaker2_designation: lecture.speaker2_designation || '',
+                    speaker3: lecture.speaker3 || '',
+                    speaker3_designation: lecture.speaker3_designation || '',
+                    location: lecture.location || '',
                     sessions: []
                 });
             } else if (lecture.type === 'grid' && lecture.sessionsBySequence) {
@@ -371,6 +385,30 @@ function debounce(func, delay) {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => func.apply(this, args), delay);
     };
+}
+
+/**
+ * Format speakers with their designations for special sessions
+ * @param {Object} sessionData - Session data with speaker information
+ * @returns {String} Formatted speakers string
+ */
+function formatSpecialSessionSpeakers(sessionData) {
+    const speakers = [];
+    
+    for (let i = 1; i <= 3; i++) {
+        const speaker = sessionData[`speaker${i}`];
+        const designation = sessionData[`speaker${i}_designation`];
+        
+        if (speaker && speaker.trim()) {
+            if (designation && designation.trim()) {
+                speakers.push(`${speaker}, ${designation}`);
+            } else {
+                speakers.push(speaker);
+            }
+        }
+    }
+    
+    return speakers.length > 0 ? speakers.join(' | ') : '';
 }
 
 /**
