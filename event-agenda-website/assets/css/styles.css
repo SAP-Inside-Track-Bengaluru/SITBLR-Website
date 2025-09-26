@@ -93,6 +93,7 @@ body.dark {
 .type-badge.demo { background:#0ea5e9; }
 .type-badge.handson { background:#10b981; }
 .type-badge.concur { background:#8b5cf6; }
+.type-badge.academia { background:#f97316; }
 .type-badge.break { background:#64748b; }
 .session-meta { display:flex; flex-direction:column-reverse; gap:.35rem; font-size:.7rem; color:var(--text-muted); }
 .track-badge { display:inline-flex; align-items:center; gap:.35rem; background:var(--bg-panel-alt); border:1px solid var(--border); padding:.25rem .55rem; border-radius:1rem; font-weight:500; font-size:.65rem; letter-spacing:.5px; text-transform:uppercase; max-width:100%; }
@@ -121,6 +122,12 @@ body.dark {
   /* Concur cards - enhanced purple tint */
   background: linear-gradient(145deg, #faf5ff, #f3e8ff);
   border-left: 4px solid #8b5cf6;
+}
+
+.session-card.academia { 
+  /* Academia cards - enhanced orange tint */
+  background: linear-gradient(145deg, #fff7ed, #ffedd5);
+  border-left: 4px solid #f97316;
 }
 
 .session-card.break { 
@@ -415,6 +422,12 @@ body.dark .session-card.concur {
   /* Concur cards - enhanced dark purple */
   background: linear-gradient(145deg, #581c87, #1e293b);
   border-left: 4px solid #8b5cf6;
+}
+
+body.dark .session-card.academia {
+  /* Academia cards - enhanced dark orange */
+  background: linear-gradient(145deg, #9a3412, #1e293b);
+  border-left: 4px solid #f97316;
 }
 
 body.dark .session-card.break { 

@@ -5,12 +5,18 @@ class AgendaApp {
         this.parsedData = null;
         this.concurRawData = null;
         this.concurParsedData = null;
+        this.academiaRawData = null;
+        this.academiaParsedData = null;
         this.currentFilters = {
             types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
             tracks: []
         };
         this.concurFilters = {
             types: ['Concur Session', 'Break'],
+            tracks: []
+        };
+        this.academiaFilters = {
+            types: ['Academia Session', 'Break'],
             tracks: []
         };
         this.currentSearchTerm = '';
@@ -24,6 +30,7 @@ class AgendaApp {
         try {
             await this.loadData();
             await this.loadConcurData();
+            await this.loadAcademiaData();
             this.setupEventListeners();
             this.setupTheme();
             this.populateFilters();
@@ -73,6 +80,27 @@ class AgendaApp {
             console.error('Error loading concur data:', error);
             // Don't throw error for concur data - make it optional
             console.warn('Concur schedule will not be available');
+        }
+    }
+
+    async loadAcademiaData() {
+        try {
+            const response = await fetch('assets/data/academia_3rdedition.json');
+            if (!response.ok) {
+                throw new Error(`Failed to load academia data: ${response.status}`);
+            }
+            this.academiaRawData = await response.json();
+            
+            if (!this.academiaRawData || !this.academiaRawData.academia) {
+                throw new Error('Invalid academia data format');
+            }
+            
+            this.academiaParsedData = parseAcademiaEventData(this.academiaRawData);
+            console.log('Academia data loaded successfully:', this.academiaParsedData);
+        } catch (error) {
+            console.error('Error loading academia data:', error);
+            // Don't throw error for academia data - make it optional
+            console.warn('Academia schedule will not be available');
         }
     }
 
@@ -178,6 +206,12 @@ class AgendaApp {
             types = getConcurUniqueTypes(this.concurParsedData);
             this.concurFilters.tracks = tracks;
             this.concurFilters.types = types;
+        } else if (this.currentTab === 'academiaschedule' && this.academiaParsedData) {
+            // Use academia-specific tracks and types
+            tracks = getAcademiaUniqueTracks(this.academiaParsedData);
+            types = getAcademiaUniqueTypes(this.academiaParsedData);
+            this.academiaFilters.tracks = tracks;
+            this.academiaFilters.types = types;
         } else {
             // Use regular tracks and types
             tracks = getUniqueTracks(this.parsedData);
@@ -217,6 +251,14 @@ class AgendaApp {
             typeFieldset.appendChild(concurLabel);
         }
 
+        // Add Academia Session checkbox if it doesn't exist
+        const existingAcademiaCheckbox = typeFieldset.querySelector('input[value="Academia Session"]');
+        if (!existingAcademiaCheckbox) {
+            const academiaLabel = document.createElement('label');
+            academiaLabel.innerHTML = '<input type="checkbox" name="type" value="Academia Session" checked> Academia Session';
+            typeFieldset.appendChild(academiaLabel);
+        }
+
         // Make all labels visible and set appropriate checked state
         const typeLabels = Array.from(typeFieldset.querySelectorAll('label'));
         typeLabels.forEach(label => {
@@ -228,6 +270,9 @@ class AgendaApp {
             if (this.currentTab === 'concurschedule') {
                 // For concur tab, only check Concur Session and Break
                 checkbox.checked = (checkbox.value === 'Concur Session' || checkbox.value === 'Break');
+            } else if (this.currentTab === 'academiaschedule') {
+                // For academia tab, check Academia Session, Lecture and Break
+                checkbox.checked = (checkbox.value === 'Academia Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
             } else {
                 // For other tabs, use the current filter state
                 const activeTypes = this.currentFilters.types;
@@ -243,6 +288,10 @@ class AgendaApp {
             // Get selected types and tracks for concur
             this.concurFilters.types = formData.getAll('type');
             this.concurFilters.tracks = formData.getAll('track');
+        } else if (this.currentTab === 'academiaschedule') {
+            // Get selected types and tracks for academia
+            this.academiaFilters.types = formData.getAll('type');
+            this.academiaFilters.tracks = formData.getAll('track');
         } else {
             // Get selected types and tracks for regular tabs
             this.currentFilters.types = formData.getAll('type');
@@ -258,6 +307,13 @@ class AgendaApp {
             const tracks = getConcurUniqueTracks(this.concurParsedData);
             const types = getConcurUniqueTypes(this.concurParsedData);
             this.concurFilters = {
+                types: types,
+                tracks: tracks
+            };
+        } else if (this.currentTab === 'academiaschedule' && this.academiaParsedData) {
+            const tracks = getAcademiaUniqueTracks(this.academiaParsedData);
+            const types = getAcademiaUniqueTypes(this.academiaParsedData);
+            this.academiaFilters = {
                 types: types,
                 tracks: tracks
             };
@@ -338,6 +394,14 @@ class AgendaApp {
             const filteredConcurData = filterConcurEvents(this.concurParsedData, this.currentSearchTerm, this.concurFilters);
             this.renderTimeline('concurscheduleContainer', filteredConcurData.concurschedule);
             this.updateEmptyState(filteredConcurData);
+        } else if (this.currentTab === 'academiaschedule') {
+            if (!this.academiaParsedData) {
+                this.updateEmptyState({ academiaschedule: [] });
+                return;
+            }
+            const filteredAcademiaData = filterAcademiaEvents(this.academiaParsedData, this.currentSearchTerm, this.academiaFilters);
+            this.renderTimeline('academiascheduleContainer', filteredAcademiaData.academiaschedule);
+            this.updateEmptyState(filteredAcademiaData);
         } else {
             if (!this.parsedData) return;
             const filteredData = filterEvents(this.parsedData, this.currentSearchTerm, this.currentFilters);
@@ -451,6 +515,8 @@ class AgendaApp {
             card.classList.add('handson');
         } else if (session.type === 'Concur Session') {
             card.classList.add('concur');
+        } else if (session.type === 'Academia Session') {
+            card.classList.add('academia');
         } else if (session.type === 'Break') {
             card.classList.add('break');
         } else if (session.type === 'Keynote') {
@@ -478,6 +544,8 @@ class AgendaApp {
             typeBadge.classList.add('handson');
         } else if (session.type === 'Concur Session') {
             typeBadge.classList.add('concur');
+        } else if (session.type === 'Academia Session') {
+            typeBadge.classList.add('academia');
         } else if (session.type === 'Break') {
             typeBadge.classList.add('break');
         } else if (session.type === 'Keynote') {
@@ -535,6 +603,8 @@ class AgendaApp {
             hasData = filteredData.handson && filteredData.handson.length > 0;
         } else if (this.currentTab === 'concurschedule') {
             hasData = filteredData.concurschedule && filteredData.concurschedule.length > 0;
+        } else if (this.currentTab === 'academiaschedule') {
+            hasData = filteredData.academiaschedule && filteredData.academiaschedule.length > 0;
         }
             
         emptyState.hidden = hasData;

@@ -574,3 +574,156 @@ function filterConcurEvents(parsedConcurData, searchTerm = '', filters = {}) {
 
     return filtered;
 }
+/**
+ * Parse the academia-specific event data JSON into a standardized format
+ * @param {Object} academiaData - Raw JSON data from academia_3rdedition.json
+ * @returns {Object} Parsed academia data with timeline structure
+ */
+function parseAcademiaEventData(academiaData) {
+    const parsedData = {
+        academiaschedule: []
+    };
+
+    // Parse academia schedule data
+    if (academiaData.academia) {
+        academiaData.academia.forEach(timeSlot => {
+            if (timeSlot.type === 'break') {
+                // Handle break sessions
+                parsedData.academiaschedule.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'break',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
+            } else if (timeSlot.type === 'grid' && timeSlot.sessionsBySequence) {
+                // Handle regular academia sessions
+                parsedData.academiaschedule.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'session',
+                    title: '',
+                    sessions: timeSlot.sessionsBySequence.map(session => ({
+                        title: session.sessiontitle || '',
+                        speaker1: session.speaker1 || '',
+                        speaker2: session.speaker2 || '',
+                        speakers: session.speakers || '',
+                        track: session.tracktitle || '',
+                        trackId: session.trackid || '',
+                        type: session.type || 'Academia Session',
+                        description: session.description || '',
+                        organization: session.organization1 || ''
+                    }))
+                });
+            }
+        });
+    }
+
+    return parsedData;
+}
+
+/**
+ * Get all unique tracks from academia data
+ * @param {Object} parsedAcademiaData - Parsed academia event data
+ * @returns {Array} Array of unique tracks
+ */
+function getAcademiaUniqueTracks(parsedAcademiaData) {
+    const tracks = new Set();
+    
+    parsedAcademiaData.academiaschedule.forEach(timeSlot => {
+        if (timeSlot.sessions) {
+            timeSlot.sessions.forEach(session => {
+                if (session.track && session.track.trim() !== '') {
+                    tracks.add(session.track);
+                }
+            });
+        }
+    });
+    
+    return Array.from(tracks).sort();
+}
+
+/**
+ * Get all unique session types from academia data
+ * @param {Object} parsedAcademiaData - Parsed academia event data
+ * @returns {Array} Array of unique types
+ */
+function getAcademiaUniqueTypes(parsedAcademiaData) {
+    const types = new Set();
+    
+    parsedAcademiaData.academiaschedule.forEach(timeSlot => {
+        if (timeSlot.type === 'break') {
+            types.add('Break');
+        } else if (timeSlot.sessions) {
+            timeSlot.sessions.forEach(session => {
+                types.add(session.type);
+            });
+        }
+    });
+    
+    return Array.from(types).sort();
+}
+
+/**
+ * Filter academia events based on search term and filters
+ * @param {Object} parsedAcademiaData - Parsed academia event data
+ * @param {String} searchTerm - Search term
+ * @param {Object} filters - Active filters
+ * @returns {Object} Filtered data
+ */
+function filterAcademiaEvents(parsedAcademiaData, searchTerm = '', filters = {}) {
+    const filtered = {
+        academiaschedule: []
+    };
+
+    const searchLower = searchTerm.toLowerCase();
+
+    // Filter academia schedule
+    filtered.academiaschedule = parsedAcademiaData.academiaschedule.map(timeSlot => {
+        if (timeSlot.type === 'break') {
+            // Always include breaks if Break type is selected
+            if (!filters.types || filters.types.includes('Break')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        const filteredSessions = timeSlot.sessions.filter(session => {
+            // Type filter
+            if (filters.types && !filters.types.includes(session.type)) {
+                return false;
+            }
+
+            // Track filter
+            if (filters.tracks && filters.tracks.length > 0 && !filters.tracks.includes(session.track)) {
+                return false;
+            }
+
+            // Search filter
+            if (searchTerm) {
+                const sessionText = [
+                    session.title,
+                    formatSpeakers(session),
+                    session.track,
+                    session.description
+                ].join(' ').toLowerCase();
+                
+                if (!sessionText.includes(searchLower)) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+
+        if (filteredSessions.length > 0) {
+            return {
+                ...timeSlot,
+                sessions: filteredSessions
+            };
+        }
+        return null;
+    }).filter(Boolean);
+
+    return filtered;
+}

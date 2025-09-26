@@ -1,27 +1,6 @@
 {
     "academia": [
         {
-            "sequence": "0.1",
-            "time": "08:00 - 09:30",
-            "type": "break",
-            "tracktitle": "Registration,Networking & Demo Booths",
-            "sessionsBySequence": []
-        },
-        {
-            "sequence": "0.3",
-            "time": "09:30 - 10:00",
-            "type": "break",
-            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India ; Head, Customer Innovation Services, SAP)",
-            "sessionsBySequence": []
-        },
-        {
-            "sequence": "0.4",
-            "time": "10:00 - 10:30",
-            "type": "break",
-            "tracktitle": "Industry Talk - Sindhu Gangadharan | Ankit Gupta, Managing Director, Protiviti India | Ronit Mangal, CIO, Licious ",
-            "sessionsBySequence": []
-        },
-        {
             "sequence": "1",
             "time": "11:00 - 11:15",
             "type": "grid",
@@ -53,11 +32,11 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "",
+                    "speaker1": "Dhanashri Chavan",
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Git Hub Co Pilot Session ( Microsoft)",
+                    "sessiontitle": "Git Hub Co Pilot Session (Microsoft)",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -132,11 +111,11 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "",
+                    "speaker1": "Sheeba Thomas",
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "NASSCOM Session",
+                    "sessiontitle": "NASSCOM FutureSkills Prime",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
