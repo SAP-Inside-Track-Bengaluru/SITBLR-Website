@@ -4,7 +4,7 @@
             "sequence": "0.1",
             "time": "08:00 - 09:30",
             "type": "Registration",
-            "tracktitle": "Registration,Networking & Demo Booths",
+            "tracktitle": "Registration, Networking & Demo Booths",
             "sessionsBySequence": []
         },
         {
@@ -13,7 +13,7 @@
             "type": "Keynote",
             "tracktitle": "Keynote",
             "speaker1": "Sindhu Gangadharan",
-            "speaker1_designation": "MD, SAP Labs India ; Head, Customer Innovation Services, SAP",
+            "speaker1_designation": "MD, SAP Labs India; Head, Customer Innovation Services, SAP",
             "location": "Audimax, BLR05",
             "sessionsBySequence": []
         },
@@ -39,8 +39,8 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "Rahul Lodhe",
-                    "speaker2": "Srivathsa Dixit",
+                    "speaker1": "Srivathsa Dixit",
+                    "speaker2": "Prasanna Bhat Mavinakuli",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "SAP Joule - Essentials of tomorrow unpacked today",
@@ -115,7 +115,7 @@
                     "speaker2": "Punith Oswal",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "SAP Integration Suite Insights: The IBM MQ and NFS Adapters Powering the PO to CI Migration Journey​",
+                    "sessiontitle": "SAP Integration Suite Insights: The IBM MQ and SMB Adapters Powering the PO to CI Migration Journey​",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -191,7 +191,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Dharani Karthikeyan",
-                    "speaker2": "Srini Gottimukkula",
+                    "speaker2": "Srinivas Gottimukkula",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Navigating Complexity, Unlocking Value - SAP Business Data Cloud Leading the Analytics & AI Revolution",
@@ -262,7 +262,7 @@
             "sessionsBySequence": [
                 {
                     "speakers": "Smita Naveen",
-                    "speaker1": "Karan H",
+                    "speaker1": "Vipul Prabhu",
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
