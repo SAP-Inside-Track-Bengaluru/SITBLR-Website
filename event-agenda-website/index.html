@@ -8,6 +8,7 @@
     <link rel="icon" type="image/webp" href="assets/images/sit_logo.webp" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="preload" href="assets/data/events_3rdedition.json" as="fetch" crossorigin>
+    <link rel="preload" href="assets/data/concur_3rdedition.json" as="fetch" crossorigin>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -33,6 +34,7 @@
         <button class="tab active" data-target="sessions" aria-selected="true">Sessions</button>
         <button class="tab" data-target="demopods" aria-selected="false">Demo Pods</button>
         <button class="tab" data-target="handson" aria-selected="false">Hands On</button>
+        <button class="tab" data-target="concurschedule" aria-selected="false">Concur</button>
     </nav>
 
     <div id="filterPanel" class="filter-panel" aria-hidden="true">
@@ -74,6 +76,9 @@
         </section>
         <section id="handson" class="agenda-section" hidden aria-label="Hands-on workshops timeline">
             <div id="handsonContainer" class="timeline" aria-live="polite"></div>
+        </section>
+        <section id="concurschedule" class="agenda-section" hidden aria-label="Concur schedule timeline">
+            <div id="concurscheduleContainer" class="timeline" aria-live="polite"></div>
         </section>
         <div id="emptyState" class="empty-state" hidden>No sessions match your filters.</div>
     </main>

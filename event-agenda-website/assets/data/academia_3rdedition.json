@@ -1,0 +1,214 @@
+{
+    "academia": [
+        {
+            "sequence": "0.1",
+            "time": "08:00 - 09:30",
+            "type": "break",
+            "tracktitle": "Registration,Networking & Demo Booths",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.3",
+            "time": "09:30 - 10:00",
+            "type": "break",
+            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India ; Head, Customer Innovation Services, SAP)",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.4",
+            "time": "10:00 - 10:30",
+            "type": "break",
+            "tracktitle": "Industry Talk - Sindhu Gangadharan | Ankit Gupta, Managing Director, Protiviti India | Ronit Mangal, CIO, Licious ",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "1",
+            "time": "11:00 - 11:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "REACH Team",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "REACH overview",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 1,
+                    "tracktitle": "Academia Track",
+                    "trackid": "Academia Track",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "2",
+            "time": "11:15 - 11:45",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Git Hub Co Pilot Session ( Microsoft)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 2,
+                    "tracktitle": "Academia",
+                    "trackid": "Indoor Cafeteria",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "3",
+            "time": "11:45 - 12:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Vigneshwari Sambandan",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "From Generative AI to Business AI: Building Real-World AI Solutions with SAP",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 3,
+                    "tracktitle": "Academia",
+                    "trackid": "Indoor Cafeteria",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "3.5",
+            "time": "12:15 - 01:00",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "4",
+            "time": "01:00 - 01:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Sanjana Satyan",
+                    "speaker2": "Veda Varshita",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "SAP Product Overview",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 4,
+                    "tracktitle": "Academia",
+                    "trackid": "Indoor Cafeteria",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "5",
+            "time": "01:30 - 02:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "NASSCOM Session",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 5,
+                    "tracktitle": "Academia",
+                    "trackid": "Indoor Cafeteria",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "6",
+            "time": "02:00 - 02:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Ashmita Sinha",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Startup Studio",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 6,
+                    "tracktitle": "Academia",
+                    "trackid": "Indoor Cafeteria",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "7",
+            "time": "02:15 - 02:45",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Dilip Kumar",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Student Lounge",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 7,
+                    "tracktitle": "Academia",
+                    "trackid": "Indoor Cafeteria",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "8",
+            "time": "04:00 - 04:30",
+            "type": "break",
+            "tracktitle": "Closing Ceremony, Group Photo",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "9",
+            "time": "04:30 - 05:00",
+            "type": "break",
+            "tracktitle": "Hi-Tea & Networking",
+            "sessionsBySequence": []
+        }
+    ]
+}

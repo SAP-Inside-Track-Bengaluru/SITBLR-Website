@@ -1,0 +1,166 @@
+{
+    "concur": [
+        {
+            "sequence": "0.1",
+            "time": "08:00 - 09:30",
+            "type": "Registration",
+            "tracktitle": "Registration,Networking & Demo Booths",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.3",
+            "time": "09:30 - 10:00",
+            "type": "Keynote",
+            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India ; Head, Customer Innovation Services, SAP)",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.4",
+            "time": "10:00 - 10:30",
+            "type": "Keynote",
+            "tracktitle": "Industry Talk - Sindhu Gangadharan | Ankit Gupta, Managing Director, Protiviti India | Ronit Mangal, CIO, Licious ",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "1",
+            "time": "11:00 - 11:40",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Moving & Winning with Concur",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 1,
+                    "tracktitle": "Concur",
+                    "trackid": "Experience Center",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "2",
+            "time": "11:45 - 12:10",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Efficiency with Joule & MS teams",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 2,
+                    "tracktitle": "Concur",
+                    "trackid": "Experience Center",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "2.5",
+            "time": "12:15 - 01:30",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "3",
+            "time": "01:30 - 01:50",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Compliance made Easy",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 3,
+                    "tracktitle": "Concur",
+                    "trackid": "Experience Center",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "4",
+            "time": "01:55 - 02:20",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Accelerated Implementation : Empowering Partners",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 4,
+                    "tracktitle": "Concur",
+                    "trackid": "Experience Center",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "5",
+            "time": "02:25 - 02:45",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "GST handling for India",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": 5,
+                    "tracktitle": "Concur",
+                    "trackid": "Experience Center",
+                    "trackseq": 1,
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "7",
+            "time": "04:00 - 04:30",
+            "type": "break",
+            "tracktitle": "Closing Ceremony, Group Photo",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "8",
+            "time": "04:30 - 05:00",
+            "type": "break",
+            "tracktitle": "Hi-Tea & Networking",
+            "sessionsBySequence": []
+        }
+    ]
+}

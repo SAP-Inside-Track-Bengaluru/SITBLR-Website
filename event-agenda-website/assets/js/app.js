@@ -3,8 +3,14 @@ class AgendaApp {
     constructor() {
         this.rawData = null;
         this.parsedData = null;
+        this.concurRawData = null;
+        this.concurParsedData = null;
         this.currentFilters = {
             types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
+            tracks: []
+        };
+        this.concurFilters = {
+            types: ['Concur Session', 'Break'],
             tracks: []
         };
         this.currentSearchTerm = '';
@@ -17,6 +23,7 @@ class AgendaApp {
     async init() {
         try {
             await this.loadData();
+            await this.loadConcurData();
             this.setupEventListeners();
             this.setupTheme();
             this.populateFilters();
@@ -45,6 +52,27 @@ class AgendaApp {
         } catch (error) {
             console.error('Error loading data:', error);
             throw error;
+        }
+    }
+
+    async loadConcurData() {
+        try {
+            const response = await fetch('assets/data/concur_3rdedition.json');
+            if (!response.ok) {
+                throw new Error(`Failed to load concur data: ${response.status}`);
+            }
+            this.concurRawData = await response.json();
+            
+            if (!this.concurRawData || !this.concurRawData.concur) {
+                throw new Error('Invalid concur data format');
+            }
+            
+            this.concurParsedData = parseConcurEventData(this.concurRawData);
+            console.log('Concur data loaded successfully:', this.concurParsedData);
+        } catch (error) {
+            console.error('Error loading concur data:', error);
+            // Don't throw error for concur data - make it optional
+            console.warn('Concur schedule will not be available');
         }
     }
 
@@ -142,9 +170,21 @@ class AgendaApp {
     }
 
     populateFilters() {
-        const tracks = getUniqueTracks(this.parsedData);
-        const tracksList = document.getElementById('tracksList');
+        let tracks, types;
         
+        if (this.currentTab === 'concurschedule' && this.concurParsedData) {
+            // Use concur-specific tracks and types
+            tracks = getConcurUniqueTracks(this.concurParsedData);
+            types = getConcurUniqueTypes(this.concurParsedData);
+            this.concurFilters.tracks = tracks;
+            this.concurFilters.types = types;
+        } else {
+            // Use regular tracks and types
+            tracks = getUniqueTracks(this.parsedData);
+            this.currentFilters.tracks = tracks;
+        }
+        
+        const tracksList = document.getElementById('tracksList');
         tracksList.innerHTML = tracks.map(track => `
             <label>
                 <input type="checkbox" name="track" value="${track}" checked>
@@ -152,29 +192,83 @@ class AgendaApp {
             </label>
         `).join('');
 
-        // Set initial filter state
-        this.currentFilters.tracks = tracks;
+        // Ensure all type filters are visible and properly set
+        this.resetTypeFiltersVisibility();
+    }
+
+    resetTypeFiltersVisibility() {
+        const fieldsets = document.querySelectorAll('fieldset');
+        let typeFieldset = null;
+        
+        fieldsets.forEach(fieldset => {
+            const legend = fieldset.querySelector('legend');
+            if (legend && legend.textContent.trim() === 'Type') {
+                typeFieldset = fieldset;
+            }
+        });
+        
+        if (!typeFieldset) return;
+
+        // Add Concur Session checkbox if it doesn't exist
+        const existingConcurCheckbox = typeFieldset.querySelector('input[value="Concur Session"]');
+        if (!existingConcurCheckbox) {
+            const concurLabel = document.createElement('label');
+            concurLabel.innerHTML = '<input type="checkbox" name="type" value="Concur Session" checked> Concur Session';
+            typeFieldset.appendChild(concurLabel);
+        }
+
+        // Make all labels visible and set appropriate checked state
+        const typeLabels = Array.from(typeFieldset.querySelectorAll('label'));
+        typeLabels.forEach(label => {
+            const checkbox = label.querySelector('input[name="type"]');
+            if (!checkbox) return;
+            
+            label.style.display = 'flex';
+            
+            if (this.currentTab === 'concurschedule') {
+                // For concur tab, only check Concur Session and Break
+                checkbox.checked = (checkbox.value === 'Concur Session' || checkbox.value === 'Break');
+            } else {
+                // For other tabs, use the current filter state
+                const activeTypes = this.currentFilters.types;
+                checkbox.checked = activeTypes.includes(checkbox.value);
+            }
+        });
     }
 
     applyFilters() {
         const formData = new FormData(document.getElementById('filtersForm'));
         
-        // Get selected types
-        this.currentFilters.types = formData.getAll('type');
-        
-        // Get selected tracks
-        this.currentFilters.tracks = formData.getAll('track');
+        if (this.currentTab === 'concurschedule') {
+            // Get selected types and tracks for concur
+            this.concurFilters.types = formData.getAll('type');
+            this.concurFilters.tracks = formData.getAll('track');
+        } else {
+            // Get selected types and tracks for regular tabs
+            this.currentFilters.types = formData.getAll('type');
+            this.currentFilters.tracks = formData.getAll('track');
+        }
         
         this.renderAgenda();
         this.closeFilterPanel();
     }
 
     resetFilters() {
-        const tracks = getUniqueTracks(this.parsedData);
-        this.currentFilters = {
-            types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
-            tracks: tracks
-        };
+        if (this.currentTab === 'concurschedule' && this.concurParsedData) {
+            const tracks = getConcurUniqueTracks(this.concurParsedData);
+            const types = getConcurUniqueTypes(this.concurParsedData);
+            this.concurFilters = {
+                types: types,
+                tracks: tracks
+            };
+        } else {
+            const tracks = getUniqueTracks(this.parsedData);
+            this.currentFilters = {
+                types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
+                tracks: tracks
+            };
+        }
+        this.populateFilters();
         this.renderAgenda();
     }
 
@@ -201,6 +295,8 @@ class AgendaApp {
         targetSection.classList.add('active');
         targetSection.hidden = false;
         
+        // Update filters for the new tab
+        this.populateFilters();
         this.renderAgenda();
     }
 
@@ -234,19 +330,28 @@ class AgendaApp {
     }
 
     renderAgenda() {
-        if (!this.parsedData) return;
-
-        const filteredData = filterEvents(this.parsedData, this.currentSearchTerm, this.currentFilters);
-        
-        if (this.currentTab === 'sessions') {
-            this.renderTimeline('sessionsContainer', filteredData.lectures);
-        } else if (this.currentTab === 'demopods') {
-            this.renderTimeline('demopodsContainer', filteredData.demopods);
-        } else if (this.currentTab === 'handson') {
-            this.renderTimeline('handsonContainer', filteredData.handson);
+        if (this.currentTab === 'concurschedule') {
+            if (!this.concurParsedData) {
+                this.updateEmptyState({ concurschedule: [] });
+                return;
+            }
+            const filteredConcurData = filterConcurEvents(this.concurParsedData, this.currentSearchTerm, this.concurFilters);
+            this.renderTimeline('concurscheduleContainer', filteredConcurData.concurschedule);
+            this.updateEmptyState(filteredConcurData);
+        } else {
+            if (!this.parsedData) return;
+            const filteredData = filterEvents(this.parsedData, this.currentSearchTerm, this.currentFilters);
+            
+            if (this.currentTab === 'sessions') {
+                this.renderTimeline('sessionsContainer', filteredData.lectures);
+            } else if (this.currentTab === 'demopods') {
+                this.renderTimeline('demopodsContainer', filteredData.demopods);
+            } else if (this.currentTab === 'handson') {
+                this.renderTimeline('handsonContainer', filteredData.handson);
+            }
+            
+            this.updateEmptyState(filteredData);
         }
-        
-        this.updateEmptyState(filteredData);
     }
 
     renderTimeline(containerId, timeSlots) {
@@ -344,6 +449,8 @@ class AgendaApp {
             card.classList.add('demo');
         } else if (session.type === 'Hands On') {
             card.classList.add('handson');
+        } else if (session.type === 'Concur Session') {
+            card.classList.add('concur');
         } else if (session.type === 'Break') {
             card.classList.add('break');
         } else if (session.type === 'Keynote') {
@@ -369,6 +476,8 @@ class AgendaApp {
             typeBadge.classList.add('demo');
         } else if (session.type === 'Hands On') {
             typeBadge.classList.add('handson');
+        } else if (session.type === 'Concur Session') {
+            typeBadge.classList.add('concur');
         } else if (session.type === 'Break') {
             typeBadge.classList.add('break');
         } else if (session.type === 'Keynote') {
@@ -419,11 +528,13 @@ class AgendaApp {
         let hasData = false;
         
         if (this.currentTab === 'sessions') {
-            hasData = filteredData.lectures.length > 0;
+            hasData = filteredData.lectures && filteredData.lectures.length > 0;
         } else if (this.currentTab === 'demopods') {
-            hasData = filteredData.demopods.length > 0;
+            hasData = filteredData.demopods && filteredData.demopods.length > 0;
         } else if (this.currentTab === 'handson') {
-            hasData = filteredData.handson.length > 0;
+            hasData = filteredData.handson && filteredData.handson.length > 0;
+        } else if (this.currentTab === 'concurschedule') {
+            hasData = filteredData.concurschedule && filteredData.concurschedule.length > 0;
         }
             
         emptyState.hidden = hasData;
