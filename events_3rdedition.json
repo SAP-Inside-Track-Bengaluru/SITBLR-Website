@@ -4,14 +4,14 @@
             "sequence": "0.1",
             "time": "08:00 - 09:30",
             "type": "break",
-            "tracktitle": "Registration,Networking & Demo Booths",
+            "tracktitle": "Registration, Networking & Demo Booths",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.3",
             "time": "09:30 - 10:00",
             "type": "break",
-            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India ; Head, Customer Innovation Services, SAP)",
+            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India; Head, Customer Innovation Services, SAP)",
             "sessionsBySequence": []
         },
         {
@@ -29,7 +29,7 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "Rahul Lodhe",
+                    "speaker1": "Prasanna Bhat Mavinakuli",
                     "speaker2": "Srivathsa Dixit",
                     "speaker1_social": "",
                     "speaker2_social": "",
@@ -105,7 +105,7 @@
                     "speaker2": "Punith Oswal",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "SAP Integration Suite Insights: The IBM MQ and NFS Adapters Powering the PO to CI Migration Journey​",
+                    "sessiontitle": "SAP Integration Suite Insights: The IBM MQ and SMB Adapters Powering the PO to CI Migration Journey​",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
