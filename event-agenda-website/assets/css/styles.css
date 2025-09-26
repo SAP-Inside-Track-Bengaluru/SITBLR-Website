@@ -14,7 +14,13 @@ body.dark { background:#0f1115; color:#e5e9f0; }
   --text-muted:#64748b;
   --radius:10px;
   --shadow:0 4px 16px -4px rgba(0 112 243 / 0.1),0 2px 4px -2px rgba(0 112 243 / 0.06);
-  --gradient:linear-gradient(135deg,#0070f3 0%,#0ea5e9 40%,#3b82f6 100%);
+  --gradient:linear-gradient(135deg,#0070f3 0%,#0ea5e9  .brand h1 {
+    font-size: 1rem;
+  }
+  
+  .brand-logo {
+    height: 1.75rem;
+  }%,#3b82f6 100%);
 }
 body.dark {
   --bg-panel:#1e293b;
@@ -29,8 +35,11 @@ body.dark {
 
 /* Header */
 .site-header { position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(14px); background:rgba(var(--accent-rgb)/0.06); border-bottom:1px solid var(--border); display:flex; flex-wrap:wrap; align-items:center; gap:1rem; padding:.75rem clamp(1rem,2vw,2rem); }
-.brand { flex:1 1 auto; min-width:200px; }
-.brand h1 { font-size:clamp(1.15rem,3.2vw,1.75rem); margin:0; background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:600; letter-spacing:.5px; }
+.brand { flex:1 1 auto; min-width:200px; display:flex; align-items:center; gap:clamp(0.5rem, 1.5vw, 0.75rem); }
+.brand-logo { height:clamp(1.5rem, 2.5vw, 2rem); width:auto; object-fit:contain; flex-shrink:0; }
+.brand-text { flex:1; }
+.brand h1 { font-size:clamp(1.15rem,3.2vw,1.75rem); margin:0; background:var(--gradient); -webkit-background-clip:text; background-clip:text; font-weight:600; letter-spacing:.5px; }
+
 .brand .tagline { display:block; font-size:.7rem; font-weight:500; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-muted); margin-top:.1rem; }
 .header-actions { display:flex; align-items:center; gap:.75rem; }
 
@@ -447,6 +456,11 @@ body.dark .session-card.registration {
   .brand {
     text-align: center;
     min-width: auto;
+    gap: 0.5rem;
+  }
+  
+  .brand-logo {
+    height: 1.75rem;
   }
   
   .header-actions {
@@ -533,6 +547,10 @@ body.dark .session-card.registration {
   
   .brand h1 {
     font-size: 1.25rem;
+  }
+  
+  .brand-logo {
+    height: 1.5rem;
   }
   
   .header-actions {
@@ -636,6 +654,10 @@ body.dark .session-card.registration {
 @media (max-width: 400px) {
   .brand h1 {
     font-size: 1.1rem;
+  }
+  
+  .brand-logo {
+    height: 1.25rem;
   }
   
   .main {
