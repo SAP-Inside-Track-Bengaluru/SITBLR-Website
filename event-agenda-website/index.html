@@ -31,38 +31,42 @@
              <a href="#gallery" class="nav-link">Gallery</a>
              <a href="#contact" class="nav-link">Contact Us</a>
         </nav>
-        <div class="header-actions">
+        <!-- <div class="header-actions">
             <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle dark mode">🌗</button>
-        </div>
+        </div> -->
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-bg"></div>
             <div class="hero-container">
-                <div class="hero-content">
+                <div class="hero-header">
                     <h2>SAP Inside Track Bengaluru</h2>
                     <h3>Where Innovation Meets Community</h3>
-                    <p class="hero-tagline">Connect. Learn. Share. Grow with the community.</p>
-                    <p class="hero-description">Driven by the SAP Community, SIT Bengaluru stands as a global benchmark for grassroots innovation. It is a premier tech conference where the ecosystem’s brightest minds converge to explore the frontiers of Business AI and digital transformation. Join us to move beyond the routine, master new technologies, and shape the future of enterprise software together.</p>
-                    <div class="hero-actions">
-                        <a href="#register" class="primary-btn">Join Next Edition</a>
-                        <a href="agenda.html?year=2025&q=3" class="secondary-btn">View Past Agenda</a>
-                    </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="small-carousel">
-                        <div class="carousel-slide active">
-                            <img src="assets/images/SIT-Pics/01.jpg" alt="SIT Bengaluru 1">
+                <div class="hero-main">
+                    <div class="hero-content">
+                        <p class="hero-tagline">Connect. Learn. Share. Grow with the community.</p>
+                        <p class="hero-description">Driven by the SAP Community, SIT Bengaluru stands as a global benchmark for grassroots innovation. It is a premier tech conference where the ecosystem’s brightest minds converge to explore the frontiers of Business AI and digital transformation. Join us to move beyond the routine, master new technologies, and shape the future of enterprise software together.</p>
+                        <div class="hero-actions">
+                            <a href="#register" class="primary-btn">Join Next Edition</a>
+                            <a href="agenda.html?year=2025&q=3" class="secondary-btn">View Past Agenda</a>
                         </div>
-                        <div class="carousel-slide">
-                            <img src="assets/images/SIT-Pics/02.jpg" alt="SIT Bengaluru 2">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="assets/images/SIT-Pics/03.jpg" alt="SIT Bengaluru 3">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="assets/images/SIT-Pics/04.jpg" alt="SIT Bengaluru 4">
+                    </div>
+                    <div class="hero-visual">
+                        <div class="small-carousel">
+                            <div class="carousel-slide active">
+                                <img src="assets/images/SIT-Pics/01.jpg" alt="SIT Bengaluru 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/SIT-Pics/02.jpg" alt="SIT Bengaluru 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/SIT-Pics/03.jpg" alt="SIT Bengaluru 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/SIT-Pics/04.jpg" alt="SIT Bengaluru 4">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,7 +80,7 @@
                     <p>Attendees</p>
                 </div>
                 <div class="stat-item">
-                    <h3>50+</h3>
+                    <h3>100+</h3>
                     <p>Session Speakers</p>
                 </div>
                 <div class="stat-item">
@@ -135,18 +139,13 @@
                     <h3>SAP Community</h3>
                     <p>Join the Bengaluru Group</p>
                 </a>
-                <div class="contact-card">
-                    <i class="fas fa-location-dot" style="color: #e74c3c;"></i>
-                    <h3>Location</h3>
-                    <p>SAP Labs India, Bengaluru</p>
-                </div>
             </div>
         </section>
 
         <section class="sponsors-section" aria-label="Event sponsors">
             <div class="sponsors-container">
                 <div class="sponsors-header">
-                    <h2>Our Sponsors</h2>
+                    <h2>Our Sponsors(2025)</h2>
                     <p class="sponsors-subtitle">Thank you to our amazing partners who make this event possible</p>
                 </div>
                 <div class="sponsors-grid">
@@ -176,18 +175,19 @@
     </footer>
 
     <script>
-        // Simple Carousel Logic
+        // Hero Carousel Logic
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
+        const slides = document.querySelectorAll('.hero-visual .carousel-slide');
         
         function nextSlide() {
+            if (slides.length === 0) return;
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
 
         if (slides.length > 0) {
-            setInterval(nextSlide, 5000);
+            setInterval(nextSlide, 3500); // Auto-scroll every 3.5 seconds
         }
 
         // Dark Mode Toggle
