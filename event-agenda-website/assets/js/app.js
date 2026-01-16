@@ -1,6 +1,11 @@
 // SITBLR Event Agenda Application
 class AgendaApp {
     constructor() {
+        this.params = new URLSearchParams(window.location.search);
+        this.year = this.params.get('year') || '2025';
+        this.quarter = this.params.get('q') || '3';
+        this.dataPath = `assets/data/${this.year}/Q${this.quarter}`;
+        
         this.rawData = null;
         this.parsedData = null;
         this.concurRawData = null;
@@ -29,6 +34,7 @@ class AgendaApp {
     async init() {
         try {
             await this.loadData();
+            if (!this.rawData) return; // Load data handled coming soon
             await this.loadConcurData();
             await this.loadAcademiaData();
             this.setupEventListeners();
@@ -36,16 +42,28 @@ class AgendaApp {
             this.populateFilters();
             this.renderAgenda();
             this.updateYear();
+            this.updateBrandTagline();
         } catch (error) {
             console.error('Failed to initialize app:', error);
             this.showError('Failed to load agenda data. Please refresh the page.');
         }
     }
 
+    updateBrandTagline() {
+        const tagline = document.querySelector('.tagline');
+        if (tagline) {
+            tagline.textContent = `${this.year} Q${this.quarter} - Agenda`;
+        }
+    }
+
     async loadData() {
         try {
-            const response = await fetch('assets/data/events_3rdedition.json');
+            const response = await fetch(`${this.dataPath}/events.json`);
             if (!response.ok) {
+                if (response.status === 404) {
+                    this.showComingSoon();
+                    return;
+                }
                 throw new Error(`Failed to load data: ${response.status}`);
             }
             this.rawData = await response.json();
@@ -64,7 +82,7 @@ class AgendaApp {
 
     async loadConcurData() {
         try {
-            const response = await fetch('assets/data/concur_3rdedition.json');
+            const response = await fetch(`${this.dataPath}/concur.json`);
             if (!response.ok) {
                 throw new Error(`Failed to load concur data: ${response.status}`);
             }
@@ -85,7 +103,7 @@ class AgendaApp {
 
     async loadAcademiaData() {
         try {
-            const response = await fetch('assets/data/academia_3rdedition.json');
+            const response = await fetch(`${this.dataPath}/academia.json`);
             if (!response.ok) {
                 throw new Error(`Failed to load academia data: ${response.status}`);
             }
@@ -614,6 +632,33 @@ class AgendaApp {
         const yearElement = document.getElementById('year');
         if (yearElement) {
             yearElement.textContent = new Date().getFullYear();
+        }
+    }
+
+    showComingSoon() {
+        const main = document.querySelector('.main');
+        const brandTextTagline = document.querySelector('.tagline');
+        if (brandTextTagline) {
+            brandTextTagline.textContent = `${this.year} Q${this.quarter} - Coming Soon`;
+        }
+        main.innerHTML = `
+            <div class="coming-soon-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60vh; text-align: center; padding: 2rem;">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent);">Agenda ${this.year} Q${this.quarter}</h1>
+                <p>Coming Soon! We are currently planning this edition of SAP Inside Track Bengaluru.</p>
+                <p>Stay tuned for updates!</p>
+                <a href="index.html" class="primary-btn" style="margin-top: 2rem; text-decoration: none; background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 4px;">Back to Home</a>
+            </div>
+        `;
+        // Hide tabs and header actions as they are not needed for coming soon
+        const tabs = document.querySelector('.tabs');
+        if (tabs) tabs.style.display = 'none';
+        const headerActions = document.querySelector('.header-actions');
+        if (headerActions) {
+            // Keep theme toggle but hide search/filter
+            const search = headerActions.querySelector('.search-wrapper');
+            if (search) search.style.display = 'none';
+            const filter = document.getElementById('filterToggle');
+            if (filter) filter.style.display = 'none';
         }
     }
 
