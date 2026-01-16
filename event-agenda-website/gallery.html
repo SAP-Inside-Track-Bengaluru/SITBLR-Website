@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAP Inside Track Bengaluru - Full Gallery</title>
+    <link rel="icon" type="image/webp" href="assets/images/sit_logo.webp" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="dark">
+    <header class="site-header">
+        <div class="brand">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; color: inherit;">
+                <img src="assets/images/sit_logo.webp" alt="SAP Inside Track Bengaluru Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>SAP Inside Track Bengaluru</h1>
+                </div>
+            </a>
+        </div>
+        <nav class="main-nav">
+             <a href="index.html" class="nav-link">Home</a>
+             <div class="dropdown">
+                <button class="dropbtn">Agenda</button>
+                <div class="dropdown-content">
+                  <a href="agenda.html?year=2025&q=3">2025 Q3</a>
+                  <a href="agenda.html?year=2026&q=1">2026 Q1</a>
+                </div>
+              </div>
+             <a href="index.html#gallery" class="nav-link">Gallery</a>
+             <a href="index.html#contact" class="nav-link">Contact Us</a>
+        </nav>
+        <div class="header-actions">
+            <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle dark mode">🌗</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-section" style="margin-top: 4rem;">
+            <h2>Full Gallery</h2>
+            <p>Relive the moments from our previous SAP Inside Track events in Bengaluru.</p>
+            <div class="gallery-grid" style="margin-top: 3rem;">
+                <div class="gallery-item"><img src="assets/images/SIT-Pics/01.jpg" alt="Gallery Photo"></div>
+                <div class="gallery-item"><img src="assets/images/SIT-Pics/02.jpg" alt="Gallery Photo"></div>
+                <div class="gallery-item"><img src="assets/images/SIT-Pics/03.jpg" alt="Gallery Photo"></div>
+                <div class="gallery-item"><img src="assets/images/SIT-Pics/04.jpg" alt="Gallery Photo"></div>
+                <div class="gallery-item"><img src="assets/images/SIT-Pics/05.jpg" alt="Gallery Photo"></div>
+                <div class="gallery-item"><img src="assets/images/SIT-Pics/07.jpg" alt="Gallery Photo"></div>
+                <div class="gallery-item"><img src="assets/images/SIT-Pics/08.jpg" alt="Gallery Photo"></div>
+                <div class="gallery-item"><img src="assets/images/SIT-Pics/09.jpg" alt="Gallery Photo"></div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <a href="index.html" class="primary-btn">Back to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-image-container">
+        <img src="assets/images/footer.png" alt="SAP Inside Track Bengaluru Footer" class="footer-image" loading="lazy">
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 SAP Inside Track Bengaluru. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.replace('dark', 'light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light')) {
+                body.classList.replace('light', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.replace('dark', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>

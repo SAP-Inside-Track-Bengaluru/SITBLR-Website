@@ -189,13 +189,13 @@ class AgendaApp {
     }
 
     setupTheme() {
-        const savedTheme = localStorage.getItem('agenda-theme');
+        const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             document.body.className = savedTheme;
             this.updateThemeButton();
         } else {
             // Default to dark theme
-            document.body.className = 'light';
+            document.body.className = 'dark';
             this.updateThemeButton();
         }
     }
@@ -204,7 +204,7 @@ class AgendaApp {
         const currentTheme = document.body.className;
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         document.body.className = newTheme;
-        localStorage.setItem('agenda-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
         this.updateThemeButton();
     }
 

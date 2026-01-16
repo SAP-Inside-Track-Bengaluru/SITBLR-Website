@@ -7,6 +7,7 @@
     <meta name="description" content="SAP Inside Track Bengaluru – The biggest community-led SAP event in India." />
     <link rel="icon" type="image/webp" href="assets/images/sit_logo.webp" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body class="dark">
     <header class="site-header">
@@ -37,22 +38,49 @@
 
     <main>
         <section class="hero">
-            <h2>SAP Inside Track Bengaluru</h2>
-            <p>Connect. Learn. Share. Grow with the community.</p>
-            <a href="#register" class="primary-btn">Register for Next Edition</a>
+            <h2>The Heart of SAP Community in India</h2>
+            <p>Empowering SAP professionals through collaborative learning, networking, and knowledge sharing.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#register" class="primary-btn">Join Next Edition</a>
+                <a href="agenda.html?year=2025&q=3" class="primary-btn" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3);">View Past Agenda</a>
+            </div>
         </section>
 
         <section class="carousel-section">
             <h2>Glimpses from Previous Editions</h2>
             <div class="carousel-container">
                 <div class="carousel-slide active">
-                    <img src="https://images.unsplash.com/photo-1540575861501-7ce05b4d1d9a?auto=format&fit=crop&w=1200" alt="Event Photo 1">
+                    <img src="assets/images/SIT-Pics/01.jpg" alt="Event Photo 1">
                 </div>
                 <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200" alt="Event Photo 2">
+                    <img src="assets/images/SIT-Pics/02.jpg" alt="Event Photo 2">
                 </div>
                 <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200" alt="Event Photo 3">
+                    <img src="assets/images/SIT-Pics/03.jpg" alt="Event Photo 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/images/SIT-Pics/04.jpg" alt="Event Photo 4">
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section" style="padding: 4rem 1rem; text-align: center;">
+            <div style="display: flex; justify-content: center; gap: clamp(2rem, 8vw, 6rem); flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+                <div>
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent);">2000+</div>
+                    <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Attendees</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent);">50+</div>
+                    <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Session Speakers</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent);">10+</div>
+                    <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Editions</div>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent);">∞</div>
+                    <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Learning & Fun</div>
                 </div>
             </div>
         </section>
@@ -67,28 +95,50 @@
             <h2>Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=400" alt="Gallery 1">
+                    <img src="assets/images/SIT-Pics/01.jpg" alt="Gallery 1">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=400" alt="Gallery 2">
+                    <img src="assets/images/SIT-Pics/02.jpg" alt="Gallery 2">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=400" alt="Gallery 3">
+                    <img src="assets/images/SIT-Pics/03.jpg" alt="Gallery 3">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400" alt="Gallery 4">
+                    <img src="assets/images/SIT-Pics/04.jpg" alt="Gallery 4">
                 </div>
+                <div class="gallery-item">
+                    <img src="assets/images/SIT-Pics/05.jpg" alt="Gallery 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/SIT-Pics/06.jpg" alt="Gallery 6">
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="gallery.html" class="icon-btn">See More Photos</a>
             </div>
         </section>
 
         <section id="contact" class="contact-section">
-            <h2>Contact Us</h2>
+            <h2>Get in Touch</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Have questions? Reach out to our community leads.</p>
             <div class="contact-info">
-                <div class="contact-card">
+                <a href="mailto:sapcommunitybengaluru@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope" style="font-size: 2rem; color: var(--accent);"></i>
                     <h3>Email</h3>
-                    <p>contact@sitblr.com</p>
-                </div>
+                    <p>sapcommunitybengaluru@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/company/sitblr/posts/?feedView=all" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin" style="font-size: 2rem; color: #0077b5;"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Follow our updates</p>
+                </a>
+                <a href="https://community.sap.com/t5/bengaluru/gh-p/bangalore" target="_blank" class="contact-card">
+                    <i class="fas fa-users" style="font-size: 2rem; color: #f39c12;"></i>
+                    <h3>SAP Community</h3>
+                    <p>Join the Bengaluru Group</p>
+                </a>
                 <div class="contact-card">
+                    <i class="fas fa-location-dot" style="font-size: 2rem; color: #e74c3c;"></i>
                     <h3>Location</h3>
                     <p>SAP Labs India, Bengaluru</p>
                 </div>
