@@ -38,62 +38,41 @@
 
     <main>
         <section class="hero">
-            <h2>The Heart of SAP Community in India</h2>
-            <p>Empowering SAP professionals through collaborative learning, networking, and knowledge sharing.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#register" class="primary-btn">Join Next Edition</a>
-                <a href="agenda.html?year=2025&q=3" class="primary-btn" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3);">View Past Agenda</a>
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h2>SAP Inside Track Bengaluru: Where Innovation Meets Community</h2>
+                <p>SAP Inside Track (SIT) Bengaluru is an open tech conference by SAP Community; it is the heartbeat of the SAP community in India. As the largest grassroots event of its kind globally, it brings together thousands of developers, consultants, architects, and industry leaders to move beyond the manual and into the future of Business AI.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#register" class="primary-btn">Join Next Edition</a>
+                    <a href="agenda.html?year=2025&q=3" class="primary-btn" style="background: rgba(255,255,255,0.1); color: var(--text-primary) !important; border: 1px solid var(--border); box-shadow: none;">View Past Agenda</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>2000+</h3>
+                    <p>Attendees</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Session Speakers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Editions</p>
+                </div>
+                <div class="stat-item">
+                    <h3>∞</h3>
+                    <p>Learning & Fun</p>
+                </div>
             </div>
         </section>
 
         <section class="carousel-section">
             <h2>Glimpses from Previous Editions</h2>
             <div class="carousel-container">
-                <div class="carousel-slide active">
-                    <img src="assets/images/SIT-Pics/01.jpg" alt="Event Photo 1">
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/images/SIT-Pics/02.jpg" alt="Event Photo 2">
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/images/SIT-Pics/03.jpg" alt="Event Photo 3">
-                </div>
-                <div class="carousel-slide">
-                    <img src="assets/images/SIT-Pics/04.jpg" alt="Event Photo 4">
-                </div>
-            </div>
-        </section>
-
-        <section class="stats-section" style="padding: 4rem 1rem; text-align: center;">
-            <div style="display: flex; justify-content: center; gap: clamp(2rem, 8vw, 6rem); flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
-                <div>
-                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent);">2000+</div>
-                    <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Attendees</div>
-                </div>
-                <div>
-                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent);">50+</div>
-                    <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Session Speakers</div>
-                </div>
-                <div>
-                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent);">10+</div>
-                    <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Editions</div>
-                </div>
-                <div>
-                    <div style="font-size: 3rem; font-weight: 800; color: var(--accent);">∞</div>
-                    <div style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Learning & Fun</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="register" class="reg-section">
-            <h2>Register for 2026</h2>
-            <p>Don't miss out on the biggest SAP community event. Be the first to know when registrations open!</p>
-            <a href="#" class="icon-btn" style="padding: 1rem 2rem; background: var(--accent); color: white; border-radius: 4px; text-decoration: none;">Coming Soon...</a>
-        </section>
-
-        <section id="gallery" class="gallery-section">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="assets/images/SIT-Pics/01.jpg" alt="Gallery 1">
                 </div>
@@ -120,25 +99,24 @@
 
         <section id="contact" class="contact-section">
             <h2>Get in Touch</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Have questions? Reach out to our community leads.</p>
-            <div class="contact-info">
+            <div class="contact-grid">
                 <a href="mailto:sapcommunitybengaluru@gmail.com" class="contact-card">
-                    <i class="fas fa-envelope" style="font-size: 2rem; color: var(--accent);"></i>
+                    <i class="fas fa-envelope" style="color: var(--primary);"></i>
                     <h3>Email</h3>
                     <p>sapcommunitybengaluru@gmail.com</p>
                 </a>
                 <a href="https://www.linkedin.com/company/sitblr/posts/?feedView=all" target="_blank" class="contact-card">
-                    <i class="fab fa-linkedin" style="font-size: 2rem; color: #0077b5;"></i>
+                    <i class="fab fa-linkedin" style="color: #0077b5;"></i>
                     <h3>LinkedIn</h3>
                     <p>Follow our updates</p>
                 </a>
                 <a href="https://community.sap.com/t5/bengaluru/gh-p/bangalore" target="_blank" class="contact-card">
-                    <i class="fas fa-users" style="font-size: 2rem; color: #f39c12;"></i>
+                    <i class="fas fa-users" style="color: #f39c12;"></i>
                     <h3>SAP Community</h3>
                     <p>Join the Bengaluru Group</p>
                 </a>
                 <div class="contact-card">
-                    <i class="fas fa-location-dot" style="font-size: 2rem; color: #e74c3c;"></i>
+                    <i class="fas fa-location-dot" style="color: #e74c3c;"></i>
                     <h3>Location</h3>
                     <p>SAP Labs India, Bengaluru</p>
                 </div>
