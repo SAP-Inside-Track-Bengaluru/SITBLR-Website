@@ -67,6 +67,13 @@
                             <div class="carousel-slide">
                                 <img src="assets/images/SIT-Pics/04.jpg" alt="SIT Bengaluru 4">
                             </div>
+                            <!-- Indicators -->
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,11 +83,11 @@
         <section class="stats-section">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>2000+</h3>
+                    <h3>15000+</h3>
                     <p>Attendees</p>
                 </div>
                 <div class="stat-item">
-                    <h3>100+</h3>
+                    <h3>500+</h3>
                     <p>Session Speakers</p>
                 </div>
                 <div class="stat-item">
@@ -178,17 +185,30 @@
         // Hero Carousel Logic
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-visual .carousel-slide');
+        const dots = document.querySelectorAll('.hero-visual .dot');
         
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
         function nextSlide() {
             if (slides.length === 0) return;
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+            let next = (currentSlide + 1) % slides.length;
+            showSlide(next);
         }
 
         if (slides.length > 0) {
-            setInterval(nextSlide, 3500); // Auto-scroll every 3.5 seconds
+            setInterval(nextSlide, 4000); // Auto-scroll every 4 seconds
         }
+
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
 
         // Dark Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
