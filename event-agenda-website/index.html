@@ -3,146 +3,164 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SAP Inside Track Bengaluru - Event Agenda</title>
-    <meta name="description" content="Agenda for SAP Inside Track Bengaluru – lectures, demo pods & more" />
+    <title>SAP Inside Track Bengaluru</title>
+    <meta name="description" content="SAP Inside Track Bengaluru – The biggest community-led SAP event in India." />
     <link rel="icon" type="image/webp" href="assets/images/sit_logo.webp" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="preload" href="assets/data/events_3rdedition.json" as="fetch" crossorigin>
-    <link rel="preload" href="assets/data/concur_3rdedition.json" as="fetch" crossorigin>
-    <link rel="preload" href="assets/data/academia_3rdedition.json" as="fetch" crossorigin>
 </head>
-<body>
-    <a href="#main" class="skip-link">Skip to content</a>
+<body class="dark">
     <header class="site-header">
         <div class="brand">
-            <img src="assets/images/sit_logo.webp" alt="SAP Inside Track Bengaluru Logo" class="brand-logo">
-            <div class="brand-text">
-                <h1>SAP Inside Track Bengaluru</h1>
-                <span class="tagline">3rd Edition 2025 - Agenda</span>
-            </div>
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; color: inherit;">
+                <img src="assets/images/sit_logo.webp" alt="SAP Inside Track Bengaluru Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>SAP Inside Track Bengaluru</h1>
+                </div>
+            </a>
         </div>
+        <nav class="main-nav">
+             <a href="index.html" class="nav-link">Home</a>
+             <div class="dropdown">
+                <button class="dropbtn">Agenda</button>
+                <div class="dropdown-content">
+                  <a href="agenda-2025.html">2025</a>
+                  <a href="agenda-2026.html">2026</a>
+                </div>
+              </div>
+             <a href="#gallery" class="nav-link">Gallery</a>
+             <a href="#contact" class="nav-link">Contact Us</a>
+        </nav>
         <div class="header-actions">
-            <div class="search-wrapper" role="search">
-                <input id="searchInput" type="text" placeholder="Search by title, speaker or track" aria-label="Search sessions" />
-                <button id="clearSearch" class="icon-btn" aria-label="Clear search" hidden>&times;</button>
-            </div>
-            <button id="filterToggle" class="icon-btn" aria-expanded="false" aria-controls="filterPanel">Filters</button>
             <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle dark mode">🌗</button>
         </div>
     </header>
 
-    <nav class="tabs" aria-label="Content sections">
-        <button class="tab active" data-target="sessions" aria-selected="true">Sessions</button>
-        <button class="tab" data-target="demopods" aria-selected="false">Demo Pods</button>
-        <button class="tab" data-target="handson" aria-selected="false">Hands On</button>
-        <button class="tab" data-target="concurschedule" aria-selected="false">Concur</button>
-        <button class="tab" data-target="academiaschedule" aria-selected="false">Academia</button>
-    </nav>
+    <main>
+        <section class="hero">
+            <h2>SAP Inside Track Bengaluru</h2>
+            <p>Connect. Learn. Share. Grow with the community.</p>
+            <a href="#register" class="primary-btn">Register for Next Edition</a>
+        </section>
 
-    <div id="filterPanel" class="filter-panel" aria-hidden="true">
-        <form id="filtersForm" class="filters" aria-describedby="filterHelp">
-            <div class="filters-header">
-                <h2>Filter</h2>
-                <button type="button" id="closeFilters" class="icon-btn" aria-label="Close filters">✕</button>
+        <section class="carousel-section">
+            <h2>Glimpses from Previous Editions</h2>
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="https://images.unsplash.com/photo-1540575861501-7ce05b4d1d9a?auto=format&fit=crop&w=1200" alt="Event Photo 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200" alt="Event Photo 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200" alt="Event Photo 3">
+                </div>
             </div>
-            <p id="filterHelp" class="sr-only">Use the checkboxes to limit which sessions are shown.</p>
+        </section>
 
-            <fieldset>
-                <legend>Type</legend>
-                <label><input type="checkbox" name="type" value="Lecture" checked> Lecture</label>
-                <label><input type="checkbox" name="type" value="Demo Pod" checked> Demo Pod</label>
-                <label><input type="checkbox" name="type" value="Hands On" checked> Hands On</label>
-                <label><input type="checkbox" name="type" value="Break" checked> Break</label>
-                <label><input type="checkbox" name="type" value="Keynote" checked> Keynote</label>
-                <label><input type="checkbox" name="type" value="Registration" checked> Registration</label>
-            </fieldset>
+        <section id="register" class="reg-section">
+            <h2>Register for 2026</h2>
+            <p>Don't miss out on the biggest SAP community event. Be the first to know when registrations open!</p>
+            <a href="#" class="icon-btn" style="padding: 1rem 2rem; background: var(--accent); color: white; border-radius: 4px; text-decoration: none;">Coming Soon...</a>
+        </section>
 
-            <fieldset id="trackFilters">
-                <legend>Tracks</legend>
-                <div class="tracks-list" id="tracksList">Loading…</div>
-            </fieldset>
-
-            <div class="filters-footer">
-                <button type="reset">Reset</button>
-                <button type="submit" class="primary">Apply</button>
+        <section id="gallery" class="gallery-section">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=400" alt="Gallery 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=400" alt="Gallery 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=400" alt="Gallery 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=400" alt="Gallery 4">
+                </div>
             </div>
-        </form>
-    </div>
+        </section>
 
-    <main id="main" class="main">
-        <section id="sessions" class="agenda-section active" aria-label="Sessions agenda timeline">
-            <div id="sessionsContainer" class="timeline" aria-live="polite"></div>
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>contact@sitblr.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <p>SAP Labs India, Bengaluru</p>
+                </div>
+            </div>
         </section>
-        <section id="demopods" class="agenda-section" hidden aria-label="Demo pods timeline">
-            <div id="demopodsContainer" class="timeline" aria-live="polite"></div>
+
+        <section class="sponsors-section" aria-label="Event sponsors">
+            <div class="sponsors-container">
+                <div class="sponsors-header">
+                    <h2>Our Sponsors</h2>
+                    <p class="sponsors-subtitle">Thank you to our amazing partners who make this event possible</p>
+                </div>
+                <div class="sponsors-grid">
+                    <div class="sponsor-item">
+                        <img src="assets/images/sponsor_logos/aws-logo.webp" alt="Amazon Web Services" class="sponsor-logo" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/images/sponsor_logos/mindset_logo.webp" alt="Mindset Consulting" class="sponsor-logo" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/images/sponsor_logos/rojo_logo.webp" alt="Rojo Consultancy" class="sponsor-logo" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/images/sponsor_logos/sap_press_logo.webp" alt="SAP Press" class="sponsor-logo" loading="lazy">
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="handson" class="agenda-section" hidden aria-label="Hands-on workshops timeline">
-            <div id="handsonContainer" class="timeline" aria-live="polite"></div>
-        </section>
-        <section id="concurschedule" class="agenda-section" hidden aria-label="Concur schedule timeline">
-            <div id="concurscheduleContainer" class="timeline" aria-live="polite"></div>
-        </section>
-        <section id="academiaschedule" class="agenda-section" hidden aria-label="Academia schedule timeline">
-            <div id="academiascheduleContainer" class="timeline" aria-live="polite"></div>
-        </section>
-        <div id="emptyState" class="empty-state" hidden>No sessions match your filters.</div>
     </main>
-
-    <section class="sponsors-section" aria-label="Event sponsors">
-        <div class="sponsors-container">
-            <div class="sponsors-header">
-                <h2>Our Sponsors</h2>
-                <p class="sponsors-subtitle">Thank you to our amazing partners who make this event possible</p>
-            </div>
-            <div class="sponsors-grid">
-                
-                <div class="sponsor-item">
-                    <img src="assets/images/sponsor_logos/aws-logo.webp" alt="Amazon Web Services" class="sponsor-logo" loading="lazy">
-                </div>
-                <div class="sponsor-item">
-                    <img src="assets/images/sponsor_logos/mindset_logo.webp" alt="Mindset Consulting" class="sponsor-logo" loading="lazy">
-                </div>
-                <div class="sponsor-item">
-                    <img src="assets/images/sponsor_logos/rojo_logo.webp" alt="Rojo Consultancy" class="sponsor-logo" loading="lazy">
-                </div>
-                <div class="sponsor-item">
-                    <img src="assets/images/sponsor_logos/sap_press_logo.webp" alt="SAP Press" class="sponsor-logo" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
 
     <div class="footer-image-container">
         <img src="assets/images/footer.png" alt="SAP Inside Track Bengaluru Footer" class="footer-image" loading="lazy">
     </div>
 
     <footer class="site-footer">
-        <p>&copy; <span id="year"></span> SAP Inside Track Bengaluru. All rights reserved.</p>
+        <p>&copy; 2026 SAP Inside Track Bengaluru. All rights reserved.</p>
     </footer>
 
-    <template id="timeslotTemplate">
-        <div class="timeslot">
-            <div class="time-col">
-                <time class="slot-time"></time>
-            </div>
-            <div class="sessions-col"></div>
-        </div>
-    </template>
+    <script>
+        // Simple Carousel Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
 
-    <template id="sessionCardTemplate">
-        <article class="session-card" tabindex="0">
-            <header class="session-header">
-                <h3 class="session-title"></h3>
-                <span class="badge type-badge"></span>
-            </header>
-            <div class="session-meta">
-                <span class="track-badge"></span>
-                <span class="speakers"></span>
-            </div>
-        </article>
-    </template>
+        if (slides.length > 0) {
+            setInterval(nextSlide, 5000);
+        }
 
-    <script src="assets/js/utils.js"></script>
-    <script src="assets/js/app.js"></script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.replace('dark', 'light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light')) {
+                body.classList.replace('light', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.replace('dark', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 </html>
