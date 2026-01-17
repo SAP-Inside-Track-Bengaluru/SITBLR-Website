@@ -7,7 +7,7 @@
     <link rel="icon" type="image/webp" href="assets/images/sit_logo.webp" />
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body class="dark">
+<body>
     <header class="site-header">
         <div class="brand">
             <a href="index.html" style="text-decoration: none; display: flex; align-items: center; color: inherit;">
@@ -67,18 +67,21 @@
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            body.classList.replace('dark', 'light');
+        // Default to light mode, but check for saved preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+        } else {
+            body.classList.remove('dark');
         }
 
         themeToggle.addEventListener('click', () => {
-            if (body.classList.contains('light')) {
-                body.classList.replace('light', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.replace('dark', 'light');
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
             }
         });
     </script>

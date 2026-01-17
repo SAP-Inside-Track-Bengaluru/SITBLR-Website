@@ -42,10 +42,14 @@
         <p>If you are not redirected automatically, <a href="event-agenda-website/">click here</a>.</p>
     </div>
     <script>
+        // Redirect with hash preservation
+        const target = 'event-agenda-website/' + window.location.hash;
+        window.location.replace(target);
+
         // Fallback redirect
         setTimeout(() => {
             if (window.location.href.indexOf('event-agenda-website') === -1) {
-                window.location.href = 'event-agenda-website/';
+                window.location.href = target;
             }
         }, 1000);
     </script>

@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-<body class="dark">
+<body>
     <header class="site-header">
         <div class="brand">
             <a href="index.html" style="text-decoration: none; display: flex; align-items: center; color: inherit;">
                 <img src="assets/images/sit_logo.webp" alt="SAP Inside Track Bengaluru Logo" class="brand-logo">
                 <div class="brand-text">
-                    <h1>SAP Inside Track Bengaluru</h1>
+                    <h1>SAP Inside Track</h1>
                 </div>
             </a>
         </div>
@@ -31,9 +31,9 @@
              <a href="#gallery" class="nav-link">Gallery</a>
              <a href="#contact" class="nav-link">Contact Us</a>
         </nav>
-        <!-- <div class="header-actions">
+        <div class="header-actions">
             <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle dark mode">🌗</button>
-        </div> -->
+        </div>
     </header>
 
     <main>
@@ -128,6 +128,14 @@
             </div>
         </section>
 
+        <section id="register" class="reg-section">
+            <h2>Ready to Join?</h2>
+            <p>Registrations for the next edition are normally opened a few weeks before the event. Stay tuned for the announcement on our social channels!</p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="https://www.linkedin.com/company/sitblr/posts/?feedView=all" target="_blank" class="secondary-btn" style="background: white; color: var(--primary) !important;">Follow on LinkedIn</a>
+            </div>
+        </section>
+
         <section id="contact" class="contact-section">
             <h2>Get in Touch</h2>
             <div class="contact-grid">
@@ -214,19 +222,21 @@
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            body.classList.replace('dark', 'light');
+        // Default to light mode, but check for saved preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+        } else {
+            body.classList.remove('dark');
         }
 
         themeToggle.addEventListener('click', () => {
-            if (body.classList.contains('light')) {
-                body.classList.replace('light', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.replace('dark', 'light');
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
             }
         });
     </script>

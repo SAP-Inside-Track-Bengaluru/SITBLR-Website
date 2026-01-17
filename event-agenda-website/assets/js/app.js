@@ -189,28 +189,28 @@ class AgendaApp {
     }
 
     setupTheme() {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.body.className = savedTheme;
-            this.updateThemeButton();
-        } else {
-            // Default to dark theme
-            document.body.className = 'dark';
-            this.updateThemeButton();
-        }
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.className = savedTheme === 'dark' ? 'dark' : '';
+        this.updateThemeButton();
     }
 
     toggleTheme() {
-        const currentTheme = document.body.className;
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.body.className = newTheme;
+        const isDark = document.body.classList.contains('dark');
+        const newTheme = isDark ? 'light' : 'dark';
+        
+        if (newTheme === 'dark') {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
+        
         localStorage.setItem('theme', newTheme);
         this.updateThemeButton();
     }
 
     updateThemeButton() {
         const button = document.getElementById('themeToggle');
-        const isDark = document.body.className === 'dark';
+        const isDark = document.body.classList.contains('dark');
         button.setAttribute('aria-pressed', isDark.toString());
         button.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
     }
