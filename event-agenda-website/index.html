@@ -129,10 +129,17 @@
         </section>
 
         <section id="register" class="reg-section">
-            <h2>Ready to Join?</h2>
-            <p>Registrations for the next edition are normally opened a few weeks before the event. Stay tuned for the announcement on our social channels!</p>
+            <h2>Next Edition: Feb 28, 2026</h2>
+            <div style="margin-bottom: 2rem;">
+                <p>Join us at <strong>SAP Labs India Innovation Park</strong></p>
+                <p style="font-size: 0.95rem; opacity: 0.9;">Bande Kodigehalli, Singahalli, Karnataka 562149<br>Bengaluru, India</p>
+                <a href="https://maps.app.goo.gl/kDH69XVq8e5yaoCi7" target="_blank" style="color: white; text-decoration: underline; font-size: 0.95rem;">
+                    <i class="fas fa-map-marker-alt"></i> View on Google Maps
+                </a>
+            </div>
             <div class="hero-actions" style="justify-content: center;">
-                <a href="https://www.linkedin.com/company/sitblr/posts/?feedView=all" target="_blank" class="secondary-btn" style="background: white; color: var(--primary) !important;">Follow on LinkedIn</a>
+                <button id="registerBtn" class="primary-btn" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</button>
+                <a href="agenda.html?year=2026&q=1" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
             </div>
         </section>
 
@@ -239,6 +246,14 @@
                 localStorage.setItem('theme', 'dark');
             }
         });
+
+        // Register Button Popup
+        const registerBtn = document.getElementById('registerBtn');
+        if (registerBtn) {
+            registerBtn.addEventListener('click', () => {
+                alert('Registration link will be available soon!');
+            });
+        }
     </script>
 </body>
 </html>
