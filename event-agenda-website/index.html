@@ -141,7 +141,7 @@
                     <p style="margin-bottom: 0;">Deadline: <strong>8th February 2026</strong></p>
                 </div>
                 <div class="hero-actions" style="justify-content: center;">
-                    <a href="https://sessionize.com/sap-inside-track-q1-2026" target="_blank" class="primary-btn">Submit a Session</a>
+                    <a href="https://sessionize.com/sap-inside-track-q1-2026" id="submitBtn" target="_blank" class="primary-btn">Submit a Session</a>
                 </div>
             </div>
         </section>
@@ -214,6 +214,8 @@
         <p>&copy; 2026 SAP Inside Track Bengaluru. All rights reserved.</p>
     </footer>
 
+    <div id="toast" style="visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 8px; padding: 16px; position: fixed; z-index: 2000; left: 50%; bottom: 30px; transform: translateX(-50%); transition: visibility 0.3s, opacity 0.3s; opacity: 0;">Link Copied!</div>
+
     <script>
         // Hero Carousel Logic
         let currentSlide = 0;
@@ -267,10 +269,58 @@
 
         // Register Button Redirect
         const registerBtn = document.getElementById('registerBtn');
-        if (registerBtn) {
-            registerBtn.addEventListener('click', () => {
-                window.location.href = 'https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/1937a329-59c7-42fd-a938-c5a2ac9174a5';
+        const submitBtn = document.getElementById('submitBtn');
+        const REGISTRATION_URL = 'https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/1937a329-59c7-42fd-a938-c5a2ac9174a5';
+        const SUBMISSION_URL = 'https://sessionize.com/sap-inside-track-q1-2026';
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.innerText = message || 'Link Copied!';
+            toast.style.visibility = 'visible';
+            toast.style.opacity = '1';
+            setTimeout(() => {
+                toast.style.visibility = 'hidden';
+                toast.style.opacity = '0';
+            }, 3000);
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
             });
+        }
+
+        function isInAppBrowser() {
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            const inAppPatterns = ['FBAN', 'FBAV', 'Instagram', 'LinkedInApp', 'Twitter', 'Line', 'MicroMessenger', 'Snapchat', 'WhatsApp', 'Pinterest'];
+            const isApp = inAppPatterns.some(pattern => ua.indexOf(pattern) > -1);
+            const isWebView = (/(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(ua)) || (ua.indexOf('wv') > -1);
+            return isApp || isWebView;
+        }
+
+        if (isInAppBrowser()) {
+            if (registerBtn) {
+                registerBtn.innerText = 'Copy Link to Register Now';
+                registerBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    copyToClipboard(REGISTRATION_URL);
+                });
+            }
+            if (submitBtn) {
+                submitBtn.innerText = 'Copy Link to Submit Session';
+                submitBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    copyToClipboard(SUBMISSION_URL);
+                });
+            }
+        } else {
+            if (registerBtn) {
+                registerBtn.addEventListener('click', () => {
+                    window.location.href = REGISTRATION_URL;
+                });
+            }
         }
     </script>
 </body>
