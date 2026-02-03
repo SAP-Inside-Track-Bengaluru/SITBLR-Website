@@ -142,6 +142,9 @@
                 </div>
                 <div class="hero-actions" style="justify-content: center;">
                     <a href="https://sessionize.com/sap-inside-track-q1-2026" id="submitBtn" target="_blank" class="primary-btn">Submit a Session</a>
+                    <button class="icon-btn share-section-btn" data-anchor="#submit-topic" title="Copy link to this section" style="background: rgba(var(--accent-rgb), 0.1); border-color: rgba(var(--accent-rgb), 0.2);">
+                        
+                    </button>
                 </div>
             </div>
         </section>
@@ -158,6 +161,9 @@
             <div class="hero-actions" style="justify-content: center;">
                 <button id="registerBtn" class="primary-btn" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</button>
                 <a href="agenda.html?year=2026&q=1" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
+                <button class="icon-btn share-section-btn" data-anchor="#register" title="Copy link to this section" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white;">
+                   
+                </button>
             </div>
         </section>
 
@@ -322,6 +328,17 @@
                 });
             }
         }
+
+        // Share Section Logic
+        const shareBtns = document.querySelectorAll('.share-section-btn');
+        shareBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const anchor = btn.getAttribute('data-anchor');
+                const url = window.location.origin + window.location.pathname + anchor;
+                copyToClipboard(url);
+                showToast('Section Link Copied!');
+            });
+        });
     </script>
 </body>
 </html>
