@@ -144,7 +144,7 @@
                 <div class="hero-actions" style="justify-content: center;">
                     <a href="https://sessionize.com/sap-inside-track-q1-2026" id="submitBtn" target="_blank" class="primary-btn">Submit a Session</a>
                     <button class="icon-btn share-section-btn" data-anchor="#submit-topic" title="Copy link to this section" style="background: rgba(var(--accent-rgb), 0.1); border-color: rgba(var(--accent-rgb), 0.2);">
-                        
+                        <i class="fas fa-link"></i> Share Section
                     </button>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                 <button id="registerBtn" class="primary-btn" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</button>
                 <a href="agenda.html?year=2026&q=1" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
                 <button class="icon-btn share-section-btn" data-anchor="#register" title="Copy link to this section" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white;">
-                   
+                   <i class="fas fa-link"></i> Share Section
                 </button>
             </div>
         </section>
@@ -309,19 +309,21 @@
 
         if (isInAppBrowser()) {
             if (registerBtn) {
-                registerBtn.innerText = 'Copy Link to Register Now';
+                registerBtn.innerText = 'Copy Link to Register';
                 registerBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     copyToClipboard(REGISTRATION_URL);
                 });
             }
             if (submitBtn) {
-                submitBtn.innerText = 'Copy Link to Submit Session';
+                submitBtn.innerText = 'Copy Link to Submit';
                 submitBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     copyToClipboard(SUBMISSION_URL);
                 });
             }
+            // Hide separate share buttons in-app to avoid confusion
+            document.querySelectorAll('.share-section-btn').forEach(btn => btn.style.display = 'none');
         } else {
             if (registerBtn) {
                 registerBtn.addEventListener('click', () => {
