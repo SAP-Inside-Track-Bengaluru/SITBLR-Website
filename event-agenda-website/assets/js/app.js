@@ -12,6 +12,8 @@ class AgendaApp {
         this.concurParsedData = null;
         this.academiaRawData = null;
         this.academiaParsedData = null;
+        this.ui5RawData = null;
+        this.ui5ParsedData = null;
         this.currentFilters = {
             types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
             tracks: []
@@ -22,6 +24,10 @@ class AgendaApp {
         };
         this.academiaFilters = {
             types: ['Academia Session', 'Break'],
+            tracks: []
+        };
+        this.ui5Filters = {
+            types: ['UI5 Session', 'Break'],
             tracks: []
         };
         this.currentSearchTerm = '';
@@ -37,6 +43,7 @@ class AgendaApp {
             if (!this.rawData) return; // Load data handled coming soon
             await this.loadConcurData();
             await this.loadAcademiaData();
+            await this.loadUI5Data();
             this.setupEventListeners();
             this.setupTheme();
             this.populateFilters();
@@ -119,6 +126,27 @@ class AgendaApp {
             console.error('Error loading academia data:', error);
             // Don't throw error for academia data - make it optional
             console.warn('Academia schedule will not be available');
+        }
+    }
+
+    async loadUI5Data() {
+        try {
+            const response = await fetch(`${this.dataPath}/ui5.json`);
+            if (!response.ok) {
+                throw new Error(`Failed to load UI5 data: ${response.status}`);
+            }
+            this.ui5RawData = await response.json();
+            
+            if (!this.ui5RawData || !this.ui5RawData.ui5) {
+                throw new Error('Invalid UI5 data format');
+            }
+            
+            this.ui5ParsedData = parseUI5EventData(this.ui5RawData);
+            console.log('UI5 data loaded successfully:', this.ui5ParsedData);
+        } catch (error) {
+            console.error('Error loading UI5 data:', error);
+            // Don't throw error for UI5 data - make it optional
+            console.warn('UI5 schedule will not be available');
         }
     }
 
@@ -230,6 +258,12 @@ class AgendaApp {
             types = getAcademiaUniqueTypes(this.academiaParsedData);
             this.academiaFilters.tracks = tracks;
             this.academiaFilters.types = types;
+        } else if (this.currentTab === 'ui5schedule' && this.ui5ParsedData) {
+            // Use UI5-specific tracks and types
+            tracks = getUI5UniqueTracks(this.ui5ParsedData);
+            types = getUI5UniqueTypes(this.ui5ParsedData);
+            this.ui5Filters.tracks = tracks;
+            this.ui5Filters.types = types;
         } else {
             // Use regular tracks and types
             tracks = getUniqueTracks(this.parsedData);
@@ -291,6 +325,9 @@ class AgendaApp {
             } else if (this.currentTab === 'academiaschedule') {
                 // For academia tab, check Academia Session, Lecture and Break
                 checkbox.checked = (checkbox.value === 'Academia Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
+            } else if (this.currentTab === 'ui5schedule') {
+                // For UI5 tab, check UI5 Session, Lecture and Break
+                checkbox.checked = (checkbox.value === 'UI5 Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
             } else {
                 // For other tabs, use the current filter state
                 const activeTypes = this.currentFilters.types;
@@ -310,6 +347,10 @@ class AgendaApp {
             // Get selected types and tracks for academia
             this.academiaFilters.types = formData.getAll('type');
             this.academiaFilters.tracks = formData.getAll('track');
+        } else if (this.currentTab === 'ui5schedule') {
+            // Get selected types and tracks for UI5
+            this.ui5Filters.types = formData.getAll('type');
+            this.ui5Filters.tracks = formData.getAll('track');
         } else {
             // Get selected types and tracks for regular tabs
             this.currentFilters.types = formData.getAll('type');
@@ -332,6 +373,13 @@ class AgendaApp {
             const tracks = getAcademiaUniqueTracks(this.academiaParsedData);
             const types = getAcademiaUniqueTypes(this.academiaParsedData);
             this.academiaFilters = {
+                types: types,
+                tracks: tracks
+            };
+        } else if (this.currentTab === 'ui5schedule' && this.ui5ParsedData) {
+            const tracks = getUI5UniqueTracks(this.ui5ParsedData);
+            const types = getUI5UniqueTypes(this.ui5ParsedData);
+            this.ui5Filters = {
                 types: types,
                 tracks: tracks
             };
@@ -420,6 +468,14 @@ class AgendaApp {
             const filteredAcademiaData = filterAcademiaEvents(this.academiaParsedData, this.currentSearchTerm, this.academiaFilters);
             this.renderTimeline('academiascheduleContainer', filteredAcademiaData.academiaschedule);
             this.updateEmptyState(filteredAcademiaData);
+        } else if (this.currentTab === 'ui5schedule') {
+            if (!this.ui5ParsedData) {
+                this.updateEmptyState({ ui5schedule: [] });
+                return;
+            }
+            const filteredUI5Data = filterUI5Events(this.ui5ParsedData, this.currentSearchTerm, this.ui5Filters);
+            this.renderTimeline('ui5scheduleContainer', filteredUI5Data.ui5schedule);
+            this.updateEmptyState(filteredUI5Data);
         } else {
             if (!this.parsedData) return;
             const filteredData = filterEvents(this.parsedData, this.currentSearchTerm, this.currentFilters);
@@ -535,6 +591,8 @@ class AgendaApp {
             card.classList.add('concur');
         } else if (session.type === 'Academia Session') {
             card.classList.add('academia');
+        } else if (session.type === 'UI5 Session') {
+            card.classList.add('ui5');
         } else if (session.type === 'Break') {
             card.classList.add('break');
         } else if (session.type === 'Keynote') {
@@ -564,6 +622,8 @@ class AgendaApp {
             typeBadge.classList.add('concur');
         } else if (session.type === 'Academia Session') {
             typeBadge.classList.add('academia');
+        } else if (session.type === 'UI5 Session') {
+            typeBadge.classList.add('ui5');
         } else if (session.type === 'Break') {
             typeBadge.classList.add('break');
         } else if (session.type === 'Keynote') {
@@ -623,6 +683,8 @@ class AgendaApp {
             hasData = filteredData.concurschedule && filteredData.concurschedule.length > 0;
         } else if (this.currentTab === 'academiaschedule') {
             hasData = filteredData.academiaschedule && filteredData.academiaschedule.length > 0;
+        } else if (this.currentTab === 'ui5schedule') {
+            hasData = filteredData.ui5schedule && filteredData.ui5schedule.length > 0;
         }
             
         emptyState.hidden = hasData;

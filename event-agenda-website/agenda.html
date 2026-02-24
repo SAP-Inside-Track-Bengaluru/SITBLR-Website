@@ -49,6 +49,7 @@
         <button class="tab" data-target="handson" aria-selected="false">Hands On</button>
         <button class="tab" data-target="concurschedule" aria-selected="false">Concur</button>
         <button class="tab" data-target="academiaschedule" aria-selected="false">Academia</button>
+        <button class="tab" data-target="ui5schedule" aria-selected="false">UI5</button>
     </nav>
 
     <div id="filterPanel" class="filter-panel" aria-hidden="true">
@@ -67,6 +68,7 @@
                 <label><input type="checkbox" name="type" value="Break" checked> Break</label>
                 <label><input type="checkbox" name="type" value="Keynote" checked> Keynote</label>
                 <label><input type="checkbox" name="type" value="Registration" checked> Registration</label>
+                <label><input type="checkbox" name="type" value="UI5 Session" checked> UI5 Session</label>
             </fieldset>
 
             <fieldset id="trackFilters">
@@ -96,6 +98,9 @@
         </section>
         <section id="academiaschedule" class="agenda-section" hidden aria-label="Academia schedule timeline">
             <div id="academiascheduleContainer" class="timeline" aria-live="polite"></div>
+        </section>
+        <section id="ui5schedule" class="agenda-section" hidden aria-label="UI5 schedule timeline">
+            <div id="ui5scheduleContainer" class="timeline" aria-live="polite"></div>
         </section>
         <div id="emptyState" class="empty-state" hidden>No sessions match your filters.</div>
     </main>

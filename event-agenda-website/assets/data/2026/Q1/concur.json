@@ -1,0 +1,306 @@
+{
+    "concur": [
+        {
+            "sequence": "0.1",
+            "time": "08:00 - 09:30",
+            "type": "break",
+            "tracktitle": "Arrival to SAP Labs India Innovation Park",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.3",
+            "time": "09:30 - 10:00",
+            "type": "break",
+            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India | Head, Customer Innovation Services, SAP)",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.4",
+            "time": "10:00 - 10:30",
+            "type": "break",
+            "tracktitle": "Industry Talk",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "1",
+            "time": "11:00 - 11:25",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Malavikha A",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "SAP Concur Vision: Recent AI Innovations and Roadmap",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "2",
+            "time": "11:25 - 11:40",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Efficiency with Joule & MS Teams",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "3",
+            "time": "11:45 - 12:05",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Sai Krishna",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Joule Beyond Assistance: When AI Acts Across Travel & Expense - In Teams, Chat, and Beyond",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "3",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "4",
+            "time": "12:05 - 12:25",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Aneesh",
+                    "speaker2": "Satrajit",
+                    "speaker3": "Himanshu",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Beyond Go-Live: From Adoption to Real Business Value",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "4",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "4.5",
+            "time": "12:25 - 01:30",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "5",
+            "time": "01:15 - 01:35",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Aneesh",
+                    "speaker2": "Himanshu",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Reimagining the Future of Invoice with AI: Intelligent. Global. Effortless",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "5",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "6",
+            "time": "01:40 - 02:10",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Kezhukoot, Meera",
+                    "speaker2": "Prabakaran, Sathish Kumar",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Concur's Platform Resilience and Enabling AI-Driven Analytics on AWS",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "6",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "7",
+            "time": "02:15 - 02:40",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Diwakar",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Reimagining Corporate Spend with a Payments-First Lens (powered by Virtual Cards and UPI)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "7",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "8",
+            "time": "11:00 - 01:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Amit",
+                    "speaker2": "Manoj Chitaguppi",
+                    "speaker3": "Shreyas Bhardwaj",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "One-Audit: Shaping the Future of Audit & Compliance with AI",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "8",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Demo Pod"
+                }
+            ]
+        },
+        {
+            "sequence": "9",
+            "time": "11:00 - 01:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Ajay",
+                    "speaker2": "Praveen",
+                    "speaker3": "Srihari",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Bringing All SAP Concur Teams Capabilities into a Conversational Experience",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "9",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Demo Pod"
+                }
+            ]
+        },
+        {
+            "sequence": "10",
+            "time": "01:30 - 02:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Bhargav",
+                    "speaker2": "Mahua",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Co-Creating the Future of Self-Service Entity Management and Implementation with Concur Management Console (CMC)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "10",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Demo Pod"
+                }
+            ]
+        },
+        {
+            "sequence": "11",
+            "time": "11:00 - 02:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Sourin",
+                    "speaker2": "Chandra Bhanu",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Connected Experience",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "11",
+                    "tracktitle": "Training Room 3, BLR12 4th Floor",
+                    "trackid": "Training Room 3, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Hands On"
+                }
+            ]
+        },
+        {
+            "sequence": "12",
+            "time": "04:00 - 04:30",
+            "type": "break",
+            "tracktitle": "Closing Ceremony, Group Photo",
+            "sessionsBySequence": []
+        }
+    ]
+}
