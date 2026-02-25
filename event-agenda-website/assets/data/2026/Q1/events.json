@@ -217,22 +217,6 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Ankur Kumar",
-                    "speaker2": "Saibala Sundram",
-                    "speaker1_social": "",
-                    "speaker2_social": "",
-                    "sessiontitle": "From Voice to Action: Multi-Agent AI Safety Orchestration with SAP Joule Speech-to-Text (STT)",
-                    "description": "",
-                    "organization1": "",
-                    "socialmedia": "",
-                    "sessionseq": "3",
-                    "tracktitle": "Training Room1, BLR12 4th Floor",
-                    "trackid": "Training Room1, BLR12 4th Floor",
-                    "trackseq": "3",
-                    "type": "Lecture"
-                },
-                {
-                    "speakers": "",
                     "speaker1": "Vishakha Watwani",
                     "speaker2": "Ankita Verma",
                     "speaker1_social": "",
@@ -244,6 +228,22 @@
                     "sessionseq": "3",
                     "tracktitle": "Training Room2, BLR12 4th Floor",
                     "trackid": "Training Room2, BLR12 4th Floor",
+                    "trackseq": "3",
+                    "type": "Lecture"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Ankur Kumar",
+                    "speaker2": "Saibala Sundram",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "From Voice to Action: Multi-Agent AI Safety Orchestration with SAP Joule Speech-to-Text (STT)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "3",
+                    "tracktitle": "Training Room1, BLR12 4th Floor",
+                    "trackid": "Training Room1, BLR12 4th Floor",
                     "trackseq": "4",
                     "type": "Lecture"
                 }
