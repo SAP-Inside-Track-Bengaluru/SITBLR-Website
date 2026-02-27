@@ -67,6 +67,7 @@ function parseEventData(eventData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
@@ -102,6 +103,7 @@ function parseEventData(eventData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
@@ -137,6 +139,7 @@ function parseEventData(eventData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
@@ -230,6 +233,9 @@ function formatSpeakers(session) {
     }
     if (session.speaker2 && session.speaker2.trim()) {
         speakers.push(session.speaker2);
+    }
+    if (session.speaker3 && session.speaker3.trim()) {
+        speakers.push(session.speaker3);
     }
     
     return speakers.length > 0 ? speakers.join(', ') : '';
@@ -496,6 +502,7 @@ function parseConcurEventData(concurData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
@@ -698,6 +705,7 @@ function parseAcademiaEventData(academiaData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',

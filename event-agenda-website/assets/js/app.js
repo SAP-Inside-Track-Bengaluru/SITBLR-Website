@@ -734,9 +734,7 @@ class AgendaApp {
             // Handle regular session speakers
             const speakersText = formatSpeakers(session);
             if (speakersText) {
-                // Use "Organizers:" label for Vibe Coding session
-                const label = session.title && session.title.includes('Vibe Coding') ? 'Organizers:' : 'Speakers:';
-                speakersElement.textContent = `${label} ${speakersText}`;
+                speakersElement.textContent = `Speakers: ${speakersText}`;
             } else {
                 speakersElement.style.display = 'none';
             }
