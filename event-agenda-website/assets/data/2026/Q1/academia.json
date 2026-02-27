@@ -70,15 +70,15 @@
         ]
     },
     {
-        "sequence": "3.5",
-        "time": "12:15 - 01:00",
+        "sequence": "3",
+        "time": "12:00 - 01:00",
         "type": "break",
         "tracktitle": "Lunch",
         "sessionsBySequence": []
     },
     {
         "sequence": "4",
-        "time": "01:00 - 01:30",
+        "time": "01:00 - 01:45",
         "type": "grid",
         "tracktitle": "<Not Required>",
         "sessionsBySequence": [
@@ -102,7 +102,7 @@
     },
     {
         "sequence": "5",
-        "time": "01:30 - 02:15",
+        "time": "01:45 - 02:15",
         "type": "grid",
         "tracktitle": "<Not Required>",
         "sessionsBySequence": [
@@ -125,15 +125,15 @@
         ]
     },
     {
-        "sequence": "5.5",
-        "time": "12:15 - 01:00",
+        "sequence": "5",
+        "time": "02:15 - 02:30",
         "type": "break",
         "tracktitle": "Break",
         "sessionsBySequence": []
     },
     {
         "sequence": "6",
-        "time": "02:00 - 02:15",
+        "time": "02:30 - 03:15",
         "type": "grid",
         "tracktitle": "<Not Required>",
         "sessionsBySequence": [
