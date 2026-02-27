@@ -368,7 +368,7 @@
                     "speaker2": "Anil Kumar K R",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "All_in_One AI for Sales cloud: Turning Every Seller into an AI_Powered Superstar.",
+                    "sessiontitle": "All_in_One AI for Sales cloud: Turning Every Seller into an AI Powered Superstar.",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -510,7 +510,7 @@
                     "speaker2": " Janaki Meena Valliappan",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "AI_First Cloud ERP: SAP Cloud ERP's 2602 AI Highlights",
+                    "sessiontitle": "AI-First Cloud ERP: SAP Cloud ERP's 2602 AI Highlights",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -1180,7 +1180,7 @@
                     "speaker2": "CVS Abhishek",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Building Intelligent Apps for SAP Commodity Expense Management in Business Data Cloud",
+                    "sessiontitle": "Securing Margins with Commodity Expense Management in High-Volume Commodity Trading with SAP BTP ",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -1914,7 +1914,7 @@
             "sessionsBySequence": []
         }
     ],
-    "ui5": [
+    "UI5con": [
         {
             "sequence": "0.1",
             "time": "08:00 - 09:30",
@@ -2364,4 +2364,5 @@
             "sessionsBySequence": []
         }
     ]
+
 }
