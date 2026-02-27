@@ -61,22 +61,6 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Priti Dhingra",
-                    "speaker2": "Abhishek Mishra",
-                    "speaker1_social": "",
-                    "speaker2_social": "",
-                    "sessiontitle": "Building the Future of Business AI with ISLM",
-                    "description": "",
-                    "organization1": "",
-                    "socialmedia": "",
-                    "sessionseq": "1",
-                    "tracktitle": "R04, BLR12 4th Floor ",
-                    "trackid": "R04, BLR12 4th Floor ",
-                    "trackseq": "4",
-                    "type": "Lecture"
-                },
-                {
-                    "speakers": "",
                     "speaker1": "Rishab Jain C",
                     "speaker2": "Ranjeet Kumar",
                     "speaker1_social": "",
@@ -89,6 +73,22 @@
                     "tracktitle": "R03, BLR12 4th Floor ",
                     "trackid": "R03, BLR12 4th Floor ",
                     "trackseq": "3",
+                    "type": "Lecture"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Priti Dhingra",
+                    "speaker2": "Abhishek Mishra",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Building the Future of Business AI with ISLM",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 }
             ]
@@ -105,7 +105,7 @@
                     "speaker2": "Punith Oswal",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "WhatÃs New in Adapters: Discover the Latest in SAP Integration Suite",
+                    "sessiontitle": "What's New in Adapters: Discover the Latest in SAP Integration Suite",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -133,6 +133,23 @@
                 },
                 {
                     "speakers": "",
+                    "speaker1": "Rekha DR",
+                    "speaker2": "Shilpa Shankar",
+                    "speaker3": "Naveen Kumar Banala",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Joule Studio: Leverage Vibe Coding to Build and Extend Custom Agents",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "R03, BLR12 4th Floor ",
+                    "trackid": "R03, BLR12 4th Floor ",
+                    "trackseq": "3",
+                    "type": "Lecture"
+                },
+                {
+                    "speakers": "",
                     "speaker1": "Sanil Bhandari",
                     "speaker2": "Prachee Gidh",
                     "speaker1_social": "",
@@ -145,23 +162,6 @@
                     "tracktitle": "R04, BLR12 4th Floor ",
                     "trackid": "R04, BLR12 4th Floor ",
                     "trackseq": "4",
-                    "type": "Lecture"
-                },
-                {
-                    "speakers": "",
-                    "speaker1": "Rekha DR",
-                    "speaker2": "Shilpa Shankar",
-                    "speaker3": "Naveen Kumar Banala",
-                    "speaker1_social": "",
-                    "speaker2_social": "",
-                    "sessiontitle": "Build and Extend Intelligent Agents with SAP Build Joule Studio using Vibe Coding",
-                    "description": "",
-                    "organization1": "",
-                    "socialmedia": "",
-                    "sessionseq": "2",
-                    "tracktitle": "R03, BLR12 4th Floor ",
-                    "trackid": "R03, BLR12 4th Floor ",
-                    "trackseq": "3",
                     "type": "Lecture"
                 }
             ]
@@ -213,22 +213,6 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Shubham Rai",
-                    "speaker2": "Piyush Lund",
-                    "speaker1_social": "",
-                    "speaker2_social": "",
-                    "sessiontitle": "AI Capabilities in BDC",
-                    "description": "",
-                    "organization1": "",
-                    "socialmedia": "",
-                    "sessionseq": "3",
-                    "tracktitle": "R04, BLR12 4th Floor ",
-                    "trackid": "R04, BLR12 4th Floor ",
-                    "trackseq": "4",
-                    "type": "Lecture"
-                },
-                {
-                    "speakers": "",
                     "speaker1": "Ankur Kumar",
                     "speaker2": "Saibala Sundram",
                     "speaker1_social": "",
@@ -241,6 +225,22 @@
                     "tracktitle": "R03, BLR12 4th Floor ",
                     "trackid": "R03, BLR12 4th Floor ",
                     "trackseq": "3",
+                    "type": "Lecture"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Shubham Rai",
+                    "speaker2": "Piyush Lund",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "AI Capabilities in BDC",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "3",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 }
             ]
@@ -285,22 +285,6 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Prashant Kocharekar",
-                    "speaker2": "",
-                    "speaker1_social": "",
-                    "speaker2_social": "",
-                    "sessiontitle": "Delivering SAP Joule at Scale in SAP SuccessFactors - A Practical Journey to Production",
-                    "description": "",
-                    "organization1": "",
-                    "socialmedia": "",
-                    "sessionseq": "4",
-                    "tracktitle": "R04, BLR12 4th Floor ",
-                    "trackid": "R04, BLR12 4th Floor ",
-                    "trackseq": "4",
-                    "type": "Lecture"
-                },
-                {
-                    "speakers": "",
                     "speaker1": "Santhana Krishnan",
                     "speaker2": "Jhansi Rani B",
                     "speaker1_social": "",
@@ -313,6 +297,22 @@
                     "tracktitle": "R03, BLR12 4th Floor ",
                     "trackid": "R03, BLR12 4th Floor ",
                     "trackseq": "3",
+                    "type": "Lecture"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Prashant Kocharekar",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Delivering SAP Joule at Scale in SAP SuccessFactors - A Practical Journey to Production",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "4",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 }
             ]
@@ -332,8 +332,8 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "Eishvinder  Ratra\nSAP Business Group Accenture Technology centre lead, Accenture",
-                    "speaker2": "Anil Vohra\nSAP GenAI and Innovation lead, Accenture",
+                    "speaker1": "Eishvinder  Ratra\nSAP Business Group Accenture Technology centre lead",
+                    "speaker2": "Anil Vohra\nAccenture SAP GenAI and Innovation lead",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Accenture Accelerates Enterprise AI with SAP: From SAP S/4HANA & SAP SuccessFactors to Joule Copilot, AI Agents, and Partner-Led Innovation",
@@ -364,27 +364,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Kangkana Deb",
-                    "speaker2": "Anil Kumar K R",
-                    "speaker1_social": "",
-                    "speaker2_social": "",
-                    "sessiontitle": "All_in_One AI for Sales cloud: Turning Every Seller into an AI Powered Superstar.",
-                    "description": "",
-                    "organization1": "",
-                    "socialmedia": "",
-                    "sessionseq": "5",
-                    "tracktitle": "R04, BLR12 4th Floor ",
-                    "trackid": "R04, BLR12 4th Floor ",
-                    "trackseq": "4",
-                    "type": "Lecture"
-                },
-                {
-                    "speakers": "",
                     "speaker1": "Veda Varshitha Surapaneni",
                     "speaker2": "Vishalakshi Mahadevan",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Driving Customer transformation with the evolving SAP Business Suite_",
+                    "sessiontitle": "Driving Customer transformation with the evolving SAP Business Suite",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -392,6 +376,22 @@
                     "tracktitle": "R03, BLR12 4th Floor ",
                     "trackid": "R03, BLR12 4th Floor ",
                     "trackseq": "3",
+                    "type": "Lecture"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Kangkana Deb",
+                    "speaker2": "Anil Kumar K R",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "All in One AI for Sales cloud: Turning Every Seller into an AI Powered Superstar.",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "5",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 }
             ]
@@ -435,23 +435,7 @@
                     "type": "Lecture"
                 },
                 {
-                    "speakers": "",
-                    "speaker1": "Sunny Kapoor",
-                    "speaker2": "Arti Gopalan",
-                    "speaker1_social": "",
-                    "speaker2_social": "",
-                    "sessiontitle": "Practioners Guide to Operational Efficiency using AI capabilities in SAP Integration Suite",
-                    "description": "",
-                    "organization1": "",
-                    "socialmedia": "",
-                    "sessionseq": "6",
-                    "tracktitle": "R04, BLR12 4th Floor ",
-                    "trackid": "R04, BLR12 4th Floor ",
-                    "trackseq": "4",
-                    "type": "Lecture"
-                },
-                {
-                    "speakers": "",
+                     "speakers": "",
                     "speaker1": "Aditi Singh",
                     "speaker2": "Arjun Menon",
                     "speaker1_social": "",
@@ -464,6 +448,22 @@
                     "tracktitle": "R03, BLR12 4th Floor ",
                     "trackid": "R03, BLR12 4th Floor ",
                     "trackseq": "3",
+                    "type": "Lecture"
+                },
+                {
+                   "speakers": "",
+                    "speaker1": "Sunny Kapoor",
+                    "speaker2": "Arti Gopalan",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Practioners Guide to Operational Efficiency using AI capabilities in SAP Integration Suite",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "6",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 }
             ]
@@ -522,11 +522,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Shilpa Shankar",
-                    "speaker2": "Karanveer Singh",
+                    "speaker1": "Amit Nangia",
+                    "speaker2": "Manoj Chitaguppi",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Ethical AI: Inclusive Design",
+                    "sessiontitle": "One Audit: Shaping the Future of Audit & Compliance with AI [SAP Concur]",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -634,6 +634,22 @@
                 },
                 {
                     "speakers": "",
+                    "speaker1": "Shilpa Shankar",
+                    "speaker2": "Karanveer Singh",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Ethical AI: Inclusive Design",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Pod 9",
+                    "trackid": "Pod 9",
+                    "trackseq": "13",
+                    "type": "Demo Pod"
+                },
+                {
+                    "speakers": "",
                     "speaker1": "",
                     "speaker2": "",
                     "speaker1_social": "",
@@ -643,8 +659,8 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "1",
-                    "tracktitle": "Pod 9",
-                    "trackid": "Pod 9",
+                    "tracktitle": "Pod 10",
+                    "trackid": "Pod 10",
                     "trackseq": "13",
                     "type": "Demo Pod"
                 }
@@ -658,11 +674,11 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "Himabindu Guttapalem",
-                    "speaker2": "",
+                    "speaker1": "Ajay Selvaraj",
+                    "speaker2": "Praveen Kumar",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "SAP Joule Studio - Extend, build & Share Agents ",
+                    "sessiontitle": "Bringing All SAP Concur Teams Capabilities into a Conversational Experience [SAP Concur]",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -674,15 +690,15 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Abinash Routray",
-                    "speaker2": "Ranjeet Kumar",
+                    "speaker1": "Amit Nangia",
+                    "speaker2": "Manoj Chitaguppi",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Responsibility Management in SAP S4HANA & BTP",
+                    "sessiontitle": "One Audit: Shaping the Future of Audit & Compliance with AI [SAP Concur]",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
-                    "sessionseq": "2",
+                    "sessionseq": "1",
                     "tracktitle": "Pod 2",
                     "trackid": "Pod 2",
                     "trackseq": "6",
@@ -694,7 +710,7 @@
                     "speaker2": "Sajal Gupta",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Learn SAPÃs Overall Strategy: Unified Applications, Data and AI on SAP BTP",
+                    "sessiontitle": "Learn SAP's Overall Strategy: Unified Applications, Data and AI on SAP BTP",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -784,6 +800,22 @@
                     "trackseq": "12",
                     "type": "Demo Pod"
                 },
+               {
+                    "speakers": "",
+                    "speaker1": "Abinash Routray",
+                    "speaker2": "Ranjeet Kumar",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Responsibility Management in SAP S4HANA & BTP",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Pod 9",
+                    "trackid": "Pod 9",
+                    "trackseq": "13",
+                    "type": "Demo Pod"
+                },
                 {
                     "speakers": "",
                     "speaker1": "",
@@ -795,9 +827,9 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "2",
-                    "tracktitle": "Pod 9",
-                    "trackid": "Pod 9",
-                    "trackseq": "13",
+                    "tracktitle": "Pod 10",
+                    "trackid": "Pod 10",
+                    "trackseq": "14",
                     "type": "Demo Pod"
                 }
             ]
@@ -833,11 +865,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Sandip Kumar  Tiwari",
-                    "speaker2": "Rushabh Porwal",
+                    "speaker1": "Naveen Kumar Banala",
+                    "speaker2": "Aryan Singh",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Orchestration service and the supported modules (grounding, content filtering, data masking, translation etc. ) in Gen AI Hub",
+                    "sessiontitle": "An AI Techingo Game - Get Ready to have fun filled Learning",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -881,11 +913,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Arvind Viswanathan",
-                    "speaker2": "Logesh KSR",
+                    "speaker1": "Anjali Pathak",
+                    "speaker2": "Krishna Sharma",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "SAP HANA Cloud Development with Build Code",
+                    "sessiontitle": "Release Assessment & Scope Dependency",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -945,11 +977,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Naveen Kumar Banala",
-                    "speaker2": "Aryan Singh",
+                    "speaker1": "Sandip Kumar Tiwari",
+                    "speaker2": "Rushabh Porwal",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "An AI Techingo Game - Get Ready to have fun filled Learning",
+                    "sessiontitle": "Orchestration service and the supported modules in Gen AI Hub",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -1144,22 +1176,6 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Alluri, Sai Sravanth Varma",
-                    "speaker2": "",
-                    "speaker1_social": "",
-                    "speaker2_social": "",
-                    "sessiontitle": "Prompt Optimization and Evaluation service in Gen AI Hub",
-                    "description": "",
-                    "organization1": "",
-                    "socialmedia": "",
-                    "sessionseq": "5",
-                    "tracktitle": "Pod 2",
-                    "trackid": "Pod 2",
-                    "trackseq": "6",
-                    "type": "Demo Pod"
-                },
-                {
-                    "speakers": "",
                     "speaker1": "Ramesha R N",
                     "speaker2": "Gopal Jhunjhunwala",
                     "speaker1_social": "",
@@ -1252,6 +1268,22 @@
                     "tracktitle": "Pod 8",
                     "trackid": "Pod 8",
                     "trackseq": "12",
+                    "type": "Demo Pod"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Atika Tantiya",
+                    "speaker2": "Akash Dubey",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Prompt Optimization and Evaluation service in Gen AI Hub",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "4",
+                    "tracktitle": "Pod 9",
+                    "trackid": "Pod 9",
+                    "trackseq": "13",
                     "type": "Demo Pod"
                 }
             ]

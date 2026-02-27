@@ -852,9 +852,13 @@ function parseUI5EventData(ui5Data) {
     };
 
     if (ui5Data.ui5) {
+        // First, add special sessions (breaks, keynotes, etc.) in order
+        const specialSessions = [];
+        const trackGroups = {};
+        
         ui5Data.ui5.forEach(timeSlot => {
             if (timeSlot.type === 'break') {
-                parsedData.ui5schedule.push({
+                specialSessions.push({
                     sequence: timeSlot.sequence,
                     time: timeSlot.time,
                     type: 'break',
@@ -862,7 +866,7 @@ function parseUI5EventData(ui5Data) {
                     sessions: []
                 });
             } else if (timeSlot.type === 'commute') {
-                parsedData.ui5schedule.push({
+                specialSessions.push({
                     sequence: timeSlot.sequence,
                     time: timeSlot.time,
                     type: 'commute',
@@ -870,7 +874,7 @@ function parseUI5EventData(ui5Data) {
                     sessions: []
                 });
             } else if (timeSlot.type === 'keynote') {
-                parsedData.ui5schedule.push({
+                specialSessions.push({
                     sequence: timeSlot.sequence,
                     time: timeSlot.time,
                     type: 'keynote',
@@ -878,7 +882,7 @@ function parseUI5EventData(ui5Data) {
                     sessions: []
                 });
             } else if (timeSlot.type === 'industry-talk') {
-                parsedData.ui5schedule.push({
+                specialSessions.push({
                     sequence: timeSlot.sequence,
                     time: timeSlot.time,
                     type: 'industry-talk',
@@ -886,22 +890,55 @@ function parseUI5EventData(ui5Data) {
                     sessions: []
                 });
             } else if (timeSlot.type === 'grid' && timeSlot.sessionsBySequence) {
-                parsedData.ui5schedule.push({
-                    sequence: timeSlot.sequence,
-                    time: timeSlot.time,
-                    type: 'session',
-                    title: '',
-                    sessions: timeSlot.sessionsBySequence.map(session => ({
+                // Group sessions by track
+                timeSlot.sessionsBySequence.forEach(session => {
+                    const trackName = session.tracktitle || 'Other';
+                    if (!trackGroups[trackName]) {
+                        trackGroups[trackName] = [];
+                    }
+                    trackGroups[trackName].push({
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
                         type: session.type || 'UI5 Session',
+                        time: timeSlot.time,
                         description: session.description || '',
                         organization: session.organization1 || ''
-                    }))
+                    });
+                });
+            }
+        });
+        
+        // Add special sessions first
+        parsedData.ui5schedule.push(...specialSessions);
+        
+        // Then add track-grouped sessions in a specific order
+        const trackOrder = ['Main Stage', 'Deep Dive', 'Demo Pod', 'Hands-On'];
+        trackOrder.forEach(trackName => {
+            if (trackGroups[trackName]) {
+                parsedData.ui5schedule.push({
+                    sequence: '999', // High sequence to appear after special sessions
+                    time: '', // No specific time for track groups
+                    type: 'track-group',
+                    title: trackName,
+                    sessions: trackGroups[trackName]
+                });
+            }
+        });
+        
+        // Add any remaining tracks not in the order
+        Object.keys(trackGroups).forEach(trackName => {
+            if (!trackOrder.includes(trackName)) {
+                parsedData.ui5schedule.push({
+                    sequence: '999',
+                    time: '',
+                    type: 'track-group',
+                    title: trackName,
+                    sessions: trackGroups[trackName]
                 });
             }
         });

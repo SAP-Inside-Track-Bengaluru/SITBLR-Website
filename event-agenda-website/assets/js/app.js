@@ -133,20 +133,20 @@ class AgendaApp {
         try {
             const response = await fetch(`${this.dataPath}/ui5.json`);
             if (!response.ok) {
-                throw new Error(`Failed to load UI5 data: ${response.status}`);
+                throw new Error(`Failed to load UI5con data: ${response.status}`);
             }
             this.ui5RawData = await response.json();
             
             if (!this.ui5RawData || !this.ui5RawData.ui5) {
-                throw new Error('Invalid UI5 data format');
+                throw new Error('Invalid UI5con data format');
             }
             
             this.ui5ParsedData = parseUI5EventData(this.ui5RawData);
-            console.log('UI5 data loaded successfully:', this.ui5ParsedData);
+            console.log('UI5con data loaded successfully:', this.ui5ParsedData);
         } catch (error) {
-            console.error('Error loading UI5 data:', error);
-            // Don't throw error for UI5 data - make it optional
-            console.warn('UI5 schedule will not be available');
+            console.error('Error loading UI5con data:', error);
+            // Don't throw error for UI5con data - make it optional
+            console.warn('UI5con schedule will not be available');
         }
     }
 
@@ -259,7 +259,7 @@ class AgendaApp {
             this.academiaFilters.tracks = tracks;
             this.academiaFilters.types = types;
         } else if (this.currentTab === 'ui5schedule' && this.ui5ParsedData) {
-            // Use UI5-specific tracks and types
+            // Use UI5con-specific tracks and types
             tracks = getUI5UniqueTracks(this.ui5ParsedData);
             types = getUI5UniqueTypes(this.ui5ParsedData);
             this.ui5Filters.tracks = tracks;
@@ -326,7 +326,7 @@ class AgendaApp {
                 // For academia tab, check Academia Session, Lecture and Break
                 checkbox.checked = (checkbox.value === 'Academia Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
             } else if (this.currentTab === 'ui5schedule') {
-                // For UI5 tab, check UI5 Session, Lecture and Break
+                // For UI5con tab, check UI5 Session, Lecture and Break
                 checkbox.checked = (checkbox.value === 'UI5 Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
             } else {
                 // For other tabs, use the current filter state
@@ -348,7 +348,7 @@ class AgendaApp {
             this.academiaFilters.types = formData.getAll('type');
             this.academiaFilters.tracks = formData.getAll('track');
         } else if (this.currentTab === 'ui5schedule') {
-            // Get selected types and tracks for UI5
+            // Get selected types and tracks for UI5con
             this.ui5Filters.types = formData.getAll('type');
             this.ui5Filters.tracks = formData.getAll('track');
         } else {
@@ -507,7 +507,16 @@ class AgendaApp {
         const element = template.content.cloneNode(true);
         
         const timeElement = element.querySelector('.slot-time');
-        timeElement.textContent = timeSlot.time;
+        
+        // Handle track-group type differently
+        if (timeSlot.type === 'track-group') {
+            timeElement.textContent = timeSlot.title; // Use track name instead of time
+            timeElement.style.fontWeight = 'bold';
+            timeElement.style.fontSize = '1.2rem';
+            timeElement.style.color = 'var(--accent)';
+        } else {
+            timeElement.textContent = timeSlot.time;
+        }
         
         const sessionsCol = element.querySelector('.sessions-col');
         
@@ -586,6 +595,15 @@ class AgendaApp {
                 location: timeSlot.location || ''
             }, `keynote-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(keynoteCard);
+        } else if (timeSlot.type === 'track-group') {
+            // Create session cards for track-grouped sessions
+            timeSlot.sessions.forEach((session, sessionIndex) => {
+                const sessionCard = this.createSessionCard(
+                    session, 
+                    generateSessionId(`track-${timeSlot.title}`, sessionIndex)
+                );
+                sessionsCol.appendChild(sessionCard);
+            });
         } else {
             // Create session cards for each session in the time slot
             timeSlot.sessions.forEach((session, sessionIndex) => {
@@ -641,7 +659,13 @@ class AgendaApp {
         
         // Set type badge
         const typeBadge = card.querySelector('.type-badge');
-        typeBadge.textContent = session.type || 'Session';
+        
+        // For UI5 Sessions with time, show time instead of type
+        if (session.type === 'UI5 Session' && session.time) {
+            typeBadge.textContent = session.time;
+        } else {
+            typeBadge.textContent = session.type || 'Session';
+        }
         
         // Add appropriate badge class
         if (session.type === 'Demo Pod') {
@@ -668,8 +692,23 @@ class AgendaApp {
         
         // Set track/location
         const trackBadge = card.querySelector('.track-badge');
+        const timeElement = card.querySelector('.session-time');
+        
+        // Hide time element for UI5 sessions since time is shown in type badge
+        if (session.type === 'UI5 Session' && session.time) {
+            timeElement.style.display = 'none';
+        } else if (session.time) {
+            // Show time for other sessions that have it
+            timeElement.textContent = `🕒 ${session.time}`;
+            timeElement.style.display = 'inline-block';
+            timeElement.style.fontWeight = 'bold';
+        }
+        
         if (session.type === 'Academia Session') {
             // Hide track badge for Academia sessions
+            trackBadge.style.display = 'none';
+        } else if (session.type === 'UI5 Session' && session.time) {
+            // Hide track badge for UI5 sessions in track-grouped view (track is shown as section header)
             trackBadge.style.display = 'none';
         } else if (session.track || session.location) {
             trackBadge.textContent = session.location || session.track;
