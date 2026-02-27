@@ -19,15 +19,15 @@ class AgendaApp {
             tracks: []
         };
         this.concurFilters = {
-            types: ['Concur Session', 'Break'],
+            types: ['Concur Session', 'Break', 'Commute', 'Keynote', 'Industry Talk'],
             tracks: []
         };
         this.academiaFilters = {
-            types: ['Academia Session', 'Break'],
+            types: ['Academia Session', 'Break', 'Commute', 'Keynote', 'Industry Talk'],
             tracks: []
         };
         this.ui5Filters = {
-            types: ['UI5 Session', 'Break'],
+            types: ['UI5 Session', 'Break', 'Commute', 'Keynote', 'Industry Talk'],
             tracks: []
         };
         this.currentSearchTerm = '';
@@ -524,6 +524,32 @@ class AgendaApp {
                 description: ''
             }, `break-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(breakCard);
+        } else if (timeSlot.type === 'commute') {
+            // Create a single full-width commute card
+            sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
+            const commuteCard = this.createSessionCard({
+                title: timeSlot.title,
+                type: 'Commute',
+                track: '',
+                speaker1: '',
+                speaker2: '',
+                speakers: '',
+                description: ''
+            }, `commute-${timeSlot.sequence}`, true);
+            sessionsCol.appendChild(commuteCard);
+        } else if (timeSlot.type === 'industry-talk') {
+            // Create a single full-width industry talk card
+            sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
+            const industryTalkCard = this.createSessionCard({
+                title: timeSlot.title,
+                type: 'Industry Talk',
+                track: '',
+                speaker1: '',
+                speaker2: '',
+                speakers: '',
+                description: ''
+            }, `industry-talk-${timeSlot.sequence}`, true);
+            sessionsCol.appendChild(industryTalkCard);
         } else if (timeSlot.type === 'registration') {
             // Create a single full-width registration card
             sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
@@ -595,6 +621,10 @@ class AgendaApp {
             card.classList.add('ui5');
         } else if (session.type === 'Break') {
             card.classList.add('break');
+        } else if (session.type === 'Commute') {
+            card.classList.add('commute');
+        } else if (session.type === 'Industry Talk') {
+            card.classList.add('industry-talk');
         } else if (session.type === 'Keynote') {
             card.classList.add('keynote');
         } else if (session.type === 'Registration') {
@@ -626,6 +656,10 @@ class AgendaApp {
             typeBadge.classList.add('ui5');
         } else if (session.type === 'Break') {
             typeBadge.classList.add('break');
+        } else if (session.type === 'Commute') {
+            typeBadge.classList.add('commute');
+        } else if (session.type === 'Industry Talk') {
+            typeBadge.classList.add('industry-talk');
         } else if (session.type === 'Keynote') {
             typeBadge.classList.add('keynote');
         } else if (session.type === 'Registration') {
@@ -634,7 +668,10 @@ class AgendaApp {
         
         // Set track/location
         const trackBadge = card.querySelector('.track-badge');
-        if (session.track || session.location) {
+        if (session.type === 'Academia Session') {
+            // Hide track badge for Academia sessions
+            trackBadge.style.display = 'none';
+        } else if (session.track || session.location) {
             trackBadge.textContent = session.location || session.track;
             if (isSpecialSession && (session.type === 'Keynote' || session.type === 'Registration')) {
                 trackBadge.style.display = 'inline-flex';
@@ -658,7 +695,9 @@ class AgendaApp {
             // Handle regular session speakers
             const speakersText = formatSpeakers(session);
             if (speakersText) {
-                speakersElement.textContent = `Speakers: ${speakersText}`;
+                // Use "Organizers:" label for Vibe Coding session
+                const label = session.title && session.title.includes('Vibe Coding') ? 'Organizers:' : 'Speakers:';
+                speakersElement.textContent = `${label} ${speakersText}`;
             } else {
                 speakersElement.style.display = 'none';
             }

@@ -3,26 +3,22 @@
         {
             "sequence": "0.1",
             "time": "08:00 - 09:30",
-            "type": "Registration",
-            "tracktitle": "Arrival to SAP Labs India Innovation Park",
+            "type": "break",
+            "tracktitle": "Arrival to SAP Labs India Innovation Park & Registrations",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.3",
             "time": "09:30 - 10:00",
-            "type": "Keynote",
+            "type": "break",
             "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India | Head, Customer Innovation Services, SAP)",
-            "speaker1": "Sindhu Gangadharan",
-            "speaker1_designation": "MD, SAP Labs India | Head, Customer Innovation Services, SAP",
-            "location": "Auditorium, BLR12 3rd Floor",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.4",
             "time": "10:00 - 10:30",
-            "type": "Keynote",
-            "tracktitle": "Industry Talk",
-            "location": "Auditorium, BLR12 3rd Floor",
+            "type": "break",
+            "tracktitle": "Industry Talk - Sindhu Gangadharan, MD, SAP Labs India ; Head, Customer Innovation Services, SAP | Vijayanand K, Co-Founder, Grevoro Platforms Private Limited | Rajdev Bhattacharya, Global Head Ð Travel & Expense (T&E), Wipro Limited.",
             "sessionsBySequence": []
         },
         {
@@ -58,8 +54,8 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "1",
-                    "tracktitle": "Pre-Audi Area, BLR12 3rd Floor",
-                    "trackid": "Pre-Audi Area, BLR12 3rd Floor",
+                    "tracktitle": "Audi Pre-Function Area, BLR12 3rd Floor",
+                    "trackid": "Audi Pre-Function Area, BLR12 3rd Floor",
                     "trackseq": "2",
                     "type": "Lecture"
                 },
@@ -74,9 +70,9 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "1",
-                    "tracktitle": "Training Room1, BLR12 4th Floor",
-                    "trackid": "Training Room1, BLR12 4th Floor",
-                    "trackseq": "3",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 },
                 {
@@ -90,9 +86,9 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "1",
-                    "tracktitle": "Training Room2, BLR12 4th Floor",
-                    "trackid": "Training Room2, BLR12 4th Floor",
-                    "trackseq": "4",
+                    "tracktitle": "R03, BLR12 4th Floor ",
+                    "trackid": "R03, BLR12 4th Floor ",
+                    "trackseq": "3",
                     "type": "Lecture"
                 }
             ]
@@ -109,7 +105,7 @@
                     "speaker2": "Punith Oswal",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "What's New in Adapters: Discover the Latest in SAP Integration Suite",
+                    "sessiontitle": "WhatÃs New in Adapters: Discover the Latest in SAP Integration Suite",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -130,25 +126,25 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "2",
-                    "tracktitle": "Pre-Audi Area, BLR12 3rd Floor",
-                    "trackid": "Pre-Audi Area, BLR12 3rd Floor",
+                    "tracktitle": "Audi Pre-Function Area, BLR12 3rd Floor",
+                    "trackid": "Audi Pre-Function Area, BLR12 3rd Floor",
                     "trackseq": "2",
                     "type": "Lecture"
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Divya Chandrika Mohan",
-                    "speaker2": "Ajai J Valiathan",
+                    "speaker1": "Sanil Bhandari",
+                    "speaker2": "Prachee Gidh",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Unlock transformative value with AI, data, and interconnected applications - SAP Cloud ERP Private",
+                    "sessiontitle": "Value Chain Analysis - Insights into Multistage Intercompany Stock Transfer and Sales Processes",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "2",
-                    "tracktitle": "Training Room1, BLR12 4th Floor",
-                    "trackid": "Training Room1, BLR12 4th Floor",
-                    "trackseq": "3",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 },
                 {
@@ -163,9 +159,9 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "2",
-                    "tracktitle": "Training Room2, BLR12 4th Floor",
-                    "trackid": "Training Room2, BLR12 4th Floor",
-                    "trackseq": "4",
+                    "tracktitle": "R03, BLR12 4th Floor ",
+                    "trackid": "R03, BLR12 4th Floor ",
+                    "trackseq": "3",
                     "type": "Lecture"
                 }
             ]
@@ -210,25 +206,25 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "3",
-                    "tracktitle": "Pre-Audi Area, BLR12 3rd Floor",
-                    "trackid": "Pre-Audi Area, BLR12 3rd Floor",
+                    "tracktitle": "Audi Pre-Function Area, BLR12 3rd Floor",
+                    "trackid": "Audi Pre-Function Area, BLR12 3rd Floor",
                     "trackseq": "2",
                     "type": "Lecture"
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Vishakha Watwani",
-                    "speaker2": "Ankita Verma",
+                    "speaker1": "Shubham Rai",
+                    "speaker2": "Piyush Lund",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "BW Modernization: Unlocking AI-Driven Insights Across Systems with BDC",
+                    "sessiontitle": "AI Capabilities in BDC",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "3",
-                    "tracktitle": "Training Room2, BLR12 4th Floor",
-                    "trackid": "Training Room2, BLR12 4th Floor",
-                    "trackseq": "3",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 },
                 {
@@ -237,14 +233,14 @@
                     "speaker2": "Saibala Sundram",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "From Voice to Action: Multi-Agent AI Safety Orchestration with SAP Joule Speech-to-Text (STT)",
+                    "sessiontitle": "From Voice to Action: Multi-Agent AI Safety Orchestration with SAP Joule Speech-to-Text(STT)",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "3",
-                    "tracktitle": "Training Room1, BLR12 4th Floor",
-                    "trackid": "Training Room1, BLR12 4th Floor",
-                    "trackseq": "4",
+                    "tracktitle": "R03, BLR12 4th Floor ",
+                    "trackid": "R03, BLR12 4th Floor ",
+                    "trackseq": "3",
                     "type": "Lecture"
                 }
             ]
@@ -257,7 +253,7 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "Srivathsa Dixit",
+                    "speaker1": "Srivathsa  Dixit",
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
@@ -273,17 +269,17 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Eishvinder Ratra",
-                    "speaker2": "Anil Vohra",
+                    "speaker1": "Ashutosh Rastogi",
+                    "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Accenture Accelerates Enterprise AI with SAP - From SAP S/4HANA & SAP SuccessFactors to Joule Copilot, AI Agents, and Partner-Led Innovation",
+                    "sessiontitle": "Business Data Cloud: The Data Advantage in Enterprise AI",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "4",
-                    "tracktitle": "Pre-Audi Area, BLR12 3rd Floor",
-                    "trackid": "Pre-Audi Area, BLR12 3rd Floor",
+                    "tracktitle": "Audi Pre-Function Area, BLR12 3rd Floor",
+                    "trackid": "Audi Pre-Function Area, BLR12 3rd Floor",
                     "trackseq": "2",
                     "type": "Lecture"
                 },
@@ -298,9 +294,9 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "4",
-                    "tracktitle": "Training Room1, BLR12 4th Floor",
-                    "trackid": "Training Room1, BLR12 4th Floor",
-                    "trackseq": "3",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 },
                 {
@@ -314,9 +310,9 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "4",
-                    "tracktitle": "Training Room2, BLR12 4th Floor",
-                    "trackid": "Training Room2, BLR12 4th Floor",
-                    "trackseq": "4",
+                    "tracktitle": "R03, BLR12 4th Floor ",
+                    "trackid": "R03, BLR12 4th Floor ",
+                    "trackseq": "3",
                     "type": "Lecture"
                 }
             ]
@@ -336,11 +332,11 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "Animesh Kumar Mishra",
-                    "speaker2": "",
+                    "speaker1": "Eishvinder  Ratra\nSAP Business Group Accenture Technology centre lead, Accenture",
+                    "speaker2": "Anil Vohra\nSAP GenAI and Innovation lead, Accenture",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Engineering Trust in LLM-Powered Applications",
+                    "sessiontitle": "Accenture Accelerates Enterprise AI with SAP: From SAP S/4HANA & SAP SuccessFactors to Joule Copilot, AI Agents, and Partner-Led Innovation",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -353,7 +349,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Praveen Kumar Padegal",
-                    "speaker2": "Ajit Kumar Panda.",
+                    "speaker2": "Lalit Mohan Sharma",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Embodied AI Agents",
@@ -361,8 +357,8 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "5",
-                    "tracktitle": "Pre-Audi Area, BLR12 3rd Floor",
-                    "trackid": "Pre-Audi Area, BLR12 3rd Floor",
+                    "tracktitle": "Audi Pre-Function Area, BLR12 3rd Floor",
+                    "trackid": "Audi Pre-Function Area, BLR12 3rd Floor",
                     "trackseq": "2",
                     "type": "Lecture"
                 },
@@ -372,14 +368,14 @@
                     "speaker2": "Anil Kumar K R",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "All-in-One AI for Sales Cloud: Turning Every Seller into an AI-Powered Superstar",
+                    "sessiontitle": "All_in_One AI for Sales cloud: Turning Every Seller into an AI_Powered Superstar.",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "5",
-                    "tracktitle": "Training Room1, BLR12 4th Floor",
-                    "trackid": "Training Room1, BLR12 4th Floor",
-                    "trackseq": "3",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 },
                 {
@@ -388,14 +384,14 @@
                     "speaker2": "Vishalakshi Mahadevan",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Driving Customer transformation with the evolving SAP Business Suite",
+                    "sessiontitle": "Driving Customer transformation with the evolving SAP Business Suite_",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "5",
-                    "tracktitle": "Training Room2, BLR12 4th Floor",
-                    "trackid": "Training Room2, BLR12 4th Floor",
-                    "trackseq": "4",
+                    "tracktitle": "R03, BLR12 4th Floor ",
+                    "trackid": "R03, BLR12 4th Floor ",
+                    "trackseq": "3",
                     "type": "Lecture"
                 }
             ]
@@ -408,11 +404,11 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "Suresh Kumar Raju",
-                    "speaker2": "Vishal Mour",
+                    "speaker1": "Animesh Kumar Mishra",
+                    "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "SAP GenAI Hub - Recent innovations (RPT-1, prompt optimization, Agentic ...)",
+                    "sessiontitle": "Engineering Trust in LLM-Powered Applications",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -433,8 +429,8 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "6",
-                    "tracktitle": "Pre-Audi Area, BLR12 3rd Floor",
-                    "trackid": "Pre-Audi Area, BLR12 3rd Floor",
+                    "tracktitle": "Audi Pre-Function Area, BLR12 3rd Floor",
+                    "trackid": "Audi Pre-Function Area, BLR12 3rd Floor",
                     "trackseq": "2",
                     "type": "Lecture"
                 },
@@ -444,14 +440,14 @@
                     "speaker2": "Arti Gopalan",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Practitioners Guide to Operational Efficiency using AI capabilities in SAP Integration Suite",
+                    "sessiontitle": "Practioners Guide to Operational Efficiency using AI capabilities in SAP Integration Suite",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "6",
-                    "tracktitle": "Training Room1, BLR12 4th Floor",
-                    "trackid": "Training Room1, BLR12 4th Floor",
-                    "trackseq": "3",
+                    "tracktitle": "R04, BLR12 4th Floor ",
+                    "trackid": "R04, BLR12 4th Floor ",
+                    "trackseq": "4",
                     "type": "Lecture"
                 },
                 {
@@ -465,9 +461,9 @@
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "6",
-                    "tracktitle": "Training Room2, BLR12 4th Floor",
-                    "trackid": "Training Room2, BLR12 4th Floor",
-                    "trackseq": "4",
+                    "tracktitle": "R03, BLR12 4th Floor ",
+                    "trackid": "R03, BLR12 4th Floor ",
+                    "trackseq": "3",
                     "type": "Lecture"
                 }
             ]
@@ -476,24 +472,45 @@
             "sequence": "7",
             "time": "04:00 - 04:30",
             "type": "break",
-            "tracktitle": "Closing Ceremony, Group Photo",
+            "tracktitle": "Closing Ceremony, Group Photo & High Tea",
             "sessionsBySequence": []
         }
     ],
     "demopods": [
         {
+            "sequence": "0.1",
+            "time": "08:00 - 09:30",
+            "type": "break",
+            "tracktitle": "Arrival to SAP Labs India Innovation Park & Registrations",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.3",
+            "time": "09:30 - 10:00",
+            "type": "break",
+            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India | Head, Customer Innovation Services, SAP)",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.4",
+            "time": "10:00 - 10:30",
+            "type": "break",
+            "tracktitle": "Industry Talk - Sindhu Gangadharan, MD, SAP Labs India ; Head, Customer Innovation Services, SAP | Vijayanand K, Co-Founder, Grevoro Platforms Private Limited | Rajdev Bhattacharya, Global Head Ð Travel & Expense, Wipro",
+            "sessionsBySequence": []
+        },
+        {
             "sequence": "1",
-            "time": "10:45 - 11:30",
+            "time": "10:45-11:30",
             "type": "grid",
             "tracktitle": "<Not Required>",
             "sessionsBySequence": [
                 {
                     "speakers": "",
                     "speaker1": "Shiva Kumar H.S.",
-                    "speaker2": "Janaki Meena Valliappan",
+                    "speaker2": " Janaki Meena Valliappan",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "AI-First Cloud ERP: SAP Cloud ERP's 2602 AI Highlights",
+                    "sessiontitle": "AI_First Cloud ERP: SAP Cloud ERP's 2602 AI Highlights",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -506,7 +523,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Shilpa Shankar",
-                    "speaker2": "Divya Chandrika Mohan",
+                    "speaker2": "Karanveer Singh",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Ethical AI: Inclusive Design",
@@ -521,11 +538,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Vimal Dubey",
-                    "speaker2": "",
+                    "speaker1": "Ahona Bhattacharyya",
+                    "speaker2": "Shuvechha Nandi",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Bias & Fairness in SAP's rpt-1 model",
+                    "sessiontitle": "Bias & Fairness in SAP's RPT-1 model",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -589,7 +606,7 @@
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Autonomous ALM - AI Scenarios in SAP Cloud ALM",
+                    "sessiontitle": "Autonoums ALM - AI Scenarios in SAP Cloud ALM",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -614,12 +631,28 @@
                     "trackid": "Pod 8",
                     "trackseq": "12",
                     "type": "Demo Pod"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "SAP Startup Studio - AgriPilotAI",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Pod 9",
+                    "trackid": "Pod 9",
+                    "trackseq": "13",
+                    "type": "Demo Pod"
                 }
             ]
         },
         {
             "sequence": "2",
-            "time": "11:30 - 12:15",
+            "time": "11:30-12:15",
             "type": "grid",
             "tracktitle": "<Not Required>",
             "sessionsBySequence": [
@@ -629,7 +662,7 @@
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "SAP Joule Studio - Extend, build & Share Agents",
+                    "sessiontitle": "SAP Joule Studio - Extend, build & Share Agents ",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -641,11 +674,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Soumadeep Sarkar",
-                    "speaker2": "Ravi Shankar",
+                    "speaker1": "Abinash Routray",
+                    "speaker2": "Ranjeet Kumar",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "SAP HANA Cloud with Vector Engine and GenAI Hub",
+                    "sessiontitle": "Responsibility Management in SAP S4HANA & BTP",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -661,7 +694,7 @@
                     "speaker2": "Sajal Gupta",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Learn SAP's Overall Strategy: Unified Applications, Data and AI on SAP BTP",
+                    "sessiontitle": "Learn SAPÃs Overall Strategy: Unified Applications, Data and AI on SAP BTP",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -673,11 +706,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Shubham Rai",
-                    "speaker2": "Piyush Lund",
+                    "speaker1": "Vishakha Watwani",
+                    "speaker2": "Ankita Verma",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "AI Capabilities in BDC",
+                    "sessiontitle": "BW Modernization: Unlocking AI-Driven Insights Across Systems with BDC",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -721,11 +754,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Prachee Gidh",
-                    "speaker2": "Prajwal K S",
+                    "speaker1": "Anirudha Kundu",
+                    "speaker2": "Wasifa Aktar",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Value Chain Analysis - Insights into Multistage Intercompany Stock Transfer and Sales Processes",
+                    "sessiontitle": "Business Workspace - From Architecture to Live UX",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -737,8 +770,8 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Mayank Khare",
-                    "speaker2": "Mahati Mangipudi",
+                    "speaker1": "Amritanshu Kumar",
+                    "speaker2": "Sachin BK",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Adaptation UI as an extension for SAP or Partner released Fiori Apps",
@@ -750,19 +783,35 @@
                     "trackid": "Pod 8",
                     "trackseq": "12",
                     "type": "Demo Pod"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "SAP Startup Studio - QpiAI",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Pod 9",
+                    "trackid": "Pod 9",
+                    "trackseq": "13",
+                    "type": "Demo Pod"
                 }
             ]
         },
         {
             "sequence": "2.5",
-            "time": "12:15 - 01:30",
+            "time": "12:15 - 1:30",
             "type": "break",
             "tracktitle": "Lunch",
             "sessionsBySequence": []
         },
         {
             "sequence": "3",
-            "time": "01:30 - 02:15",
+            "time": "1:30-2:15",
             "type": "grid",
             "tracktitle": "<Not Required>",
             "sessionsBySequence": [
@@ -784,11 +833,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Tiwari, Sandip Kumar",
-                    "speaker2": "Porwal, Rushabh",
+                    "speaker1": "Sandip Kumar  Tiwari",
+                    "speaker2": "Rushabh Porwal",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Orchestration service and the supported modules (grounding, content filtering, data masking, translation etc.) in Gen AI Hub",
+                    "sessiontitle": "Orchestration service and the supported modules (grounding, content filtering, data masking, translation etc. ) in Gen AI Hub",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -832,11 +881,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Anjali Pathak",
-                    "speaker2": "Krishna Sharma",
+                    "speaker1": "Arvind Viswanathan",
+                    "speaker2": "Logesh KSR",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Release Assessment & Scope Dependency",
+                    "sessiontitle": "SAP HANA Cloud Development with Build Code",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -868,7 +917,7 @@
                     "speaker2": "Aditya Gupta",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "SAP Fieldglass Custom Extensibility Scenarios with BTP",
+                    "sessiontitle": "Achieve business policy validations and custom approvals in SAP Fieldglass with BTP",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -896,11 +945,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Anirudha Kundu",
-                    "speaker2": "Wasifa Aktar",
+                    "speaker1": "Naveen Kumar Banala",
+                    "speaker2": "Aryan Singh",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Business Workspace - From Architecture to Live UX",
+                    "sessiontitle": "An AI Techingo Game - Get Ready to have fun filled Learning",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -914,7 +963,7 @@
         },
         {
             "sequence": "4",
-            "time": "02:15 - 03:00",
+            "time": "2:15-3:00",
             "type": "grid",
             "tracktitle": "<Not Required>",
             "sessionsBySequence": [
@@ -940,7 +989,7 @@
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Business AI: Overview on MCP Servers across SAP BTP & Microsoft Azure",
+                    "sessiontitle": "Business AI : Overview on MCP Servers across SAP BTP & Microsoft Azure",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -1052,7 +1101,7 @@
                     "speaker2": "Sachit Aggarwal",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Adopt SAP BTP with best practice by using 'Maturity Assessment' and 'Guidance Framework'",
+                    "sessiontitle": "Adopt SAP BTP with best practice by using 'Maturity Assessment' and 'Guidance Framework'.",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -1066,14 +1115,14 @@
         },
         {
             "sequence": "4.5",
-            "time": "03:00 - 03:15",
+            "time": "3:00 - 3:15",
             "type": "break",
             "tracktitle": "Break & Networking",
             "sessionsBySequence": []
         },
         {
             "sequence": "5",
-            "time": "03:15 - 04:00",
+            "time": "3:15-4:00",
             "type": "grid",
             "tracktitle": "<Not Required>",
             "sessionsBySequence": [
@@ -1127,11 +1176,11 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Soma Shekara Pavan Kumar Marla",
-                    "speaker2": "Venkata Sai Abhishek Chavali",
+                    "speaker1": "Pavan Marla",
+                    "speaker2": "CVS Abhishek",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Securing Margins with Commodity Expense Management in High-Volume Commodity Trading with SAP BTP",
+                    "sessiontitle": "Building Intelligent Apps for SAP Commodity Expense Management in Business Data Cloud",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
@@ -1206,48 +1255,1113 @@
                     "type": "Demo Pod"
                 }
             ]
+        },
+        {
+            "sequence": "6",
+            "time": "04:00 - 04:30",
+            "type": "break",
+            "tracktitle": "Closing Ceremony, Group Photo & High Tea",
+            "sessionsBySequence": []
+        }
+    ],
+    "concur": [
+        {
+            "sequence": "0.1",
+            "time": "08:00 - 09:30",
+            "type": "break",
+            "tracktitle": "Arrival to SAP Labs India Innovation Park",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.3",
+            "time": "09:30 - 10:00",
+            "type": "break",
+            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India | Head, Customer Innovation Services, SAP)",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.4",
+            "time": "10:00 - 10:30",
+            "type": "break",
+            "tracktitle": "Industry Talk",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "1",
+            "time": "11:00 - 11:25",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Malavikha A",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "SAP Concur Vision: Recent AI Innovations and Roadmap",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "R05, BLR12 4th Floor",
+                    "trackid": "R05, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "2",
+            "time": "11:30 - 11:50",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": " Saikrishna Bollineni",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Joule Beyond Assistance: When AI Acts Across Travel & Expense - In Teams, Chat, and Beyond",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "R05, BLR12 4th Floor",
+                    "trackid": "R05, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "3",
+            "time": "11:55- 12:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Panel:  Aneesh Batra, Satrajit Sengupta",
+                    "speaker2": " Host: Himanshu Sharma",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Beyond Go-Live: From Adoption to Real Business Value",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "3",
+                    "tracktitle": "R05, BLR12 4th Floor",
+                    "trackid": "R05, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "4.5",
+            "time": "12:15 - 01:15",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "5",
+            "time": "1:15- 1:35",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Amruta Mohanty",
+                    "speaker2": "Himanshu Sharma ",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Reimagining the Future of Invoice with AI: Intelligent. Global. Effortless",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "4",
+                    "tracktitle": "R05, BLR12 4th Floor",
+                    "trackid": "R05, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "6",
+            "time": "1:40- 2:10",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Meera Kezhukoot",
+                    "speaker2": "Sathish Kumar Prabakaran",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Concur's Platform Resilience and Enabling AI-Driven Analytics on AWS",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "5",
+                    "tracktitle": "R05, BLR12 4th Floor",
+                    "trackid": "R05, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "7",
+            "time": "2:15- 2:40",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Diwakar Gandhi",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Reimagining Corporate Spend with a Payments-First Lens\n(powered by Virtual Cards and UPI)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "6",
+                    "tracktitle": "R05, BLR12 4th Floor",
+                    "trackid": "R05, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "8",
+            "time": "11:00-1:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Amit Nangia",
+                    "speaker2": "Manoj Chitaguppi",
+                    "speaker3": "Shreyas Bhardwaj",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "One_Audit: Shaping the Future of Audit & Compliance with AI",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "7",
+                    "tracktitle": "BLR12 4th Floor",
+                    "trackid": "BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Demo Pod 1"
+                }
+            ]
+        },
+        {
+            "sequence": "9",
+            "time": "11:00-1:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Ajay Selvaraj",
+                    "speaker2": "Praveen Kumar",
+                    "speaker3": "Srihari M",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Bringing All SAP Concur Teams Capabilities into a Conversational Experience",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "8",
+                    "tracktitle": "BLR12 4th Floor",
+                    "trackid": "BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Demo Pod 2"
+                }
+            ]
+        },
+        {
+            "sequence": "10",
+            "time": "1:30-2:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Bhargav PA",
+                    "speaker2": "Mahua Roy",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": " Co_Creating future of  Self_Service Entity Management and Implementation with Concur Management Console (CMC)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "9",
+                    "tracktitle": "BLR12 4th Floor",
+                    "trackid": "BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Research and brainstorming "
+                }
+            ]
+        },
+        {
+            "sequence": "11",
+            "time": "11:00 - 2:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Sourin Sarkar",
+                    "speaker2": "Chandra Bhanu",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Experience the Power of Joule, ConcurÕs Generative Copilot",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "10",
+                    "tracktitle": "R05, BLR12 4th Floor",
+                    "trackid": "R05, BLR12 4th Floor",
+                    "trackseq": "1",
+                    "type": "Hands - on"
+                }
+            ]
+        },
+        {
+            "sequence": "12",
+            "time": "04:00 - 04:30",
+            "type": "break",
+            "tracktitle": "Closing Ceremony, Group Photo & High Tea",
+            "sessionsBySequence": []
+        }
+    ],
+    "academia": [
+        {
+            "sequence": "0.1",
+            "time": "08:00 - 09:30",
+            "type": "break",
+            "tracktitle": "Arrival to SAP Labs India Innovation Park",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.3",
+            "time": "09:30 - 10:00",
+            "type": "break",
+            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India | Head, Customer Innovation Services, SAP)",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.4",
+            "time": "10:00 - 10:30",
+            "type": "break",
+            "tracktitle": "Industry Talk - Sindhu Gangadharan, MD, SAP Labs India ; Head, Customer Innovation Services, SAP | Vijayanand K, Co-Founder, Grevoro Platforms Private Limited | Rajdev Bhattacharya, Global Head Ð Travel & Expense (T&E), Wipro Limited.",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "1",
+            "time": "11:00 - 11:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "REACH Team",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "REACH overview",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Academia Track",
+                    "trackid": "Academia Track",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "2",
+            "time": "11:15 - 12:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Ravikanth Malipeddu",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "From Generative AI to AI Agents: Building Real-world AI Solutions with SAP",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Academia Track",
+                    "trackid": "Academia Track",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "3.5",
+            "time": "12:15 - 01:00",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "4",
+            "time": "01:00 - 01:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Smitha Uttam Tallimani",
+                    "speaker2": "Veda Varshita",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Why Design Matters?",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "4",
+                    "tracktitle": "Academia Track",
+                    "trackid": "Academia Track",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "5",
+            "time": "01:30 - 02:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Dr. Suman De",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Importance of Applied Research",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "5",
+                    "tracktitle": "Academia Track",
+                    "trackid": "Academia Track",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "5.5",
+            "time": "12:15 - 01:00",
+            "type": "break",
+            "tracktitle": "break",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "6",
+            "time": "02:00 - 02:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Avinash Raman Gumma",
+                    "speaker2": "Akansha Chakravorty",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Student Lounge",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "6",
+                    "tracktitle": "Academia Track",
+                    "trackid": "Academia Track",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "7",
+            "time": "04:00 - 04:30",
+            "type": "break",
+            "tracktitle": "Closing Ceremony, Group Photo & High Tea",
+            "sessionsBySequence": []
         }
     ],
     "handson": [
         {
-            "speaker1": "Soumadeep Sarkar",
-            "speaker2": "Ravi Shankar",
-            "sessiontitle": "SAP HANA Cloud with Vector Engine and GenAI Hub",
-            "description": "",
-            "organization1": "",
-            "tracktitle": "Grand Staircase, BLR12 1st Floor",
-            "trackid": "",
-            "location": "Grand Staircase, BLR12 1st Floor"
+            "sequence": "1",
+            "time": "11:00 - 12:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "SAP HANA Cloud with Vector Engine and GenAI Hub",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "1",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "SAP HANA CAP Development with Business Application Studio",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "2",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "Experience the Power of Joule, Concur's Generative Copilot",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "3",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "3",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "Benchmark, evaluate, and optimize prompts across models",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "4",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "4",
+                    "type": "Hands On"
+                }
+            ]
         },
         {
-            "speaker1": "",
-            "speaker2": "",
-            "sessiontitle": "SAP HANA CAP Development with Business Application Studio",
-            "description": "",
-            "organization1": "",
-            "tracktitle": "Grand Staircase, BLR12 1st Floor",
-            "trackid": "",
-            "location": "Grand Staircase, BLR12 1st Floor"
+            "sequence": "1.5",
+            "time": "12:00 - 1:30",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
         },
         {
-            "speaker1": "Naveeta Srivastava",
-            "speaker2": "",
-            "sessiontitle": "Concur Hands-On",
-            "description": "",
-            "organization1": "",
-            "tracktitle": "Grand Staircase, BLR12 1st Floor",
-            "trackid": "",
-            "location": "Grand Staircase, BLR12 1st Floor"
+            "sequence": "2",
+            "time": "1:30 - 2:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "SAP HANA Cloud with Vector Engine and GenAI Hub",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "1",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "SAP HANA CAP Development with Business Application Studio",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "2",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "Experience the Power of Joule, Concur's Generative Copilot",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "3",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "3",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "Benchmark, evaluate, and optimize prompts across models",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "4",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "4",
+                    "type": "Hands On"
+                }
+            ]
         },
         {
-            "speaker1": "Samruddhi Nabriya",
-            "speaker2": "",
-            "sessiontitle": "Benchmark, evaluate, and optimize prompts across models",
-            "description": "",
-            "organization1": "",
-            "tracktitle": "Grand Staircase, BLR12 1st Floor",
-            "trackid": "",
-            "location": "Grand Staircase, BLR12 1st Floor"
+            "sequence": "2.5",
+            "time": "2:30 - 3:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speaker1": "Manoj Kumar",
+                    "speaker2": "Naveen Kumar Banala",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Vibe Coding (10 Min Vibe Coding Challenge)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "1",
+                    "type": "Hands On"
+                }
+            ]
+        },
+        {
+            "sequence": "3",
+            "time": "3:00 - 4:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "SAP HANA Cloud with Vector Engine and GenAI Hub",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "1",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "SAP HANA CAP Development with Business Application Studio",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "2",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "Experience the Power of Joule, Concur's Generative Copilot",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "3",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "3",
+                    "type": "Hands On"
+                },
+                {
+                    "speaker1": "",
+                    "speaker2": "",
+                    "sessiontitle": "Benchmark, evaluate, and optimize prompts across models",
+                    "description": "",
+                    "organization1": "",
+                    "sessionseq": "4",
+                    "tracktitle": "Grand Staircase, BLR12 1st Floor",
+                    "trackid": "Grand Staircase, BLR12 1st Floor",
+                    "trackseq": "4",
+                    "type": "Hands On"
+                }
+            ]
+        },
+        {
+            "sequence": "4",
+            "time": "4:00 - 4:30",
+            "type": "break",
+            "tracktitle": "Closing Ceremony, Group Photo & High Tea",
+            "sessionsBySequence": []
+        }
+    ],
+    "ui5": [
+        {
+            "sequence": "0.1",
+            "time": "08:00 - 09:30",
+            "type": "commute",
+            "tracktitle": "Arrival to SAP Labs India Innovation Park & Registrations",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.3",
+            "time": "09:30 - 10:00",
+            "type": "keynote",
+            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India | Head, Customer Innovation Services, SAP)",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "0.4",
+            "time": "10:00 - 10:30",
+            "type": "industry-talk",
+            "tracktitle": "Industry Talk - Sindhu Gangadharan, MD, SAP Labs India ; Head, Customer Innovation Services, SAP | Vijayanand K, Co-Founder, Grevoro Platforms Private Limited | Rajdev Bhattacharya, Global Head Ð Travel & Expense (T&E), Wipro Limited.",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "1",
+            "time": "11:00 - 11:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Stefan Beck",
+                    "speaker2": "Peter Muessig",
+                    "speaker3": "Rajashree Raghavendra",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Kickoff - UI5con Bengaluru",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "2",
+            "time": "11:30 - 12:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Divya C K",
+                    "speaker2": "Maheeth Reddy Chintala",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Flexibility at Scale with Freestyle SAPUI5 and SAP Fiori elements",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "3",
+            "time": "11:40 - 12:10",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Merlin Beutlberger",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "UI5 in the World of AI",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Arijit Sarkar",
+                    "speaker2": "Krushna Mantri",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Enhancing UI5 Filters with a Vertical Refinement Panel in SAP FAL 2.0",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "3.5",
+            "time": "12:00 - 1:00",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "4",
+            "time": "13:00 - 13:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Mohammed Sijas",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "DataRepository: Simplifying RESTful CRUD in UI5 without OData",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Gergana Georgieva",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "UI5's Ever-Evolving Accessibility",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Laj ilekha Vijayan Nair",
+                    "speaker2": "Shrikant Naidu",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Achieving Quality Aspects in UI5 Coding using AI Assistants",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "3",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "3",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "5",
+            "time": "13:30 - 14:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Merlin Beutlberger",
+                    "speaker2": "Peter Muessig",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "UI5 linter in Action: How to enable UI5 linter in your development process",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Arun Bharathi Kumarasamy",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Joule frontend actions bring AI conversations directly into FE apps.",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "6",
+            "time": "13:35 - 14:05",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Rajashree Raghavendra",
+                    "speaker2": "Vinay Hospete",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Intelligent app development at scale with AI and SAP Fiori elements",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "7",
+            "time": "14:00 - 14:25",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Rounak Roy",
+                    "speaker2": "Vignesh Sathi Srikumar",
+                    "speaker3": "Dharshini S",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Plug, Play and Power Up Your UI - with UI5 Web Components",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "8",
+            "time": "14:10 - 14:40",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Jitendra Kansal",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Mobilize Fiori Element apps with SAP Mobile Development Kit (MDK)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "9",
+            "time": "14:30 - 15:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Vinay Hospete",
+                    "speaker2": "Maheeth Reddy Chintala",
+                    "speaker3": "Ashish Anand",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Create great UX with AI, SAP Fiori elements and the MCP Server for Fiori",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Shubham Saklani",
+                    "speaker2": "Sandeep Negi",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "VibeCoding with SAP UI5: Smart, Stylish, and AI-Powered",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "10",
+            "time": "14:45 - 15:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Arun Bharathi Kumarasamy",
+                    "speaker2": "Adithya Bokkisum",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "TypeScript in FE apps enables better modularity and easier maintenance",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "11",
+            "time": "15:00 - 15:25",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Ashwin Kumar Bolar",
+                    "speaker2": "Vinay K N",
+                    "speaker3": "Santhosh .",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "SAPUI5 SuiteControls and Gantt Chart for Business Applications",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "12",
+            "time": "15:20 - 15:50",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Syed Anas Ali",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Fiori applications demystified for backend developers and architects",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "13",
+            "time": "15:30 - 16:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Peter Muessig",
+                    "speaker2": "Vinod S Nair",
+                    "speaker3": "Sandeep R S",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Ask us anythings session",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Kotresh T M",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Seamless Journeys: Implementing Cross-App Navigation for UI5 MicroFrontends",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "14",
+            "time": "16:30 - 17:00",
+            "type": "break",
+            "tracktitle": "Closing Ceremony, Group Photo & High Tea",
+            "sessionsBySequence": []
         }
     ]
 }

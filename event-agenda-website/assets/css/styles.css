@@ -618,6 +618,34 @@ section h2 { text-align: center; margin-bottom: 3rem; font-size: clamp(1.5rem, 4
 .speaker-role { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.1rem; }
 .track-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; display: block; font-weight: 500; }
 
+.session-meta { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem; }
+.track-info { display: flex; align-items: center; }
+.track-badge { 
+    display: inline-flex; 
+    padding: 0.25rem 0.75rem; 
+    background: var(--bg-panel-alt); 
+    border-radius: 100px; 
+    font-size: 0.75rem; 
+    color: var(--text-muted); 
+    font-weight: 500;
+    border: 1px solid var(--border);
+}
+.speaker-info { display: flex; flex-direction: column; gap: 0.25rem; }
+.speakers { 
+    font-size: 0.9rem; 
+    color: var(--text-secondary); 
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+}
+.speakers::before {
+    content: "👤";
+    position: absolute;
+    left: 0;
+    opacity: 0.6;
+    font-size: 0.85rem;
+}
+
 .type-badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
@@ -627,6 +655,15 @@ section h2 { text-align: center; margin-bottom: 3rem; font-size: clamp(1.5rem, 4
     text-transform: uppercase;
     margin-bottom: 1rem;
     background: var(--bg-panel-alt);
+}
+
+.type-badge.academia,
+.type-badge.commute,
+.type-badge.industry-talk,
+.type-badge.keynote,
+.type-badge.break {
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
 .search-wrapper { position: relative; }

@@ -3,22 +3,22 @@
         {
             "sequence": "0.1",
             "time": "08:00 - 09:30",
-            "type": "break",
-            "tracktitle": "Arrival to SAP Labs India Innovation Park",
+            "type": "commute",
+            "tracktitle": "Arrival to SAP Labs India Innovation Park & Registrations",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.3",
             "time": "09:30 - 10:00",
-            "type": "break",
+            "type": "keynote",
             "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India | Head, Customer Innovation Services, SAP)",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.4",
             "time": "10:00 - 10:30",
-            "type": "break",
-            "tracktitle": "Industry Talk",
+            "type": "industry-talk",
+            "tracktitle": "Industry Talk - Sindhu Gangadharan, MD, SAP Labs India ; Head, Customer Innovation Services, SAP | Vijayanand K, Co-Founder, Grevoro Platforms Private Limited | Rajdev Bhattacharya, Global Head Ð Travel & Expense (T&E), Wipro Limited.",
             "sessionsBySequence": []
         },
         {
@@ -29,27 +29,423 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "Mayank Khare",
-                    "speaker2": "Mahati Mangipudi",
+                    "speaker1": "Stefan Beck",
+                    "speaker2": "Peter Muessig",
+                    "speaker3": "Rajashree Raghavendra",
                     "speaker1_social": "",
                     "speaker2_social": "",
-                    "sessiontitle": "Adaptation UI as an extension for SAP or Partner released Fiori Apps",
+                    "sessiontitle": "Kickoff - UI5con Bengaluru",
                     "description": "",
                     "organization1": "",
                     "socialmedia": "",
                     "sessionseq": "1",
-                    "tracktitle": "UI5 Track",
-                    "trackid": "UI5 Track",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
                     "trackseq": "1",
-                    "type": "Lecture"
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "2",
+            "time": "11:30 - 12:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Divya C K",
+                    "speaker2": "Maheeth Reddy Chintala",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Flexibility at Scale with Freestyle SAPUI5 and SAP Fiori elements",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "3",
+            "time": "11:40 - 12:10",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Merlin Beutlberger",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "UI5 in the World of AI",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Arijit Sarkar",
+                    "speaker2": "Krushna Mantri",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Enhancing UI5 Filters with a Vertical Refinement Panel in SAP FAL 2.0",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "3.5",
+            "time": "12:00 - 1:00",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "4",
+            "time": "13:00 - 13:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Mohammed Sijas",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "DataRepository: Simplifying RESTful CRUD in UI5 without OData",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Gergana Georgieva",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "UI5's Ever-Evolving Accessibility",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Laj ilekha Vijayan Nair",
+                    "speaker2": "Shrikant Naidu",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Achieving Quality Aspects in UI5 Coding using AI Assistants",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "3",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "3",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "5",
+            "time": "13:30 - 14:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Merlin Beutlberger",
+                    "speaker2": "Peter Muessig",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "UI5 linter in Action: How to enable UI5 linter in your development process",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Arun Bharathi Kumarasamy",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Joule frontend actions bring AI conversations directly into FE apps.",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "6",
+            "time": "13:35 - 14:05",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Rajashree Raghavendra",
+                    "speaker2": "Vinay Hospete",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Intelligent app development at scale with AI and SAP Fiori elements",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
                 }
             ]
         },
         {
             "sequence": "7",
-            "time": "04:00 - 04:30",
+            "time": "14:00 - 14:25",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Rounak Roy",
+                    "speaker2": "Vignesh Sathi Srikumar",
+                    "speaker3": "Dharshini S",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Plug, Play and Power Up Your UI - with UI5 Web Components",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "8",
+            "time": "14:10 - 14:40",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Jitendra Kansal",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Mobilize Fiori Element apps with SAP Mobile Development Kit (MDK)",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "9",
+            "time": "14:30 - 15:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Vinay Hospete",
+                    "speaker2": "Maheeth Reddy Chintala",
+                    "speaker3": "Ashish Anand",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Create great UX with AI, SAP Fiori elements and the MCP Server for Fiori",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Shubham Saklani",
+                    "speaker2": "Sandeep Negi",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "VibeCoding with SAP UI5: Smart, Stylish, and AI-Powered",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "10",
+            "time": "14:45 - 15:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Arun Bharathi Kumarasamy",
+                    "speaker2": "Adithya Bokkisum",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "TypeScript in FE apps enables better modularity and easier maintenance",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "11",
+            "time": "15:00 - 15:25",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Ashwin Kumar Bolar",
+                    "speaker2": "Vinay K N",
+                    "speaker3": "Santhosh .",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "SAPUI5 SuiteControls and Gantt Chart for Business Applications",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "12",
+            "time": "15:20 - 15:50",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Syed Anas Ali",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Fiori applications demystified for backend developers and architects",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "13",
+            "time": "15:30 - 16:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Peter Muessig",
+                    "speaker2": "Vinod S Nair",
+                    "speaker3": "Sandeep R S",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Ask us anythings session",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "1",
+                    "type": "UI5 Session"
+                },
+                {
+                    "speakers": "",
+                    "speaker1": "Kotresh T M",
+                    "speaker2": "",
+                    "speaker1_social": "",
+                    "speaker2_social": "",
+                    "sessiontitle": "Seamless Journeys: Implementing Cross-App Navigation for UI5 MicroFrontends",
+                    "description": "",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "2",
+                    "tracktitle": "Krafted, BLR11 Lower Ground Floor",
+                    "trackid": "Krafted, BLR11 Lower Ground Floor",
+                    "trackseq": "2",
+                    "type": "UI5 Session"
+                }
+            ]
+        },
+        {
+            "sequence": "14",
+            "time": "16:30 - 17:00",
             "type": "break",
-            "tracktitle": "Closing Ceremony, Group Photo",
+            "tracktitle": "Closing Ceremony, Group Photo & High Tea",
             "sessionsBySequence": []
         }
     ]

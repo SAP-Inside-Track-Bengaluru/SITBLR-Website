@@ -50,6 +50,7 @@
         <button class="tab" data-target="handson" aria-selected="false">Hands On</button>
         <button class="tab" data-target="concurschedule" aria-selected="false">Concur</button>
         <button class="tab" data-target="academiaschedule" aria-selected="false">Academia</button>
+        <button class="tab" data-target="ui5schedule" aria-selected="false">UI5con</button>
     </nav>
 
     <div id="filterPanel" class="filter-panel" aria-hidden="true">
@@ -97,6 +98,9 @@
         </section>
         <section id="academiaschedule" class="agenda-section" hidden aria-label="Academia schedule timeline">
             <div id="academiascheduleContainer" class="timeline" aria-live="polite"></div>
+        </section>
+        <section id="ui5schedule" class="agenda-section" hidden aria-label="UI5con schedule timeline">
+            <div id="ui5scheduleContainer" class="timeline" aria-live="polite"></div>
         </section>
         <div id="emptyState" class="empty-state" hidden>No sessions match your filters.</div>
     </main>
@@ -149,8 +153,12 @@
                 <span class="badge type-badge"></span>
             </header>
             <div class="session-meta">
-                <span class="track-badge"></span>
-                <span class="speakers"></span>
+                <div class="track-info">
+                    <span class="track-badge"></span>
+                </div>
+                <div class="speaker-info">
+                    <span class="speakers"></span>
+                </div>
             </div>
         </article>
     </template>
