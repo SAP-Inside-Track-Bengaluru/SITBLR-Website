@@ -136,7 +136,7 @@
                  <h2 style="margin-bottom: 1.5rem;">Submit Your Topic</h2>
                  <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem;"> 
                      Do you have an idea, lesson, or innovation you cannot wait to share with the community?
-                     We are inviting session speakers for the 2nd edition of SAP Inside Track (SIT) Bangalore 2026.
+                     We are inviting session speakers for the 1st edition of SAP Inside Track (SIT) Bangalore 2026.
                  </p>
                  <div style="background: rgba(var(--accent-rgb), 0.05); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--border); display: inline-block; margin-bottom: 2rem;">
                      <p style="margin-bottom: 1rem; font-weight: 600; color: var(--primary);">Call for Speakers is OPEN!</p>
@@ -161,7 +161,7 @@
                  </a>
              </div>
              <div class="hero-actions" style="justify-content: center;">
-                 <button id="registerBtn" class="primary-btn" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</button>
+                 <a id="registerBtn" href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/3fd14d87-39c1-461d-b209-1fc92813f77c" class="primary-btn" target="_blank" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</a>
                  <a href="agenda.html?year=2026&q=2" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
                  <button class="icon-btn share-section-btn" data-anchor="#register" title="Copy link to this section" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,[...]
                     <i class="fas fa-link"></i> Share Section
@@ -197,6 +197,12 @@
                      <p class="sponsors-subtitle">Thank you to our amazing partners who make this event possible</p>
                  </div>
                  <div class="sponsors-grid">
+                     <div class="sponsor-item">
+                         <img src="assets/images/sponsor_logos/aws-logo.webp" alt="Amazon Web Services" class="sponsor-logo" loading="lazy">
+                     </div>
+                     <div class="sponsor-item">
+                         <img src="assets/images/sponsor_logos/mindset_logo.webp" alt="Mindset Consulting" class="sponsor-logo" loading="lazy">
+                     </div>
                      <div class="sponsor-item">
                          <img src="assets/images/sponsor_logos/rojo_logo.webp" alt="Rojo Consultancy" class="sponsor-logo" loading="lazy">
                      </div>
@@ -269,11 +275,9 @@
              }
          });
 
-         // Register Button Redirect
+         // Register Button Redirect - Now using <a> tag, so this is simplified
          const registerBtn = document.getElementById('registerBtn');
-         const submitBtn = document.getElementById('submitBtn');
          const REGISTRATION_URL = 'https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/3fd14d87-39c1-461d-b209-1fc92813f77c';
-         const SUBMISSION_URL = 'https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/submit-session/4587d6e7-944e-4372-8d1e-5276a627fe16';
 
          function showToast(message) {
              const toast = document.getElementById('toast');
@@ -302,29 +306,15 @@
              return isApp || isWebView;
          }
 
-         if (isInAppBrowser()) {
-             if (registerBtn) {
-                 registerBtn.innerText = 'Copy Link to Register';
-                 registerBtn.addEventListener('click', (e) => {
-                     e.preventDefault();
-                     copyToClipboard(REGISTRATION_URL);
-                 });
-             }
-             if (submitBtn) {
-                 submitBtn.innerText = 'Copy Link to Submit';
-                 submitBtn.addEventListener('click', (e) => {
-                     e.preventDefault();
-                     copyToClipboard(SUBMISSION_URL);
-                 });
-             }
-             // Hide separate share buttons in-app to avoid confusion
-             document.querySelectorAll('.share-section-btn').forEach(btn => btn.style.display = 'none');
-         } else {
-             if (registerBtn) {
-                 registerBtn.addEventListener('click', () => {
-                     window.location.href = REGISTRATION_URL;
-                 });
-             }
+         // Handle in-app browser for Register button
+         if (isInAppBrowser() && registerBtn) {
+             registerBtn.innerText = 'Copy Link to Register';
+             registerBtn.removeAttribute('href');
+             registerBtn.removeAttribute('target');
+             registerBtn.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 copyToClipboard(REGISTRATION_URL);
+             });
          }
 
          // Share Section Logic
