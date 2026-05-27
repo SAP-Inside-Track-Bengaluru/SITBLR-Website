@@ -44,6 +44,7 @@ class AgendaApp {
             await this.loadConcurData();
             await this.loadAcademiaData();
             await this.loadUI5Data();
+            this.hideUnavailableTabs();
             this.setupEventListeners();
             this.setupTheme();
             this.populateFilters();
@@ -53,6 +54,21 @@ class AgendaApp {
         } catch (error) {
             console.error('Failed to initialize app:', error);
             this.showError('Failed to load agenda data. Please refresh the page.');
+        }
+    }
+
+    hideUnavailableTabs() {
+        if (!this.concurRawData) {
+            const tab = document.querySelector('.tab[data-target="concurschedule"]');
+            if (tab) tab.style.display = 'none';
+        }
+        if (!this.academiaRawData) {
+            const tab = document.querySelector('.tab[data-target="academiaschedule"]');
+            if (tab) tab.style.display = 'none';
+        }
+        if (!this.ui5RawData) {
+            const tab = document.querySelector('.tab[data-target="ui5schedule"]');
+            if (tab) tab.style.display = 'none';
         }
     }
 
