@@ -2,9 +2,9 @@
     "lectures": [
         {
             "sequence": "0.1",
-            "time": "08:00 - 09:30",
+            "time": "08:30 - 09:30",
             "type": "break",
-            "tracktitle": "Security & Registration Check-in",
+            "tracktitle": "Registrations",
             "sessionsBySequence": []
         },
         {
@@ -78,7 +78,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Venkat Reddy",
-                    "speaker2": "Meghna Priya",
+                    "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Joule embedded across SAP applications, to help businesses move toward an autonomous enterprise",
@@ -167,7 +167,7 @@
         },
         {
             "sequence": "2.5",
-            "time": "12:00 - 13:30",
+            "time": "12:00 - 13:15",
             "type": "break",
             "tracktitle": "Lunch",
             "sessionsBySequence": []
@@ -471,9 +471,9 @@
     "demopods": [
         {
             "sequence": "0.1",
-            "time": "08:00 - 09:30",
+            "time": "08:30 - 09:30",
             "type": "break",
-            "tracktitle": "Security & Registration Check-in",
+            "tracktitle": "Arrival to SAP Labs India & Registrations",
             "sessionsBySequence": []
         },
         {
@@ -657,8 +657,8 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Vijay S B",
-                    "speaker2": "Sudeshna Silla",
+                    "speaker1": "",
+                    "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Reimagining Customer Experience with SAP CX Agents",
@@ -721,7 +721,7 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Azmath S",
+                    "speaker1": "azmath s",
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
