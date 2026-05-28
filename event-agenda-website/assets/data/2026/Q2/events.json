@@ -3,7 +3,7 @@
         {
             "sequence": "0.1",
             "time": "08:00 - 09:30",
-            "type": "Registrations",
+            "type": "Registration",
             "tracktitle": "Security & Registration Check-in",
             "sessionsBySequence": []
         },
