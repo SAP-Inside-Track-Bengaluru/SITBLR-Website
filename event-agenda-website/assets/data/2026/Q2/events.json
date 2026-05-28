@@ -3,22 +3,32 @@
         {
             "sequence": "0.1",
             "time": "08:00 - 09:30",
-            "type": "break",
+            "type": "Registrations",
             "tracktitle": "Security & Registration Check-in",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.3",
             "time": "09:30 - 10:00",
-            "type": "break",
-            "tracktitle": "Keynote from Sindhu Gangadharan (MD, SAP Labs India | Head, Customer Innovation Services, SAP)",
+            "type": "Keynote",
+            "tracktitle": "Keynote",
+            "speaker1": "Sindhu Gangadharan",
+            "speaker1_designation": "MD, SAP Labs India; Head, Customer Innovation Services, SAP",
+            "location": "Audimax, BLR05",
             "sessionsBySequence": []
         },
         {
             "sequence": "0.4",
             "time": "10:00 - 10:30",
-            "type": "break",
-            "tracktitle": "Industry Talk - Sindhu Gangadharan, MD, SAP Labs India ; Head, Customer Innovation Services, SAP | Prabhakara Sastry, MD, IKYAM | Anjana Kovoor, Project Manager & Head of Digital Transformation, BLUSPRING Enterprises Limited",
+            "type": "Keynote",
+            "tracktitle": "Industry Talk",
+            "speaker1": "Sindhu Gangadharan",
+            "speaker1_designation": "MD, SAP Labs India ; Head, Customer Innovation Services, SAP",
+            "speaker2": "Prabhakara Sastry",
+            "speaker2_designation": "Managing Director, IKYAM",
+            "speaker3": "Anjana Kovoor",
+            "speaker3_designation": "Project Manager & Head of Digital Transformation, BLUSPRING Enterprises Limited",
+            "location": "Audimax, BLR05",
             "sessionsBySequence": []
         },
         {
