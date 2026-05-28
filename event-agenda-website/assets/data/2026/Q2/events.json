@@ -62,7 +62,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Aruna K",
-                    "speaker2": "",
+                    "speaker2": "Prateek Moovalli K",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Accelerate data and analytics with agentic experiences in SAP Business Data Cloud",
@@ -134,7 +134,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Chaitanya Priya",
-                    "speaker2": "",
+                    "speaker2": "Kunal Hasija",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Hire Smarter, Scale Faster : Smart Recruiters for SAP SuccessFactors",
@@ -180,7 +180,7 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "",
+                    "speaker1": "Mahesh Palavalli",
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
@@ -213,7 +213,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Abhyarthana Kanungo",
-                    "speaker2": "",
+                    "speaker2": "Ananth Anagha D",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Effortless AI adoption & Cloud ERP extension using Cloud Integration and Automation service",
@@ -269,7 +269,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Sheena M K",
-                    "speaker2": "shilpa shankar",
+                    "speaker2": "Shilpa Shankar",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "ABAP AI Capabilities in SAP Joule for Developers",
@@ -324,8 +324,8 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "ranjeet kumar",
-                    "speaker2": "Rishab jain c",
+                    "speaker1": "Ranjeet Kumar",
+                    "speaker2": "Rishab Jain C",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Unlocking the SAP AI Platform : AI Launchpad, AI Core and Generative AI Hub",
@@ -373,7 +373,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Prasanth Menon",
-                    "speaker2": "revathi mp",
+                    "speaker2": "Revathi MP",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Driving Stable Upgrades Using a Clean Core Extensibility Strategy",
@@ -396,7 +396,7 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "swathy suriya babu",
+                    "speaker1": "Swathy Suriya Babu",
                     "speaker2": "",
                     "speaker1_social": "",
                     "speaker2_social": "",
@@ -413,7 +413,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Sharath Jois",
-                    "speaker2": "",
+                    "speaker2": "Sakshi Malhotra",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Secure, Compliant, and AI-Ready: The Future of Governance and Compliance on SAP BTP",
@@ -429,7 +429,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Lokesh Lakhondae",
-                    "speaker2": "",
+                    "speaker2": "Sandeep Kulkarni",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Beyond Points: Building Intelligent Customer Loyalty with SAP",
@@ -445,7 +445,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Phani Arava",
-                    "speaker2": "",
+                    "speaker2": "Murthy V",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Building Enterprise Multi-Tenant SaaS Applications on SAP BTP using CAP",
@@ -499,7 +499,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Ahona Bhattacharyya",
-                    "speaker2": "",
+                    "speaker2": "Vimalkumar Dubey",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Beyond Accuracy: Benchmarking LLM Security, Safety and Robustness",
@@ -562,8 +562,8 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Saurabh",
-                    "speaker2": "",
+                    "speaker1": "Saurabh Aagrwal",
+                    "speaker2": "Nikhil Lalwani",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Smart Reservation Scheduling with AI Agents",
@@ -579,7 +579,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Ashok Rajashekar",
-                    "speaker2": "",
+                    "speaker2": "Akhil Gaul",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "The Future of Analytics: AI Agents in SAP Business Data Cloud",
@@ -595,7 +595,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Sabarna Chatterjee",
-                    "speaker2": "",
+                    "speaker2": "Sanjeeb Sahu",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Agentic SAP S/4HANA Invoice Posting with SAP Business AI",
@@ -642,7 +642,7 @@
                 {
                     "speakers": "",
                     "speaker1": "kangkana deb",
-                    "speaker2": "",
+                    "speaker2": "Prabha Subbulakshmi Arumugam",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "The Rise of Intelligent Hybrid ERP: Customer Success with Joule and AI Integration",
@@ -674,7 +674,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Nikita Amberao",
-                    "speaker2": "",
+                    "speaker2": "Mahi Verma",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "AI-Powered Log Interpretation and Resolution Intelligence",
@@ -706,7 +706,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Hareesh Krishnan",
-                    "speaker2": "",
+                    "speaker2": "Nisha",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Semantic Modelling in SAP Business Data Cloud Enhanced by AI Workloads",
@@ -738,7 +738,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Moumita Pal",
-                    "speaker2": "",
+                    "speaker2": "Ashwani Kumar Singh",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Building Custom GenAI Use Cases with ISLM",
@@ -826,7 +826,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Krishnan Sampathkumar",
-                    "speaker2": "",
+                    "speaker2": "Krithika Shankaranarayan",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Inside the Loop: Real-Time Monitoring of AI Agents",
@@ -842,7 +842,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Kumar Anubhav",
-                    "speaker2": "",
+                    "speaker2": "Vijay Singh",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Supercharging Candidate Experience: SmartRecruiters Winston Integration with SF Recruiting",
@@ -857,8 +857,8 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Vishalakshi K.M.",
-                    "speaker2": "",
+                    "speaker1": "Vishalakshi K M",
+                    "speaker2": "Srividya N R",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Accelerating Growth with SAP Autonomous Suite: Managed Integration Done Right",
@@ -874,7 +874,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Sameera Khanum",
-                    "speaker2": "",
+                    "speaker2": "Venkat Bhargav A S",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Leveraging Enterprise Workflow Automation in SAP Landscapes",
@@ -913,8 +913,8 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "",
-                    "speaker2": "",
+                    "speaker1": "Shruthi Sarathy",
+                    "speaker2": "Rosemol Wilson",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Accelerating RISE with SAP using AI-Powered Comprehensive Planning Assistant for Maintenance Planner",
@@ -929,7 +929,7 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "rohit saraf",
+                    "speaker1": "Rohit Saraf",
                     "speaker2": "Abhishek Pandey",
                     "speaker1_social": "",
                     "speaker2_social": "",
@@ -961,8 +961,8 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "",
-                    "speaker2": "",
+                    "speaker1": "Nidhi Aggarwal",
+                    "speaker2": "Mohammed Sarvar",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Proactive Customer Risk Intelligence",
@@ -978,7 +978,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Digvijay Jadeja",
-                    "speaker2": "",
+                    "speaker2": "Sumitra",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "From Data to Value — SAP Managed Integration for S/4HANA Private Cloud and BDC",
@@ -994,7 +994,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Prabhjot Bhatia",
-                    "speaker2": "",
+                    "speaker2": "Ketaki Bakshi",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Beyond Traditional F4 Help - Smart Value Help : AI-Powered Recommendations in RAP-Based Fiori Apps",
@@ -1010,7 +1010,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Poornendu M G",
-                    "speaker2": "",
+                    "speaker2": "Soorya Prakash T M",
                     "speaker1_social": "",
                     "speaker2_social": "",
                     "sessiontitle": "Insights into Business Processes with Business Event Logging",
