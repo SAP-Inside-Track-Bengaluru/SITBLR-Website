@@ -724,13 +724,18 @@ body.dark .sponsor-item:hover img[src*="mindset_logo"] {
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 60px;
-    /* Adjusted for smaller header */
     z-index: 900;
     overflow-x: auto;
     scrollbar-width: none;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     background: rgba(var(--bg-panel-alt-rgb), 0.9);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+
+.tabs::-webkit-scrollbar {
+    display: none;
 }
 
 .tab {
@@ -753,7 +758,7 @@ body.dark .sponsor-item:hover img[src*="mindset_logo"] {
 }
 
 .agenda-section {
-    padding: 3rem 0;
+    padding: 3rem clamp(1rem, 5vw, 4rem);
 }
 
 .timeline {
@@ -1061,13 +1066,193 @@ body.dark .sponsor-item:hover img[src*="mindset_logo"] {
     .timeslot {
         grid-template-columns: 1fr;
         gap: 0.5rem;
+        padding: 0 1rem;
     }
 
     .time-col {
         text-align: left;
+        font-size: 0.85rem;
+    }
+
+    .sessions-col {
+        grid-template-columns: 1fr;
+    }
+
+    .session-card {
+        padding: 1rem;
+    }
+
+    .session-title {
+        font-size: 0.95rem;
+    }
+
+    /* Tabs – isolate horizontal scroll from page scroll */
+    .tabs {
+        padding: 0.5rem 0.75rem;
+        gap: 0.4rem;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        touch-action: pan-x;
+        top: 48px;
+    }
+
+    .tab {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+    }
+
+    .agenda-section {
+        padding: 1.5rem 0;
+    }
+
+    .timeline {
+        gap: 1.25rem;
     }
 
     .filter-panel {
         width: 100%;
     }
+
+    /* Stats */
+    .stats-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .stats-grid {
+        gap: 1.5rem;
+    }
+
+    .stat-item h3 {
+        font-size: 1.75rem;
+    }
+
+    /* Gallery preview */
+    .gallery-preview-section {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+
+    .gallery-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 150px);
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+    }
+
+    .gallery-item {
+        height: 150px;
+    }
+
+    /* Registration */
+    .reg-section {
+        margin: 2rem 1rem;
+        padding: 3rem 1.25rem;
+        border-radius: var(--radius);
+    }
+
+    .reg-section h2 {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .reg-section p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .reg-section .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .reg-section .primary-btn,
+    .reg-section .secondary-btn,
+    .reg-section .icon-btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    /* Contact */
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 2rem 1.25rem;
+    }
+
+    /* Sponsors */
+    .sponsors-section {
+        padding: 3rem 1rem;
+    }
+
+    .sponsors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .sponsor-item {
+        height: 90px;
+        padding: 1rem;
+    }
+
+    /* Sections generic */
+    section {
+        padding: clamp(2.5rem, 6vw, 4rem) clamp(0.75rem, 3vw, 2rem);
+    }
+
+    section h2 {
+        font-size: 1.35rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 2rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* Buttons */
+    .primary-btn,
+    .secondary-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .brand h1 {
+        font-size: 0.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero h3 {
+        font-size: 0.95rem;
+    }
+
+    .stats-grid {
+        gap: 1rem;
+    }
+
+    .stat-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+    }
+}
 }
