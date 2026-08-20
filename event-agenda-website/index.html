@@ -52,7 +52,7 @@
                          <p class="hero-tagline">Connect. Learn. Share. Grow with the community.</p>
                          <p class="hero-description">Driven by the SAP Community, SIT Bengaluru stands as a global benchmark for grassroots innovation. It is a premier tech conference where the eco[...]
                          <div class="hero-actions">
-                             <a href="#submit-topic" class="primary-btn">Submit a Session</a>
+                             <a href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/submit-session/27ed68b7-f040-4ebf-853e-2ab11e2ee92d" class="primary-btn" target="_blank" rel="noopener">Submit a Session</a>
                              <a href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810" class="secondary-btn" target="_blank" rel="noopener">Register Now</a>
                          </div>
                      </div>
@@ -156,13 +156,13 @@
              <div style="margin-bottom: 2rem;">
                  <p>Join us at <strong>SAP Labs India Innovation Park, Bengaluru</strong></p>
                  <p style="font-size: 0.95rem; opacity: 0.9;">Bande Kodigehalli, Singahalli, Arebannimangala<br>Bengaluru, India</p>
-                 <a href="https://maps.app.goo.gl/TypbXqqxFuAdC9LL7" target="_blank" style="color: white; text-decoration: underline; font-size: 0.95rem;">
+                 <a href="https://maps.app.goo.gl/GD7j55seZmxrxFQeA" target="_blank" rel="noopener" style="color: white; text-decoration: underline; font-size: 0.95rem;">
                      <i class="fas fa-map-marker-alt"></i> View on Google Maps
                  </a>
              </div>
              <div class="hero-actions" style="justify-content: center;">
                  <a id="registerBtn" href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810" class="primary-btn" target="_blank" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</a>
-                 <a href="agenda.html?year=2026&q=2" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
+                 <a href="https://sitblr.in/agenda.html?year=2026&q=3" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
                  <button class="icon-btn share-section-btn" data-anchor="#register" title="Share registration on LinkedIn" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,[...]
                     <i class="fas fa-link"></i> Share Section
                  </button>
@@ -231,11 +231,12 @@
          const dots = document.querySelectorAll('.hero-visual .dot');
          
          function showSlide(index) {
+             if (slides.length === 0) return;
              slides[currentSlide].classList.remove('active');
-             dots[currentSlide].classList.remove('active');
-             currentSlide = index;
+             if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+             currentSlide = (index + slides.length) % slides.length;
              slides[currentSlide].classList.add('active');
-             dots[currentSlide].classList.add('active');
+             if (dots[currentSlide]) dots[currentSlide].classList.add('active');
          }
 
          function nextSlide() {
@@ -244,14 +245,10 @@
              showSlide(next);
          }
 
-         if (slides.length > 0) {
-             setInterval(nextSlide, 4000); // Auto-scroll every 4 seconds
-         }
+         if (slides.length > 1) setInterval(nextSlide, 4000);
 
          // Add click events to dots
-         dots.forEach((dot, index) => {
-             dot.addEventListener('click', () => showSlide(index));
-         });
+         dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
 
          // Dark Mode Toggle
          const themeToggle = document.getElementById('themeToggle');
