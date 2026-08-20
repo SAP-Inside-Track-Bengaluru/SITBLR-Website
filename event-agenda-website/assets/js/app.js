@@ -39,14 +39,14 @@ class AgendaApp {
 
     async init() {
         try {
+            this.setupEventListeners();
+            this.setupTheme();
             await this.loadData();
             if (!this.rawData) return; // Load data handled coming soon
             await this.loadConcurData();
             await this.loadAcademiaData();
             await this.loadUI5Data();
             this.hideUnavailableTabs();
-            this.setupEventListeners();
-            this.setupTheme();
             this.populateFilters();
             this.renderAgenda();
             this.updateYear();
@@ -798,8 +798,8 @@ class AgendaApp {
         main.innerHTML = `
             <div class="coming-soon-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60vh; text-align: center; padding: 2rem;">
                 <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent);">Agenda ${this.year} Q${this.quarter}</h1>
-                <p>Coming Soon! We are currently planning this edition of SAP Inside Track Bengaluru.</p>
-                <p>Stay tuned for updates!</p>
+                <p>Registrations are now open for this edition of SAP Inside Track Bengaluru.</p>
+                <p>The agenda is in preparation and will be available soon. Stay tuned for updates!</p>
                 <a href="index.html" class="primary-btn" style="margin-top: 2rem; text-decoration: none; background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 4px;">Back to Home</a>
             </div>
         `;

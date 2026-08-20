@@ -24,9 +24,9 @@
              <div class="dropdown">
                  <button class="dropbtn">Agenda</button>
                  <div class="dropdown-content">
-                   <a href="agenda.html?year=2025&q=3">2025 Q3</a>
                    <a href="agenda.html?year=2026&q=1">2026 Q1</a>
                    <a href="agenda.html?year=2026&q=2">2026 Q2</a>
+                                     <a href="agenda.html?year=2026&q=3">2026 Q3</a>
                  </div>
                </div>
               <!-- <a href="#submit-topic" class="nav-link">Submit a Topic</a> -->
@@ -53,7 +53,7 @@
                          <p class="hero-description">Driven by the SAP Community, SIT Bengaluru stands as a global benchmark for grassroots innovation. It is a premier tech conference where the eco[...]
                          <div class="hero-actions">
                              <a href="#submit-topic" class="primary-btn">Submit a Session</a>
-                             <a href="#register" class="secondary-btn">Register Now</a>
+                             <a href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810" class="secondary-btn" target="_blank" rel="noopener">Register Now</a>
                          </div>
                      </div>
                      <div class="hero-visual">
@@ -143,7 +143,7 @@
                      <p style="margin-bottom: 0;">Deadline: <strong>17th May 2026</strong></p>
                  </div>
                  <div class="hero-actions" style="justify-content: center;">
-                     <a href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/submit-session/4587d6e7-944e-4372-8d1e-5276a627fe16" id="submitBtn" target="_blank" class="primary-btn">Submit a Session</a>
+                     <a href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/submit-session/27ed68b7-f040-4ebf-853e-2ab11e2ee92d" id="submitBtn" target="_blank" class="primary-btn">Submit a Session</a>
                      <button class="icon-btn share-section-btn" data-anchor="#submit-topic" title="Copy link to this section" style="background: rgba(var(--accent-rgb), 0.1); border-color: rgba(va[...]
                          <i class="fas fa-link"></i> Share Section
                      </button>
@@ -152,18 +152,18 @@
          </section> -->
 
          <section id="register" class="reg-section">
-             <h2>Second Edition: May 30, 2026</h2>
+             <h2>SIT Bengaluru 3rd Edition: September 26, 2026</h2>
              <div style="margin-bottom: 2rem;">
-                 <p>Join us at <strong>SAP Labs India, Whitefield, Bangalore </strong></p>
-                 <p style="font-size: 0.95rem; opacity: 0.9;">#138, EPIP, Whitefield, Bangalore<br>Bengaluru, India</p>
+                 <p>Join us at <strong>SAP Labs India Innovation Park, Bengaluru</strong></p>
+                 <p style="font-size: 0.95rem; opacity: 0.9;">Bande Kodigehalli, Singahalli, Arebannimangala<br>Bengaluru, India</p>
                  <a href="https://maps.app.goo.gl/TypbXqqxFuAdC9LL7" target="_blank" style="color: white; text-decoration: underline; font-size: 0.95rem;">
                      <i class="fas fa-map-marker-alt"></i> View on Google Maps
                  </a>
              </div>
              <div class="hero-actions" style="justify-content: center;">
-                 <a id="registerBtn" href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/3fd14d87-39c1-461d-b209-1fc92813f77c" class="primary-btn" target="_blank" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</a>
+                 <a id="registerBtn" href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810" class="primary-btn" target="_blank" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</a>
                  <a href="agenda.html?year=2026&q=2" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
-                 <button class="icon-btn share-section-btn" data-anchor="#register" title="Copy link to this section" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,[...]
+                 <button class="icon-btn share-section-btn" data-anchor="#register" title="Share registration on LinkedIn" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,[...]
                     <i class="fas fa-link"></i> Share Section
                  </button>
              </div>
@@ -277,7 +277,7 @@
 
          // Register Button Redirect - Now using <a> tag, so this is simplified
          const registerBtn = document.getElementById('registerBtn');
-         const REGISTRATION_URL = 'https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/3fd14d87-39c1-461d-b209-1fc92813f77c';
+         const REGISTRATION_URL = 'https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810';
 
          function showToast(message) {
              const toast = document.getElementById('toast');
@@ -317,14 +317,13 @@
              });
          }
 
-         // Share Section Logic
+         // Share the registration link with a prefilled LinkedIn message.
          const shareBtns = document.querySelectorAll('.share-section-btn');
          shareBtns.forEach(btn => {
              btn.addEventListener('click', () => {
-                 const anchor = btn.getAttribute('data-anchor');
-                 const url = window.location.origin + window.location.pathname + anchor;
-                 copyToClipboard(url);
-                 showToast('Section Link Copied!');
+                 const shareText = 'I am registered for SAP Inside Track Bengaluru 3rd Edition happening on 26th Sep 2026. Join the SAP Community to know the latest updates and be part of the community.';
+                 const linkedInUrl = `https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(`${shareText} ${REGISTRATION_URL}`)}`;
+                 window.open(linkedInUrl, '_blank', 'noopener,noreferrer');
              });
          });
      </script>
