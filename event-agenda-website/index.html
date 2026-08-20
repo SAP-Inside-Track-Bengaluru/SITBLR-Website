@@ -163,7 +163,7 @@
              <div class="hero-actions" style="justify-content: center;">
                  <a id="registerBtn" href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810" class="primary-btn" target="_blank" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</a>
                  <a href="https://sitblr.in/agenda.html?year=2026&q=3" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
-                 <button class="icon-btn share-section-btn" data-anchor="#register" title="Share registration on LinkedIn" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,[...]
+                 <button class="icon-btn share-section-btn" data-anchor="#register" title="Share registration on LinkedIn" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.5);">
                     <i class="fas fa-link"></i> Share Section
                  </button>
              </div>
@@ -222,7 +222,7 @@
          <p>&copy; 2026 SAP Inside Track Bengaluru. All rights reserved.</p>
      </footer>
 
-     <div id="toast" style="visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 8px; padding: 16px; position: fixed; z-index: 2000; left: [...]
+    <div id="toast" style="visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 8px; padding: 16px; position: fixed; z-index: 2000; left: 50%; transform: translateX(-50%); bottom: 20px; opacity: 0; transition: opacity 0.3s ease;"></div>
 
      <script>
          // Hero Carousel Logic
@@ -314,13 +314,13 @@
              });
          }
 
-         // Share the registration link with a prefilled LinkedIn message.
+         // Open LinkedIn's supported share dialog for the registration link.
          const shareBtns = document.querySelectorAll('.share-section-btn');
          shareBtns.forEach(btn => {
              btn.addEventListener('click', () => {
-                 const shareText = 'I am registered for SAP Inside Track Bengaluru 3rd Edition happening on 26th Sep 2026. Join the SAP Community to know the latest updates and be part of the community.';
-                 const linkedInUrl = `https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(`${shareText} ${REGISTRATION_URL}`)}`;
-                 window.open(linkedInUrl, '_blank', 'noopener,noreferrer');
+                 const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(REGISTRATION_URL)}`;
+                 const shareWindow = window.open(linkedInUrl, '_blank', 'noopener,noreferrer');
+                 if (!shareWindow) window.location.href = linkedInUrl;
              });
          });
      </script>
