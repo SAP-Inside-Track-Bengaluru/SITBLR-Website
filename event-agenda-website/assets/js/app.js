@@ -19,15 +19,15 @@ class AgendaApp {
             tracks: []
         };
         this.concurFilters = {
-            types: ['Concur Session', 'Break'],
+            types: ['Concur Session', 'Break', 'Commute', 'Keynote', 'Industry Talk'],
             tracks: []
         };
         this.academiaFilters = {
-            types: ['Academia Session', 'Break'],
+            types: ['Academia Session', 'Break', 'Commute', 'Keynote', 'Industry Talk'],
             tracks: []
         };
         this.ui5Filters = {
-            types: ['UI5 Session', 'Break'],
+            types: ['UI5 Session', 'Break', 'Commute', 'Keynote', 'Industry Talk'],
             tracks: []
         };
         this.currentSearchTerm = '';
@@ -39,13 +39,14 @@ class AgendaApp {
 
     async init() {
         try {
+            this.setupEventListeners();
+            this.setupTheme();
             await this.loadData();
             if (!this.rawData) return; // Load data handled coming soon
             await this.loadConcurData();
             await this.loadAcademiaData();
             await this.loadUI5Data();
-            this.setupEventListeners();
-            this.setupTheme();
+            this.hideUnavailableTabs();
             this.populateFilters();
             this.renderAgenda();
             this.updateYear();
@@ -53,6 +54,21 @@ class AgendaApp {
         } catch (error) {
             console.error('Failed to initialize app:', error);
             this.showError('Failed to load agenda data. Please refresh the page.');
+        }
+    }
+
+    hideUnavailableTabs() {
+        if (!this.concurRawData) {
+            const tab = document.querySelector('.tab[data-target="concurschedule"]');
+            if (tab) tab.style.display = 'none';
+        }
+        if (!this.academiaRawData) {
+            const tab = document.querySelector('.tab[data-target="academiaschedule"]');
+            if (tab) tab.style.display = 'none';
+        }
+        if (!this.ui5RawData) {
+            const tab = document.querySelector('.tab[data-target="ui5schedule"]');
+            if (tab) tab.style.display = 'none';
         }
     }
 
@@ -133,20 +149,20 @@ class AgendaApp {
         try {
             const response = await fetch(`${this.dataPath}/ui5.json`);
             if (!response.ok) {
-                throw new Error(`Failed to load UI5 data: ${response.status}`);
+                throw new Error(`Failed to load UI5con data: ${response.status}`);
             }
             this.ui5RawData = await response.json();
             
             if (!this.ui5RawData || !this.ui5RawData.ui5) {
-                throw new Error('Invalid UI5 data format');
+                throw new Error('Invalid UI5con data format');
             }
             
             this.ui5ParsedData = parseUI5EventData(this.ui5RawData);
-            console.log('UI5 data loaded successfully:', this.ui5ParsedData);
+            console.log('UI5con data loaded successfully:', this.ui5ParsedData);
         } catch (error) {
-            console.error('Error loading UI5 data:', error);
-            // Don't throw error for UI5 data - make it optional
-            console.warn('UI5 schedule will not be available');
+            console.error('Error loading UI5con data:', error);
+            // Don't throw error for UI5con data - make it optional
+            console.warn('UI5con schedule will not be available');
         }
     }
 
@@ -259,7 +275,7 @@ class AgendaApp {
             this.academiaFilters.tracks = tracks;
             this.academiaFilters.types = types;
         } else if (this.currentTab === 'ui5schedule' && this.ui5ParsedData) {
-            // Use UI5-specific tracks and types
+            // Use UI5con-specific tracks and types
             tracks = getUI5UniqueTracks(this.ui5ParsedData);
             types = getUI5UniqueTypes(this.ui5ParsedData);
             this.ui5Filters.tracks = tracks;
@@ -326,7 +342,7 @@ class AgendaApp {
                 // For academia tab, check Academia Session, Lecture and Break
                 checkbox.checked = (checkbox.value === 'Academia Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
             } else if (this.currentTab === 'ui5schedule') {
-                // For UI5 tab, check UI5 Session, Lecture and Break
+                // For UI5con tab, check UI5 Session, Lecture and Break
                 checkbox.checked = (checkbox.value === 'UI5 Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
             } else {
                 // For other tabs, use the current filter state
@@ -348,7 +364,7 @@ class AgendaApp {
             this.academiaFilters.types = formData.getAll('type');
             this.academiaFilters.tracks = formData.getAll('track');
         } else if (this.currentTab === 'ui5schedule') {
-            // Get selected types and tracks for UI5
+            // Get selected types and tracks for UI5con
             this.ui5Filters.types = formData.getAll('type');
             this.ui5Filters.tracks = formData.getAll('track');
         } else {
@@ -507,7 +523,16 @@ class AgendaApp {
         const element = template.content.cloneNode(true);
         
         const timeElement = element.querySelector('.slot-time');
-        timeElement.textContent = timeSlot.time;
+        
+        // Handle track-group type differently
+        if (timeSlot.type === 'track-group') {
+            timeElement.textContent = timeSlot.title; // Use track name instead of time
+            timeElement.style.fontWeight = 'bold';
+            timeElement.style.fontSize = '1.2rem';
+            timeElement.style.color = 'var(--accent)';
+        } else {
+            timeElement.textContent = timeSlot.time;
+        }
         
         const sessionsCol = element.querySelector('.sessions-col');
         
@@ -524,6 +549,32 @@ class AgendaApp {
                 description: ''
             }, `break-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(breakCard);
+        } else if (timeSlot.type === 'commute') {
+            // Create a single full-width commute card
+            sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
+            const commuteCard = this.createSessionCard({
+                title: timeSlot.title,
+                type: 'Commute',
+                track: '',
+                speaker1: '',
+                speaker2: '',
+                speakers: '',
+                description: ''
+            }, `commute-${timeSlot.sequence}`, true);
+            sessionsCol.appendChild(commuteCard);
+        } else if (timeSlot.type === 'industry-talk') {
+            // Create a single full-width industry talk card
+            sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
+            const industryTalkCard = this.createSessionCard({
+                title: timeSlot.title,
+                type: 'Industry Talk',
+                track: '',
+                speaker1: '',
+                speaker2: '',
+                speakers: '',
+                description: ''
+            }, `industry-talk-${timeSlot.sequence}`, true);
+            sessionsCol.appendChild(industryTalkCard);
         } else if (timeSlot.type === 'registration') {
             // Create a single full-width registration card
             sessionsCol.style.gridTemplateColumns = '1fr'; // Force single column for full width
@@ -560,6 +611,15 @@ class AgendaApp {
                 location: timeSlot.location || ''
             }, `keynote-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(keynoteCard);
+        } else if (timeSlot.type === 'track-group') {
+            // Create session cards for track-grouped sessions
+            timeSlot.sessions.forEach((session, sessionIndex) => {
+                const sessionCard = this.createSessionCard(
+                    session, 
+                    generateSessionId(`track-${timeSlot.title}`, sessionIndex)
+                );
+                sessionsCol.appendChild(sessionCard);
+            });
         } else {
             // Create session cards for each session in the time slot
             timeSlot.sessions.forEach((session, sessionIndex) => {
@@ -595,6 +655,10 @@ class AgendaApp {
             card.classList.add('ui5');
         } else if (session.type === 'Break') {
             card.classList.add('break');
+        } else if (session.type === 'Commute') {
+            card.classList.add('commute');
+        } else if (session.type === 'Industry Talk') {
+            card.classList.add('industry-talk');
         } else if (session.type === 'Keynote') {
             card.classList.add('keynote');
         } else if (session.type === 'Registration') {
@@ -611,7 +675,13 @@ class AgendaApp {
         
         // Set type badge
         const typeBadge = card.querySelector('.type-badge');
-        typeBadge.textContent = session.type || 'Session';
+        
+        // For UI5 Sessions with time, show time instead of type
+        if (session.type === 'UI5 Session' && session.time) {
+            typeBadge.textContent = session.time;
+        } else {
+            typeBadge.textContent = session.type || 'Session';
+        }
         
         // Add appropriate badge class
         if (session.type === 'Demo Pod') {
@@ -626,6 +696,10 @@ class AgendaApp {
             typeBadge.classList.add('ui5');
         } else if (session.type === 'Break') {
             typeBadge.classList.add('break');
+        } else if (session.type === 'Commute') {
+            typeBadge.classList.add('commute');
+        } else if (session.type === 'Industry Talk') {
+            typeBadge.classList.add('industry-talk');
         } else if (session.type === 'Keynote') {
             typeBadge.classList.add('keynote');
         } else if (session.type === 'Registration') {
@@ -634,7 +708,25 @@ class AgendaApp {
         
         // Set track/location
         const trackBadge = card.querySelector('.track-badge');
-        if (session.track || session.location) {
+        const timeElement = card.querySelector('.session-time');
+        
+        // Hide time element for UI5 sessions since time is shown in type badge
+        if (session.type === 'UI5 Session' && session.time) {
+            timeElement.style.display = 'none';
+        } else if (session.time) {
+            // Show time for other sessions that have it
+            timeElement.textContent = `🕒 ${session.time}`;
+            timeElement.style.display = 'inline-block';
+            timeElement.style.fontWeight = 'bold';
+        }
+        
+        if (session.type === 'Academia Session') {
+            // Hide track badge for Academia sessions
+            trackBadge.style.display = 'none';
+        } else if (session.type === 'UI5 Session' && session.time) {
+            // Hide track badge for UI5 sessions in track-grouped view (track is shown as section header)
+            trackBadge.style.display = 'none';
+        } else if (session.track || session.location) {
             trackBadge.textContent = session.location || session.track;
             if (isSpecialSession && (session.type === 'Keynote' || session.type === 'Registration')) {
                 trackBadge.style.display = 'inline-flex';
@@ -706,8 +798,8 @@ class AgendaApp {
         main.innerHTML = `
             <div class="coming-soon-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60vh; text-align: center; padding: 2rem;">
                 <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent);">Agenda ${this.year} Q${this.quarter}</h1>
-                <p>Coming Soon! We are currently planning this edition of SAP Inside Track Bengaluru.</p>
-                <p>Stay tuned for updates!</p>
+                <p>Registrations are now open for this edition of SAP Inside Track Bengaluru.</p>
+                <p>The agenda is in preparation and will be available soon. Stay tuned for updates!</p>
                 <a href="index.html" class="primary-btn" style="margin-top: 2rem; text-decoration: none; background: var(--accent); color: white; padding: 0.75rem 1.5rem; border-radius: 4px;">Back to Home</a>
             </div>
         `;

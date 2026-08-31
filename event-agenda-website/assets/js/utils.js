@@ -67,6 +67,7 @@ function parseEventData(eventData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
@@ -82,7 +83,17 @@ function parseEventData(eventData) {
     // Parse demo pods
     if (eventData.demopods) {
         eventData.demopods.forEach(demo => {
-            if (demo.sessionsBySequence) {
+            if (demo.type === 'break') {
+                // Handle break sessions
+                parsedData.demopods.push({
+                    sequence: demo.sequence,
+                    time: demo.time,
+                    type: 'break',
+                    title: demo.tracktitle,
+                    sessions: []
+                });
+            } else if (demo.type === 'grid' && demo.sessionsBySequence) {
+                // Handle regular demo pod sessions with multiple tracks
                 parsedData.demopods.push({
                     sequence: demo.sequence,
                     time: demo.time,
@@ -92,6 +103,7 @@ function parseEventData(eventData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
@@ -106,29 +118,38 @@ function parseEventData(eventData) {
 
     // Parse hands-on sessions
     if (eventData.handson && Array.isArray(eventData.handson)) {
-        const handsonSessions = eventData.handson
-            .filter(session => session.sessiontitle && session.sessiontitle.trim() !== '')
-            .map(session => ({
-                title: session.sessiontitle || '',
-                speaker1: session.speaker1 || '',
-                speaker2: session.speaker2 || '',
-                speakers: session.speakers || '',
-                track: session.location || session.tracktitle || 'BLR05 Cafeteria',
-                trackId: session.trackid || session.location || 'cafeteria',
-                type: 'Hands On',
-                description: session.description || '',
-                organization: session.organization1 || ''
-            }));
-
-        if (handsonSessions.length > 0) {
-            parsedData.handson.push({
-                sequence: 'handson',
-                time: 'Workshop Sessions',
-                type: 'handson',
-                title: 'Hands-On Workshops',
-                sessions: handsonSessions
-            });
-        }
+        eventData.handson.forEach(handson => {
+            if (handson.type === 'break') {
+                // Handle break sessions
+                parsedData.handson.push({
+                    sequence: handson.sequence,
+                    time: handson.time,
+                    type: 'break',
+                    title: handson.tracktitle,
+                    sessions: []
+                });
+            } else if (handson.type === 'grid' && handson.sessionsBySequence) {
+                // Handle regular hands-on sessions with multiple tracks
+                parsedData.handson.push({
+                    sequence: handson.sequence,
+                    time: handson.time,
+                    type: 'handson',
+                    title: '',
+                    sessions: handson.sessionsBySequence.map(session => ({
+                        title: session.sessiontitle || '',
+                        speaker1: session.speaker1 || '',
+                        speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
+                        speakers: session.speakers || '',
+                        track: session.tracktitle || '',
+                        trackId: session.trackid || '',
+                        type: session.type || 'Hands On',
+                        description: session.description || '',
+                        organization: session.organization1 || ''
+                    }))
+                });
+            }
+        });
     }
 
     return parsedData;
@@ -212,6 +233,9 @@ function formatSpeakers(session) {
     }
     if (session.speaker2 && session.speaker2.trim()) {
         speakers.push(session.speaker2);
+    }
+    if (session.speaker3 && session.speaker3.trim()) {
+        speakers.push(session.speaker3);
     }
     
     return speakers.length > 0 ? speakers.join(', ') : '';
@@ -443,6 +467,30 @@ function parseConcurEventData(concurData) {
                     title: timeSlot.tracktitle,
                     sessions: []
                 });
+            } else if (timeSlot.type === 'commute') {
+                parsedData.concurschedule.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'commute',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
+            } else if (timeSlot.type === 'keynote') {
+                parsedData.concurschedule.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'keynote',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
+            } else if (timeSlot.type === 'industry-talk') {
+                parsedData.concurschedule.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'industry-talk',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
             } else if (timeSlot.type === 'grid' && timeSlot.sessionsBySequence) {
                 // Handle regular concur sessions
                 parsedData.concurschedule.push({
@@ -454,6 +502,7 @@ function parseConcurEventData(concurData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
@@ -501,6 +550,12 @@ function getConcurUniqueTypes(parsedConcurData) {
     parsedConcurData.concurschedule.forEach(timeSlot => {
         if (timeSlot.type === 'break') {
             types.add('Break');
+        } else if (timeSlot.type === 'commute') {
+            types.add('Commute');
+        } else if (timeSlot.type === 'keynote') {
+            types.add('Keynote');
+        } else if (timeSlot.type === 'industry-talk') {
+            types.add('Industry Talk');
         } else if (timeSlot.sessions) {
             timeSlot.sessions.forEach(session => {
                 types.add(session.type);
@@ -530,6 +585,27 @@ function filterConcurEvents(parsedConcurData, searchTerm = '', filters = {}) {
         if (timeSlot.type === 'break') {
             // Always include breaks if Break type is selected
             if (!filters.types || filters.types.includes('Break')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'commute') {
+            if (!filters.types || filters.types.includes('Commute')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'keynote') {
+            if (!filters.types || filters.types.includes('Keynote')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'industry-talk') {
+            if (!filters.types || filters.types.includes('Industry Talk')) {
                 return timeSlot;
             }
             return null;
@@ -595,6 +671,30 @@ function parseAcademiaEventData(academiaData) {
                     title: timeSlot.tracktitle,
                     sessions: []
                 });
+            } else if (timeSlot.type === 'commute') {
+                parsedData.academiaschedule.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'commute',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
+            } else if (timeSlot.type === 'keynote') {
+                parsedData.academiaschedule.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'keynote',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
+            } else if (timeSlot.type === 'industry-talk') {
+                parsedData.academiaschedule.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'industry-talk',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
             } else if (timeSlot.type === 'grid' && timeSlot.sessionsBySequence) {
                 parsedData.academiaschedule.push({
                     sequence: timeSlot.sequence,
@@ -605,6 +705,7 @@ function parseAcademiaEventData(academiaData) {
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
@@ -652,6 +753,12 @@ function getAcademiaUniqueTypes(parsedAcademiaData) {
     parsedAcademiaData.academiaschedule.forEach(timeSlot => {
         if (timeSlot.type === 'break') {
             types.add('Break');
+        } else if (timeSlot.type === 'commute') {
+            types.add('Commute');
+        } else if (timeSlot.type === 'keynote') {
+            types.add('Keynote');
+        } else if (timeSlot.type === 'industry-talk') {
+            types.add('Industry Talk');
         } else if (timeSlot.sessions) {
             timeSlot.sessions.forEach(session => {
                 types.add(session.type);
@@ -679,6 +786,27 @@ function filterAcademiaEvents(parsedAcademiaData, searchTerm = '', filters = {})
     filtered.academiaschedule = parsedAcademiaData.academiaschedule.map(timeSlot => {
         if (timeSlot.type === 'break') {
             if (!filters.types || filters.types.includes('Break')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'commute') {
+            if (!filters.types || filters.types.includes('Commute')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'keynote') {
+            if (!filters.types || filters.types.includes('Keynote')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'industry-talk') {
+            if (!filters.types || filters.types.includes('Industry Talk')) {
                 return timeSlot;
             }
             return null;
@@ -732,32 +860,93 @@ function parseUI5EventData(ui5Data) {
     };
 
     if (ui5Data.ui5) {
+        // First, add special sessions (breaks, keynotes, etc.) in order
+        const specialSessions = [];
+        const trackGroups = {};
+        
         ui5Data.ui5.forEach(timeSlot => {
             if (timeSlot.type === 'break') {
-                parsedData.ui5schedule.push({
+                specialSessions.push({
                     sequence: timeSlot.sequence,
                     time: timeSlot.time,
                     type: 'break',
                     title: timeSlot.tracktitle,
                     sessions: []
                 });
-            } else if (timeSlot.type === 'grid' && timeSlot.sessionsBySequence) {
-                parsedData.ui5schedule.push({
+            } else if (timeSlot.type === 'commute') {
+                specialSessions.push({
                     sequence: timeSlot.sequence,
                     time: timeSlot.time,
-                    type: 'session',
-                    title: '',
-                    sessions: timeSlot.sessionsBySequence.map(session => ({
+                    type: 'commute',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
+            } else if (timeSlot.type === 'keynote') {
+                specialSessions.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'keynote',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
+            } else if (timeSlot.type === 'industry-talk') {
+                specialSessions.push({
+                    sequence: timeSlot.sequence,
+                    time: timeSlot.time,
+                    type: 'industry-talk',
+                    title: timeSlot.tracktitle,
+                    sessions: []
+                });
+            } else if (timeSlot.type === 'grid' && timeSlot.sessionsBySequence) {
+                // Group sessions by track
+                timeSlot.sessionsBySequence.forEach(session => {
+                    const trackName = session.tracktitle || 'Other';
+                    if (!trackGroups[trackName]) {
+                        trackGroups[trackName] = [];
+                    }
+                    trackGroups[trackName].push({
                         title: session.sessiontitle || '',
                         speaker1: session.speaker1 || '',
                         speaker2: session.speaker2 || '',
+                        speaker3: session.speaker3 || '',
                         speakers: session.speakers || '',
                         track: session.tracktitle || '',
                         trackId: session.trackid || '',
                         type: session.type || 'UI5 Session',
+                        time: timeSlot.time,
                         description: session.description || '',
                         organization: session.organization1 || ''
-                    }))
+                    });
+                });
+            }
+        });
+        
+        // Add special sessions first
+        parsedData.ui5schedule.push(...specialSessions);
+        
+        // Then add track-grouped sessions in a specific order
+        const trackOrder = ['Main Stage', 'Deep Dive', 'Demo Pod', 'Hands-On'];
+        trackOrder.forEach(trackName => {
+            if (trackGroups[trackName]) {
+                parsedData.ui5schedule.push({
+                    sequence: '999', // High sequence to appear after special sessions
+                    time: '', // No specific time for track groups
+                    type: 'track-group',
+                    title: trackName,
+                    sessions: trackGroups[trackName]
+                });
+            }
+        });
+        
+        // Add any remaining tracks not in the order
+        Object.keys(trackGroups).forEach(trackName => {
+            if (!trackOrder.includes(trackName)) {
+                parsedData.ui5schedule.push({
+                    sequence: '999',
+                    time: '',
+                    type: 'track-group',
+                    title: trackName,
+                    sessions: trackGroups[trackName]
                 });
             }
         });
@@ -798,6 +987,12 @@ function getUI5UniqueTypes(parsedUI5Data) {
     parsedUI5Data.ui5schedule.forEach(timeSlot => {
         if (timeSlot.type === 'break') {
             types.add('Break');
+        } else if (timeSlot.type === 'commute') {
+            types.add('Commute');
+        } else if (timeSlot.type === 'keynote') {
+            types.add('Keynote');
+        } else if (timeSlot.type === 'industry-talk') {
+            types.add('Industry Talk');
         } else if (timeSlot.sessions) {
             timeSlot.sessions.forEach(session => {
                 types.add(session.type);
@@ -825,6 +1020,27 @@ function filterUI5Events(parsedUI5Data, searchTerm = '', filters = {}) {
     filtered.ui5schedule = parsedUI5Data.ui5schedule.map(timeSlot => {
         if (timeSlot.type === 'break') {
             if (!filters.types || filters.types.includes('Break')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'commute') {
+            if (!filters.types || filters.types.includes('Commute')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'keynote') {
+            if (!filters.types || filters.types.includes('Keynote')) {
+                return timeSlot;
+            }
+            return null;
+        }
+
+        if (timeSlot.type === 'industry-talk') {
+            if (!filters.types || filters.types.includes('Industry Talk')) {
                 return timeSlot;
             }
             return null;
