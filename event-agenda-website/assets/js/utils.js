@@ -56,6 +56,18 @@ function parseEventData(eventData) {
                     location: lecture.location || '',
                     sessions: []
                 });
+            } else if (lecture.type === 'Industry Talk') {
+                parsedData.lectures.push({
+                    sequence: lecture.sequence,
+                    time: lecture.time,
+                    type: 'industry-talk',
+                    title: lecture.tracktitle,
+                    speaker1: lecture.speaker1 || '',
+                    speaker2: lecture.speaker2 || '',
+                    speaker3: lecture.speaker3 || '',
+                    location: lecture.location || '',
+                    sessions: []
+                });
             } else if (lecture.type === 'grid' && lecture.sessionsBySequence) {
                 // Handle regular sessions with multiple tracks
                 parsedData.lectures.push({
@@ -191,6 +203,8 @@ function getUniqueTypes(parsedData) {
             types.add('Registration');
         } else if (timeSlot.type === 'keynote') {
             types.add('Keynote');
+        } else if (timeSlot.type === 'industry-talk') {
+            types.add('Industry Talk');
         } else if (timeSlot.sessions) {
             timeSlot.sessions.forEach(session => {
                 types.add(session.type);
@@ -277,6 +291,11 @@ function filterEvents(parsedData, searchTerm = '', filters = {}) {
                 return timeSlot;
             }
             return null;
+        } else if (timeSlot.type === 'industry-talk') {
+            if (!filters.types || filters.types.includes('Industry Talk')) {
+                return timeSlot;
+            }
+            return null;
         }
 
         const filteredSessions = timeSlot.sessions.filter(session => {
@@ -318,6 +337,10 @@ function filterEvents(parsedData, searchTerm = '', filters = {}) {
 
     // Filter demo pods
     filtered.demopods = parsedData.demopods.map(timeSlot => {
+        if (timeSlot.type === 'break') {
+            return !filters.types || filters.types.includes('Break') ? timeSlot : null;
+        }
+
         const filteredSessions = timeSlot.sessions.filter(session => {
             // Type filter
             if (filters.types && !filters.types.includes(session.type)) {
@@ -357,6 +380,10 @@ function filterEvents(parsedData, searchTerm = '', filters = {}) {
 
     // Filter hands-on sessions
     filtered.handson = parsedData.handson.map(timeSlot => {
+        if (timeSlot.type === 'break') {
+            return !filters.types || filters.types.includes('Break') ? timeSlot : null;
+        }
+
         const filteredSessions = timeSlot.sessions.filter(session => {
             // Type filter
             if (filters.types && !filters.types.includes(session.type)) {

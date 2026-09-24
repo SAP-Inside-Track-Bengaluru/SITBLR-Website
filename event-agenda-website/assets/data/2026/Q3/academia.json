@@ -1,0 +1,149 @@
+{
+    "academia": [
+        {
+            "sequence": "1",
+            "time": "11:00 - 11:15",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker3": "",
+                    "sessiontitle": "Welcome and REACH Overview",
+                    "description": "REACH Team/Sikta Laha (MC)",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Academia",
+                    "trackid": "Academia",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "2",
+            "time": "11:15 - 12:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "Anjani Mishra",
+                    "speaker2": "Srividya N. R.",
+                    "speaker3": "",
+                    "sessiontitle": "Introduction to Autonomous Enterprises",
+                    "description": "Introduction to Autonomous Enterprises",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Academia",
+                    "trackid": "Academia",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "3",
+            "time": "12:00 - 13:00",
+            "type": "break",
+            "tracktitle": "Lunch",
+            "sessionsBySequence": []
+        },
+        {
+            "sequence": "4",
+            "time": "13:00 - 13:45",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker3": "",
+                    "sessiontitle": "UA-UX Collaboration for improved Joule Experience",
+                    "description": "UA-UX Collaboration for improved Joule Experience",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Academia",
+                    "trackid": "Academia",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "5",
+            "time": "13:45 - 14:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker3": "",
+                    "sessiontitle": "AI Fundamentals & get coding with SNAP",
+                    "description": "AI Fundamentals & get coding with SNAP",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Academia",
+                    "trackid": "Academia",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "6",
+            "time": "14:30 - 15:30",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker3": "",
+                    "sessiontitle": "Student Lounge",
+                    "description": "Student Lounge",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Academia",
+                    "trackid": "Academia",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        },
+        {
+            "sequence": "7",
+            "time": "15:30 - 16:00",
+            "type": "grid",
+            "tracktitle": "<Not Required>",
+            "sessionsBySequence": [
+                {
+                    "speakers": "",
+                    "speaker1": "",
+                    "speaker2": "",
+                    "speaker3": "",
+                    "sessiontitle": "Closing Ceremony and Group Photo",
+                    "description": "Closing Ceremony and Group Photo",
+                    "organization1": "",
+                    "socialmedia": "",
+                    "sessionseq": "1",
+                    "tracktitle": "Academia",
+                    "trackid": "Academia",
+                    "trackseq": "1",
+                    "type": "Lecture"
+                }
+            ]
+        }
+    ]
+}

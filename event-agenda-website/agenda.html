@@ -50,6 +50,7 @@
         <button class="tab" data-target="handson" aria-selected="false">Hands On</button>
         <button class="tab" data-target="concurschedule" aria-selected="false">Concur</button>
         <button class="tab" data-target="academiaschedule" aria-selected="false">Academia</button>
+        <button class="tab" data-target="professorsschedule" aria-selected="false">Professors Track</button>
         <button class="tab" data-target="ui5schedule" aria-selected="false">UI5</button>
     </nav>
 
@@ -68,6 +69,7 @@
                 <label><input type="checkbox" name="type" value="Hands On" checked> Hands On</label>
                 <label><input type="checkbox" name="type" value="Break" checked> Break</label>
                 <label><input type="checkbox" name="type" value="Keynote" checked> Keynote</label>
+                <label><input type="checkbox" name="type" value="Industry Talk" checked> Industry Talk</label>
                 <label><input type="checkbox" name="type" value="Registration" checked> Registration</label>
                 <label><input type="checkbox" name="type" value="UI5 Session" checked> UI5 Session</label>
             </fieldset>
@@ -99,6 +101,9 @@
         </section>
         <section id="academiaschedule" class="agenda-section" hidden aria-label="Academia schedule timeline">
             <div id="academiascheduleContainer" class="timeline" aria-live="polite"></div>
+        </section>
+        <section id="professorsschedule" class="agenda-section" hidden aria-label="Professors Track timeline">
+            <div id="professorsscheduleContainer" class="timeline" aria-live="polite"></div>
         </section>
         <section id="ui5schedule" class="agenda-section" hidden aria-label="UI5 schedule timeline">
             <div id="ui5scheduleContainer" class="timeline" aria-live="polite"></div>
@@ -153,7 +158,7 @@
         </article>
     </template>
 
-    <script src="assets/js/utils.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/utils.js?v=20260924-2"></script>
+    <script src="assets/js/app.js?v=20260924-2"></script>
 </body>
 </html>

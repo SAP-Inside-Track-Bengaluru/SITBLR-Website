@@ -12,10 +12,12 @@ class AgendaApp {
         this.concurParsedData = null;
         this.academiaRawData = null;
         this.academiaParsedData = null;
+        this.professorsRawData = null;
+        this.professorsParsedData = null;
         this.ui5RawData = null;
         this.ui5ParsedData = null;
         this.currentFilters = {
-            types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
+            types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Industry Talk', 'Registration'],
             tracks: []
         };
         this.concurFilters = {
@@ -43,9 +45,12 @@ class AgendaApp {
             this.setupTheme();
             await this.loadData();
             if (!this.rawData) return; // Load data handled coming soon
-            await this.loadConcurData();
+            const isQ3Agenda = this.year === '2026' && this.quarter === '3';
+            if (!isQ3Agenda) await this.loadConcurData();
             await this.loadAcademiaData();
-            await this.loadUI5Data();
+            await this.loadProfessorsData();
+            if (!isQ3Agenda) await this.loadUI5Data();
+            this.configureQuarterTabs();
             this.hideUnavailableTabs();
             this.populateFilters();
             this.renderAgenda();
@@ -66,10 +71,23 @@ class AgendaApp {
             const tab = document.querySelector('.tab[data-target="academiaschedule"]');
             if (tab) tab.style.display = 'none';
         }
+        if (!this.professorsRawData) {
+            const tab = document.querySelector('.tab[data-target="professorsschedule"]');
+            if (tab) tab.style.display = 'none';
+        }
         if (!this.ui5RawData) {
             const tab = document.querySelector('.tab[data-target="ui5schedule"]');
             if (tab) tab.style.display = 'none';
         }
+    }
+
+    configureQuarterTabs() {
+        if (this.year !== '2026' || this.quarter !== '3') return;
+
+        ['concurschedule', 'ui5schedule'].forEach(target => {
+            const tab = document.querySelector(`.tab[data-target="${target}"]`);
+            if (tab) tab.style.display = 'none';
+        });
     }
 
     updateBrandTagline() {
@@ -142,6 +160,25 @@ class AgendaApp {
             console.error('Error loading academia data:', error);
             // Don't throw error for academia data - make it optional
             console.warn('Academia schedule will not be available');
+        }
+    }
+
+    async loadProfessorsData() {
+        try {
+            const response = await fetch(`${this.dataPath}/professors.json`);
+            if (!response.ok) {
+                throw new Error(`Failed to load professors data: ${response.status}`);
+            }
+            this.professorsRawData = await response.json();
+
+            if (!this.professorsRawData || !this.professorsRawData.academia) {
+                throw new Error('Invalid professors data format');
+            }
+
+            this.professorsParsedData = parseAcademiaEventData(this.professorsRawData);
+        } catch (error) {
+            console.error('Error loading professors data:', error);
+            console.warn('Professors schedule will not be available');
         }
     }
 
@@ -274,6 +311,11 @@ class AgendaApp {
             types = getAcademiaUniqueTypes(this.academiaParsedData);
             this.academiaFilters.tracks = tracks;
             this.academiaFilters.types = types;
+        } else if (this.currentTab === 'professorsschedule' && this.professorsParsedData) {
+            tracks = getAcademiaUniqueTracks(this.professorsParsedData);
+            types = getAcademiaUniqueTypes(this.professorsParsedData);
+            this.academiaFilters.tracks = tracks;
+            this.academiaFilters.types = types;
         } else if (this.currentTab === 'ui5schedule' && this.ui5ParsedData) {
             // Use UI5con-specific tracks and types
             tracks = getUI5UniqueTracks(this.ui5ParsedData);
@@ -341,6 +383,8 @@ class AgendaApp {
             } else if (this.currentTab === 'academiaschedule') {
                 // For academia tab, check Academia Session, Lecture and Break
                 checkbox.checked = (checkbox.value === 'Academia Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
+            } else if (this.currentTab === 'professorsschedule') {
+                checkbox.checked = (checkbox.value === 'Academia Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
             } else if (this.currentTab === 'ui5schedule') {
                 // For UI5con tab, check UI5 Session, Lecture and Break
                 checkbox.checked = (checkbox.value === 'UI5 Session' || checkbox.value === 'Lecture' || checkbox.value === 'Break');
@@ -361,6 +405,9 @@ class AgendaApp {
             this.concurFilters.tracks = formData.getAll('track');
         } else if (this.currentTab === 'academiaschedule') {
             // Get selected types and tracks for academia
+            this.academiaFilters.types = formData.getAll('type');
+            this.academiaFilters.tracks = formData.getAll('track');
+        } else if (this.currentTab === 'professorsschedule') {
             this.academiaFilters.types = formData.getAll('type');
             this.academiaFilters.tracks = formData.getAll('track');
         } else if (this.currentTab === 'ui5schedule') {
@@ -392,6 +439,13 @@ class AgendaApp {
                 types: types,
                 tracks: tracks
             };
+        } else if (this.currentTab === 'professorsschedule' && this.professorsParsedData) {
+            const tracks = getAcademiaUniqueTracks(this.professorsParsedData);
+            const types = getAcademiaUniqueTypes(this.professorsParsedData);
+            this.academiaFilters = {
+                types: types,
+                tracks: tracks
+            };
         } else if (this.currentTab === 'ui5schedule' && this.ui5ParsedData) {
             const tracks = getUI5UniqueTracks(this.ui5ParsedData);
             const types = getUI5UniqueTypes(this.ui5ParsedData);
@@ -402,7 +456,7 @@ class AgendaApp {
         } else {
             const tracks = getUniqueTracks(this.parsedData);
             this.currentFilters = {
-                types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Registration'],
+                types: ['Lecture', 'Demo Pod', 'Hands On', 'Break', 'Keynote', 'Industry Talk', 'Registration'],
                 tracks: tracks
             };
         }
@@ -484,6 +538,14 @@ class AgendaApp {
             const filteredAcademiaData = filterAcademiaEvents(this.academiaParsedData, this.currentSearchTerm, this.academiaFilters);
             this.renderTimeline('academiascheduleContainer', filteredAcademiaData.academiaschedule);
             this.updateEmptyState(filteredAcademiaData);
+        } else if (this.currentTab === 'professorsschedule') {
+            if (!this.professorsParsedData) {
+                this.updateEmptyState({ academiaschedule: [] });
+                return;
+            }
+            const filteredProfessorsData = filterAcademiaEvents(this.professorsParsedData, this.currentSearchTerm, this.academiaFilters);
+            this.renderTimeline('professorsscheduleContainer', filteredProfessorsData.academiaschedule);
+            this.updateEmptyState(filteredProfessorsData);
         } else if (this.currentTab === 'ui5schedule') {
             if (!this.ui5ParsedData) {
                 this.updateEmptyState({ ui5schedule: [] });
@@ -568,11 +630,13 @@ class AgendaApp {
             const industryTalkCard = this.createSessionCard({
                 title: timeSlot.title,
                 type: 'Industry Talk',
-                track: '',
-                speaker1: '',
-                speaker2: '',
+                track: timeSlot.location || '',
+                speaker1: timeSlot.speaker1 || '',
+                speaker2: timeSlot.speaker2 || '',
+                speaker3: timeSlot.speaker3 || '',
                 speakers: '',
-                description: ''
+                description: '',
+                location: timeSlot.location || ''
             }, `industry-talk-${timeSlot.sequence}`, true);
             sessionsCol.appendChild(industryTalkCard);
         } else if (timeSlot.type === 'registration') {
@@ -737,7 +801,7 @@ class AgendaApp {
         
         // Set speakers
         const speakersElement = card.querySelector('.speakers');
-        if (isSpecialSession && (session.type === 'Keynote' || session.type === 'Registration')) {
+        if (isSpecialSession && (session.type === 'Keynote' || session.type === 'Registration' || session.type === 'Industry Talk')) {
             // Handle special session speakers with designations (no label)
             const speakersText = formatSpecialSessionSpeakers(session);
             if (speakersText) {
@@ -750,7 +814,8 @@ class AgendaApp {
             // Handle regular session speakers
             const speakersText = formatSpeakers(session);
             if (speakersText) {
-                speakersElement.textContent = `Speakers: ${speakersText}`;
+                const omitSpeakerLabel = session.title === 'Keynote from Sindhu Gangadharan' || session.title === 'Industry Talk';
+                speakersElement.textContent = omitSpeakerLabel ? speakersText : `Speakers: ${speakersText}`;
             } else {
                 speakersElement.style.display = 'none';
             }
