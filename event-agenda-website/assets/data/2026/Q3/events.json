@@ -8,7 +8,7 @@
             "speaker1": "",
             "speaker2": "",
             "speaker3": "",
-            "location": "BLR12 3rd Floor - Auditorium",
+            "location": "BLR12 Ground Floor - Reception Area",
             "sessionsBySequence": []
         },
         {
@@ -109,7 +109,7 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "",
+                    "speaker1": "Dharani",
                     "speaker2": "",
                     "speaker3": "",
                     "sessiontitle": "SAP Business Data Cloud: The Data Foundation for Autonomous Enterprises",
@@ -223,7 +223,7 @@
                 {
                     "speakers": "",
                     "speaker1": "vishu agarwal",
-                    "speaker2": "",
+                    "speaker2": "Prabhjot Bhatia",
                     "speaker3": "",
                     "sessiontitle": "Beyond Standard AI: Extending SAP Agents for Your Business",
                     "description": "**Unlocking AI Innovation with SAP Agent Extensibility**\n\nHow SAP’s Extensibility Service enables customers and partners to safely extend enterprise AI with custom skills, tools, and business logic—while preserving the clean core.\n\nAI is transforming how users interact with enterprise applications, but every business has unique processes, rules, and competitive differentiators. **Agent Extensibility** enables organizations to bring these unique requirements into SAP’s agentic world without compromising standardization, governance, or upgradeability.\n\nIn this session, discover how **Agent Extension**, as a core capability of SAP’s Extensibility Service and Suite Foundation Services, enables developers and partners to extend SAP AI agents with **custom Skills, Tools, and Pre/Post Hooks**. See how the **Extension Registry** provides centralized discovery and governance, while SAP’s publishing and deployment services enable extensions to move from development to productive landscapes in a structured and scalable way.\n\nWe will also explore how Agent Extensibility fits into the broader SAP extensibility architecture, alongside **Domain Model and UI Extensions**, and how it integrates with SAP applications and the **SAP BTP** technology foundation.\n\nFinally, experience how **SAP Build** brings an agentic engagement layer to extensibility—using natural language and AI-assisted development to make extension capabilities accessible to professional developers, partners, and business technologists.\n\n**Key takeaways:**\n\n-   Extend SAP agents with **custom Skills and Tools** for differentiated business scenarios\n    \n-   Use **Pre/Post Hooks** to inject custom business logic into agent-driven processes\n    \n-   Discover, govern, and manage extensions through the **Extension Registry**\n    \n-   Understand how Agent Extensibility supports the **clean-core** strategy\n    \n-   See how extensions are published and deployed through governed lifecycle services\n    \n-   Explore how **SAP Build** enables intent-based and agent-assisted extensibility",
@@ -268,7 +268,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Naveen Banala",
-                    "speaker2": "Venkat Reddy",
+                    "speaker2": "Mithun S",
                     "speaker3": "",
                     "sessiontitle": "From Intent to Action: Transforming work with Joule Work, Assistants & Agents",
                     "description": "What if getting work done across SAP didn't require switching between applications, searching for information, or manually coordinating tasks and handoffs?\n\nJoule Work brings data, applications, Joule Assistants, and agent workflows together in a dynamic workspace, enabling people to express what they want to accomplish and let AI help move the work forward.\n\nIn this session, we will explore how Joule Assistants orchestrate specialised Joule Agents to turn business intent into action. Agents can work sequentially or in parallel, connecting the right data, tools, and applications to analyse information, trigger actions, interact with systems, and execute workflow steps across the enterprise.\n\nThrough practical business scenarios, we'll look at how Joule Work can automate routine cross-functional work, coordinate activities across systems, and help teams move faster from insight to outcome. We will also discuss how this AI-driven experience fits with the SAP Business AI Platform, including governance, role-based access, data permissions, monitoring, auditability, and human oversight.\n\nThe session will provide a practical view of how AI agents can move beyond answering questions to actually orchestrating work—and what this means for the future of enterprise productivity.\n\n\nWhat Will the Audience Gain?\nAttendees will leave with:\n-   Understand Joule Work — how it brings data, applications, assistants, and agent workflows together in one workspace.\n-   See how Assistants and Agents work together — understand the roles of Joule Assistants, Joule Agents, and agent orchestration.\n-   Learn how intent becomes action— see how AI can move from understanding a request to executing tasks across systems.\n-   Explore real business scenarios — understand how multi-agent orchestration can automate cross-functional workflows and reduce manual handoffs.\n-   Understand sequential vs. parallel agent execution — and how specialised agents can collaborate to complete an end-to-end workflow.\n-   Learn about enterprise AI governance — understand how Joule Work interacts with the SAP Business AI Platform's controls for access, permissions, monitoring, auditability, and human oversight.\n-   Identify opportunities in your own organisation — take away ideas for where AI-powered orchestration can improve productivity and accelerate business outcomes.",
@@ -572,7 +572,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Ankit Kaneri",
-                    "speaker2": "",
+                    "speaker2": "Vasantha",
                     "speaker3": "",
                     "sessiontitle": "Joule-Powered Situation Handling: Conversational AI for Intelligent Exception Management",
                     "description": "Situation Handling in SAP S/4HANA Cloud revolutionizes business operations by delivering critical alerts to the right users at the right time. This tool notifies you of essential business parameters, ensuring that issues are addressed promptly and effectively. By integrating with your business processes, Situation Handling helps save time, reduce costs, and enhance decision-making. During this session, explore how this proactive approach can optimize your operations, increase efficiency, and drive business success. Discover SAP-delivered use cases and learn how to customize situations tailored to your unique business needs.\nThe game-changer is the Joule integration. Instead of manually searching for exceptions, users simply ask in natural language—\"Show me my situations?\"—and Joule responds instantly, surfacing relevant situations on demand and guiding users directly to the right Fiori app to take action.\nAttendees will discover:\n\n-   How Situation Handling drives measurable business value through proactive alerting\n-   The power of Joule-powered conversational exception management\n-   SAP-delivered use cases across key business scenarios\n-   How to customize situations tailored to your unique business needs",
@@ -639,8 +639,8 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "",
-                    "speaker2": "",
+                    "speaker1": "Suman Kumar Puthadi",
+                    "speaker2": "Shwetank Mishra",
                     "speaker3": "",
                     "sessiontitle": "AI-Powered Overhead Accounting Master Data",
                     "description": "AI-Powered Overhead Accounting – Master Data Intelligence is an intelligent, agent-based solution designed to simplify and automate master data management activities within SAP Overhead Accounting.\n\nThe solution brings together specialized AI agents for Internal Orders, Cost Centers, and Profit Centers. These agents help finance users perform master data activities using simple natural-language interactions instead of navigating through multiple SAP transactions and applications.\n\nThe objective is to provide a single intelligent experience for creating, viewing, updating, validating, monitoring, and resolving master data issues. The solution also focuses on proactive anomaly detection and error resolution, helping finance teams improve data quality and reduce the manual effort involved in master data maintenance.\n\nMaster Data Agents\n\n1.  Internal Order Master Data Management Agent\n\nThe Internal Order Master Data Management Agent supports the complete lifecycle of Internal Order master data.\n\nThe agent can hel",
@@ -654,8 +654,8 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "Kartik Dharwadmath",
-                    "speaker2": "",
+                    "speaker1": "Ankita Verma",
+                    "speaker2": "Vani Humbi",
                     "speaker3": "",
                     "sessiontitle": "The Autonomous Data Foundation: Modernizing SAP BW in SAP BDC that powers the Autonomous Enterprise",
                     "description": "The Autonomous Enterprise runs on data that flows seamlessly from your data warehouse into AI and ML - with minimal manual effort. But can decades of SAP BW investment feed modern machine learning? In this session, we prove it can. We’ll frame the SAP Business Warehouse modernization roadmap, including the game-changing BW Migration Assistant for guided, low-risk transitions. Then we go fully hands-on with two capabilities transforming BW today. Watch the Flattening operator collapse associated tables into a single file-based dataset - ready for machine learning in SAP Databricks. Then see the Query Template Generator app automate analytic modelling that once took teams hours. Through presentation and demos, you’ll leave with a clear blueprint for turning legacy BW into an AI-ready, self-optimizing foundation for the Autonomous Enterprise",
@@ -700,7 +700,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Venice Varshney",
-                    "speaker2": "",
+                    "speaker2": "Mansi Shukla",
                     "speaker3": "",
                     "sessiontitle": "Optimize Collections using SAP S/4HANA Behavioral Insights",
                     "description": "This application uses Embedded ML and Explainable AI to uncover payment behavior patterns, predict risk of late payment & receivership, and enable intelligent cash collections for Financial Contract Accounting. It cuts write-offs, lowers DSO, boosts cash flow, and delivers personalized dunning strategies that maximize revenue and collection efficiency via risk score.\nDemostrating the use of financial data collection and transformation via CDS views, with embedded ML risk score prediction using ISLM and diplaying in an intiguing UI5 extensible fiori application.",
@@ -715,7 +715,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Chavi Singhal",
-                    "speaker2": "",
+                    "speaker2": "Smita Koppar",
                     "speaker3": "",
                     "sessiontitle": "From Embedded AI to Agents: Navigating the Autonomous Enterprise",
                     "description": "In this session, you will discover how your daily work experience is evolving beyond simple digital assistants and entering a new era of proactive, smart business frameworks. We will break down exactly what this transition from embedded AI to autonomous agents means for you, showing how a central, natural-language interface effortlessly connects your distributed enterprise data directly with your everyday workflows. Instead of you spending time manually clicking through multiple software programs, specialized digital agents handle complex, multi-step processes for you completely behind the scenes.",
@@ -804,8 +804,8 @@
             "sessionsBySequence": [
                 {
                     "speakers": "",
-                    "speaker1": "",
-                    "speaker2": "",
+                    "speaker1": "Sunil Kumar Maurya",
+                    "speaker2": "Varsha Ahlawat",
                     "speaker3": "",
                     "sessiontitle": "Orchestrating the Quote-to-Cash Cycle with SAP Joule AI Agents",
                     "description": "We walk through the complete agent journey in quote to cash process in private cloud: the Solution Quotation Creation Agent converts a raw customer request into a fully priced, contract-aware quotation. The **Validation Agent** ensures every field aligns with the signed contract before a single value propagates downstream. The **Accept Planner Agent** orchestrates fulfilment readiness the moment a customer says yes. When issues surface in execution, the **Sales Order and Delivery Agent** resolves them in context — without leaving Joule. Downstream, **Finance and Analytics Agents** close the loop on billing accuracy, revenue recognition, and performance insights as a plan to integrate with solution quotation.\n\nTogether, these agents eliminate the manual handoffs, pricing errors, and compliance gaps that slow every commercial organisation today.\n\nIn this session, we demonstrate two agents live — Solution Quotation Creation and Sales Order — giving you a concrete, working view of the agentic enterprise in action.",
@@ -963,7 +963,7 @@
                 {
                     "speakers": "",
                     "speaker1": "Naveeta Srivastava",
-                    "speaker2": "",
+                    "speaker2": "Vishal Tambolkar",
                     "speaker3": "",
                     "sessiontitle": "Asset Management: Powered by AI and Intelligent Agents",
                     "description": "I would position the topic as a strategic, business-focused session that helps attendees understand \"how Intelligent Agents can transform maintenance processes, decision-making, and asset performance\".\n\nAttendees will gain an understanding of how Intelligent Agents can work with SAP Asset Management processes to help maintenance teams - identify issues, recommend actions, make informed decisions, and improve asset performance. \n\nKey Takeaways:\nParticipants will learn:\n-   The potential business value: reduced downtime, faster decision-making, improved maintenance efficiency, and optimized asset performance.\n-   What organizations should consider when preparing for an AI-powered Asset Management strategy.\n\nTarget Audience:\n-   SAP Asset Management Business Stakeholders,Consultants,Customers and Architects\n-   Digital Transformation Leaders\n-   AI / GenAI & Intelligent Automation Leaders\n\nPrerequisites:\n-   Basic understanding of SAP Asset Management.\n-   Familiarity with common maintenance processes such as ma",
@@ -1067,8 +1067,8 @@
                 },
                 {
                     "speakers": "",
-                    "speaker1": "",
-                    "speaker2": "",
+                    "speaker1": "Vaibhav Bhasin",
+                    "speaker2": "Jitendra Singh",
                     "speaker3": "",
                     "sessiontitle": "Prototype: AI-Powered Employee Migration via Joule — SAP HCM to SuccessFactors EC",
                     "description": "This is a prototype we built to explore how AI agents can simplify employee master data migration from SAP HCM PA30 to SuccessFactors Employee Central — triggered via a single natural language prompt in Joule.\n\nMigrating employee data from HCM to EC is complex. Every employee has a unique combination of infotypes and can have different employment scenarios — simple employment, concurrent employment, global transfer, global assignment, or rehire. Each scenario requires a completely different migration approach with different EC entities, different creation order, and different validation rules. \n\nThe agent handles all of this automatically. It reads all PA30 infotypes, detects the employment scenario, builds a migration plan, and executes it step by step — creating all required EC entities via the OData API in the correct order. It also supports a test run mode to validate data without writing to EC, which is useful for QA before going live.\n\nThe most exciting part is the Joule integration. The HR consultant simply opens Joule and types \"Migrate employee 00618676\" — Joule routes the request to the agent via DAS capability framework and streams the response back in the chat. No tools, no scripts, no technical knowledge needed.\n\nThe agent is built using LangGraph with Claude 4.5 Sonnet via SAP AI Core, deployed on SAP App Foundation on Kyma. It uses a knowledge base of 177 field mappings across 24 EC entities built from real-world migration experience.\n\nIn this session we will do a live end-to-end demo — trigger a migration from Joule, watch the agent work in real time, and see the full summary of migrated entities. This prototype shows what is possible when you combine AI agents, Joule, and deep domain knowledge — and we hope it inspires the SAP community to explore similar ideas.",
