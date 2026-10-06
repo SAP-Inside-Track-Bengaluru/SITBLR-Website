@@ -54,7 +54,7 @@
                          <p class="hero-description">Driven by the SAP Community, SIT Bengaluru stands as a global benchmark for grassroots innovation. It is a premier tech conference where the ecosystem’s brightest minds converge to explore the frontiers of Business AI and digital transformation. Join us to move beyond the routine, master new technologies, and shape the future of enterprise software together.</p>
                          <div class="hero-actions">
                              <a href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/submit-session/27ed68b7-f040-4ebf-853e-2ab11e2ee92d" class="primary-btn" target="_blank" rel="noopener">Submit a Session</a>
-                             <a href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810" class="secondary-btn" target="_blank" rel="noopener">Register Now</a>
+                             <a href="#register" class="secondary-btn">Register</a>
                          </div>
                      </div>
                      <div class="hero-visual">
@@ -162,20 +162,15 @@
          </section> -->
 
          <section id="register" class="reg-section">
-             <h2>SIT Bengaluru 3rd Edition: September 26, 2026</h2>
-             <div style="margin-bottom: 2rem;">
-                 <p>Join us at <strong>SAP Labs India Innovation Park, Bengaluru</strong></p>
-                 <p style="font-size: 0.95rem; opacity: 0.9;">Bande Kodigehalli, Singahalli, Arebannimangala<br>Bengaluru, India</p>
-                 <a href="https://maps.app.goo.gl/GD7j55seZmxrxFQeA" target="_blank" rel="noopener" style="color: white; text-decoration: underline; font-size: 0.95rem;">
-                     <i class="fas fa-map-marker-alt"></i> View on Google Maps
-                 </a>
+             <h2>SIT Bengaluru Edition 4 &mdash; 2026</h2>
+             <div style="margin-bottom: 1.5rem;">
+                 <p style="font-size: 1.1rem; opacity: 0.95;">Registration details will be shared soon.</p>
+                 <p style="font-size: 0.9rem; opacity: 0.75; margin-top: 0.5rem;">Stay tuned &mdash; follow us on LinkedIn for updates.</p>
              </div>
              <div class="hero-actions" style="justify-content: center;">
-                 <a id="registerBtn" href="https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810" class="primary-btn" target="_blank" style="background: white; color: var(--primary) !important; border: none; cursor: pointer;">Register Now</a>
-                 <a href="https://sitblr.in/agenda.html?year=2026&q=3" class="secondary-btn" style="background: transparent; color: white !important; border: 1px solid white;">View Agenda</a>
-                 <button class="icon-btn share-section-btn" data-anchor="#register" title="Share registration on LinkedIn" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.5);">
-                    <i class="fas fa-link"></i> Share Section
-                 </button>
+                 <a href="https://www.linkedin.com/company/sitblr/" class="secondary-btn" target="_blank" rel="noopener" style="background: transparent; color: white !important; border: 1px solid white;">
+                     <i class="fab fa-linkedin"></i> Follow on LinkedIn
+                 </a>
              </div>
          </section>
 
@@ -589,10 +584,6 @@
              }
          });
 
-         // Register Button Redirect - Now using <a> tag, so this is simplified
-         const registerBtn = document.getElementById('registerBtn');
-         const REGISTRATION_URL = 'https://sapinsidetrack.cfapps.eu10-004.hana.ondemand.com/index.html#/event/17121ee3-45a4-40d8-adf7-e16e3e879810';
-
          function showToast(message) {
              const toast = document.getElementById('toast');
              toast.innerText = message || 'Link Copied!';
@@ -621,13 +612,6 @@
          }
 
         if (isInAppBrowser()) {
-            if (registerBtn) {
-                registerBtn.innerText = 'Copy Link to Register';
-                registerBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    copyToClipboard(REGISTRATION_URL);
-                });
-            }
             if (submitBtn) {
                 submitBtn.innerText = 'Copy Link to Submit';
                 submitBtn.addEventListener('click', (e) => {
@@ -637,12 +621,6 @@
             }
             // Hide separate share buttons in-app to avoid confusion
             document.querySelectorAll('.share-section-btn').forEach(btn => btn.style.display = 'none');
-        } else {
-            if (registerBtn) {
-                registerBtn.addEventListener('click', () => {
-                    window.location.href = REGISTRATION_URL;
-                });
-            }
         }
 
         // FAQ Accordion
